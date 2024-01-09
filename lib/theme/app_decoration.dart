@@ -1,0 +1,96 @@
+import 'package:flutter/material.dart';
+import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
+
+class AppDecoration {
+  // Fill decorations
+  static BoxDecoration get fillGray => BoxDecoration(
+        color: appTheme.gray800.withOpacity(0.5),
+      );
+  static BoxDecoration get fillGray900 => BoxDecoration(
+        color: appTheme.gray900,
+      );
+
+  // Gradient decorations
+  static BoxDecoration get gradientDeepOrangeToDeepPurpleA => BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment(0, 0.5),
+          end: Alignment(1, 0.5),
+          colors: [
+            appTheme.deepOrange400,
+            appTheme.deepPurpleA200,
+          ],
+        ),
+      );
+  static BoxDecoration get gradientPurpleAToBlack => BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment(-0.06, -0.2),
+          end: Alignment(1.37, 0.82),
+          colors: [
+            appTheme.purpleA200,
+            appTheme.purple800,
+            appTheme.black900,
+          ],
+        ),
+      );
+
+  // Outline decorations
+  static BoxDecoration get outlineGray => BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: appTheme.gray800,
+            width: 1.h,
+          ),
+        ),
+      );
+}
+
+class BorderRadiusStyle {
+  // Circle borders
+  static BorderRadius get circleBorder18 => BorderRadius.circular(
+        18.h,
+      );
+  static BorderRadius get circleBorder23 => BorderRadius.circular(
+        23.h,
+      );
+  static BorderRadius get circleBorder28 => BorderRadius.circular(
+        28.h,
+      );
+  static BorderRadius get circleBorder39 => BorderRadius.circular(
+        39.h,
+      );
+  static BorderRadius get circleBorder43 => BorderRadius.circular(
+        43.h,
+      );
+  static BorderRadius get circleBorder48 => BorderRadius.circular(
+        48.h,
+      );
+  static BorderRadius get circleBorder94 => BorderRadius.circular(
+        94.h,
+      );
+
+  // Rounded borders
+  static BorderRadius get roundedBorder10 => BorderRadius.circular(
+        10.h,
+      );
+  static BorderRadius get roundedBorder15 => BorderRadius.circular(
+        15.h,
+      );
+}
+
+// Comment/Uncomment the below code based on your Flutter SDK version.
+
+// For Flutter SDK Version 3.7.2 or greater.
+
+double get strokeAlignInside => BorderSide.strokeAlignInside;
+
+double get strokeAlignCenter => BorderSide.strokeAlignCenter;
+
+double get strokeAlignOutside => BorderSide.strokeAlignOutside;
+
+// For Flutter SDK Version 3.7.1 or less.
+
+// StrokeAlign get strokeAlignInside => StrokeAlign.inside;
+//
+// StrokeAlign get strokeAlignCenter => StrokeAlign.center;
+//
+// StrokeAlign get strokeAlignOutside => StrokeAlign.outside;
