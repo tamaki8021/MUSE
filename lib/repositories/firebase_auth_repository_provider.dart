@@ -27,7 +27,7 @@ class FirebaseAuthRepositoryImpl implements FirebaseAuthRepository {
       // This must be true
       handleCodeInApp: true,
       iOSBundleId: 'com.muse.muse',
-      androidPackageName: 'com.insary.insary',
+      androidPackageName: 'com.muse.app',
       // installIfNotAvailable
       androidInstallApp: true,
       // minimumVersion
