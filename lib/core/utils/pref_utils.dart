@@ -35,4 +35,29 @@ class PrefUtils {
       return 'primary';
     }
   }
+
+  dynamic get(String key) {
+    var value = _sharedPreferences!.get(key);
+    return value;
+  }
+
+  Future<void> set(String key, dynamic value) async {
+    if (value is String) {
+      await _sharedPreferences!.setString(key, value);
+    } else if (value is int) {
+      await _sharedPreferences!.setInt(key, value);
+    } else if (value is bool) {
+      await _sharedPreferences!.setBool(key, value);
+    } else if (value is double) {
+      await _sharedPreferences!.setDouble(key, value);
+    } else if (value is List<String>) {
+      await _sharedPreferences!.setStringList(key, value);
+    } else {
+      throw Exception('Invalid data type');
+    }
+  }
+
+  Future<void> remove(String key) async {
+    await _sharedPreferences!.remove(key);
+  }
 }
