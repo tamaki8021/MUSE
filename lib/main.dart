@@ -13,9 +13,12 @@ import 'core/app_export.dart';
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // firebaseの初期化
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   // リンクからアプリへ遷移するとき、アプリが開いていないと発動
   await FirebaseDynamicLinks.instance.getInitialLink().then((data) async {
     final String? deepLink = data?.link.toString();
@@ -23,9 +26,6 @@ Future<void> main() async {
     final email = 'hbk14320@gmail.com';
     final auth = FirebaseAuth.instance;
 
-    print(data);
-    print('deepLink');
-    print(deepLink);
     if (deepLink == null) return;
     if (auth.isSignInWithEmailLink(deepLink)) {
       // メールリンクに含まれる認証情報でサインイン
@@ -43,6 +43,7 @@ Future<void> main() async {
   }).catchError((e) {
     print(e);
   });
+
   Future.wait([
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -80,7 +81,7 @@ class MyApp extends HookConsumerWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           theme: theme,
-          title: 'hibiki_tamaki_s_application1',
+          title: 'muse app',
           navigatorKey: NavigatorService.navigatorKey,
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [
