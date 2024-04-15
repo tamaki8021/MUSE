@@ -39,12 +39,12 @@ clean:
 # 開発環境（dev）の起動
 .PHONY: run
 run:
-	$(FVM) run --flavor dev --dart-define=FLAVOR=dev
+	$(FVM) run --dart-define=FLAVOR=dev --target lib/main.dart
 
 # 本番環境（prod）の起動
 .PHONY: run-prod
 run-prod:
-	$(FVM) run --flavor prod --dart-define=FLAVOR=prod
+	$(FVM) run --dart-define=FLAVOR=prod --target lib/main.dart
 
 # code generate
 .PHONY: build_runner
