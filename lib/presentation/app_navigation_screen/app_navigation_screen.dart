@@ -1,6 +1,5 @@
-import 'notifier/app_navigation_notifier.dart';
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
+import 'package:muse/core/app_export.dart';
 
 class AppNavigationScreen extends ConsumerStatefulWidget {
   const AppNavigationScreen({Key? key})
@@ -17,13 +16,13 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0XFFFFFFFF),
+        backgroundColor: const Color(0XFFFFFFFF),
         body: SizedBox(
           width: 375.h,
           child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
+              DecoratedBox(
+                decoration: const BoxDecoration(
                   color: Color(0XFFFFFFFF),
                 ),
                 child: Column(
@@ -34,10 +33,10 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.h),
                         child: Text(
-                          "App Navigation".tr,
+                          'App Navigation'.tr,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0XFF000000),
+                            color: const Color(0XFF000000),
                             fontSize: 20.fSize,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.w400,
@@ -51,11 +50,12 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                       child: Padding(
                         padding: EdgeInsets.only(left: 20.h),
                         child: Text(
-                          "Check your app's UI from the below demo screens of your app."
+                          "Check your app's UI from the below "
+                                  'demo screens of your app.'
                               .tr,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0XFF888888),
+                            color: const Color(0XFF888888),
                             fontSize: 16.fSize,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.w400,
@@ -67,7 +67,7 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                     Divider(
                       height: 1.v,
                       thickness: 1.v,
-                      color: Color(0XFF000000),
+                      color: const Color(0XFF000000),
                     ),
                   ],
                 ),
@@ -84,12 +84,12 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
   Widget _buildGroupAP12(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
+        child: DecoratedBox(
+          decoration: const BoxDecoration(
             color: Color(0XFFFFFFFF),
           ),
-          child: Container(
-            decoration: BoxDecoration(
+          child: DecoratedBox(
+            decoration: const BoxDecoration(
               color: Color(0XFFFFFFFF),
             ),
             child: Column(
@@ -100,10 +100,10 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.h),
                     child: Text(
-                      "street pass".tr,
+                      'street pass'.tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Color(0XFF000000),
+                        color: const Color(0XFF000000),
                         fontSize: 20.fSize,
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w400,
@@ -116,7 +116,7 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                 Divider(
                   height: 1.v,
                   thickness: 1.v,
-                  color: Color(0XFF888888),
+                  color: const Color(0XFF888888),
                 ),
               ],
             ),

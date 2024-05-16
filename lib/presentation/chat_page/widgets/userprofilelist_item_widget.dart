@@ -1,6 +1,7 @@
-import '../models/userprofilelist_item_model.dart';
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
+import 'package:muse/core/app_export.dart';
+
+import '../models/userprofilelist_item_model.dart';
 
 // ignore: must_be_immutable
 class UserprofilelistItemWidget extends StatelessWidget {
@@ -39,7 +40,7 @@ class UserprofilelistItemWidget extends StatelessWidget {
                       alignment: Alignment.center,
                     ),
                     CustomImageView(
-                      imagePath: userprofilelistItemModelObj?.userImage2,
+                      imagePath: userprofilelistItemModelObj.userImage2,
                       height: 48.adaptSize,
                       width: 48.adaptSize,
                       radius: BorderRadius.circular(

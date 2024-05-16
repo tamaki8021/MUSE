@@ -1,14 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:muse/core/app_export.dart';
+import 'package:muse/widgets/app_bar/appbar_title.dart';
+import 'package:muse/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:muse/widgets/app_bar/custom_app_bar.dart';
+import 'package:muse/widgets/custom_icon_button.dart';
+
 import '../profile_page/widgets/thirty_item_widget.dart';
 import '../profile_page/widgets/userprofile1_item_widget.dart';
 import 'models/thirty_item_model.dart';
 import 'models/userprofile1_item_model.dart';
 import 'notifier/profile_notifier.dart';
-import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/appbar_title.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/custom_app_bar.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/custom_icon_button.dart';
 
 // ignore_for_file: must_be_immutable
 class ProfilePage extends ConsumerStatefulWidget {
@@ -35,8 +36,8 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
           height: SizeUtils.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment(-0.06, -0.2),
-              end: Alignment(1.37, 0.82),
+              begin: const Alignment(-0.06, -0.2),
+              end: const Alignment(1.37, 0.82),
               colors: [
                 appTheme.purpleA200,
                 appTheme.purple800,
@@ -64,7 +65,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                         child: Column(
                           children: [
                             Text(
-                              "lbl_1_342".tr,
+                              'lbl_1_342'.tr,
                               style: TextStyle(
                                 color: appTheme.whiteA700,
                                 fontSize: 16.fSize,
@@ -74,7 +75,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                             ),
                             SizedBox(height: 3.v),
                             Text(
-                              "lbl_my_posts".tr,
+                              'lbl_my_posts'.tr,
                               style: TextStyle(
                                 color: appTheme.blueGray300,
                                 fontSize: 12.fSize,
@@ -85,7 +86,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                           ],
                         ),
                       ),
-                      Spacer(
+                      const Spacer(
                         flex: 52,
                       ),
                       SizedBox(
@@ -126,7 +127,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                           ],
                         ),
                       ),
-                      Spacer(
+                      const Spacer(
                         flex: 47,
                       ),
                       Padding(
@@ -137,7 +138,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                         child: Column(
                           children: [
                             Text(
-                              "lbl_586".tr,
+                              'lbl_586'.tr,
                               style: TextStyle(
                                 color: appTheme.whiteA700,
                                 fontSize: 16.fSize,
@@ -147,7 +148,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                             ),
                             SizedBox(height: 2.v),
                             Text(
-                              "lbl_favorites".tr,
+                              'lbl_favorites'.tr,
                               style: TextStyle(
                                 color: appTheme.blueGray300,
                                 fontSize: 12.fSize,
@@ -163,7 +164,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                 ),
                 SizedBox(height: 9.v),
                 Text(
-                  "lbl_eleanor_mena".tr,
+                  'lbl_eleanor_mena'.tr,
                   style: TextStyle(
                     color: appTheme.whiteA700,
                     fontSize: 18.fSize,
@@ -173,7 +174,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                 ),
                 SizedBox(height: 8.v),
                 Text(
-                  "msg_sometimes_i_cook".tr,
+                  'msg_sometimes_i_cook'.tr,
                   style: TextStyle(
                     color: appTheme.blueGray300,
                     fontSize: 14.fSize,
@@ -200,7 +201,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
     return CustomAppBar(
       centerTitle: true,
       title: AppbarTitle(
-        text: "lbl_muse".tr,
+        text: 'lbl_muse'.tr,
       ),
       actions: [
         AppbarTrailingImage(
@@ -224,7 +225,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
       child: Consumer(
         builder: (context, ref, _) {
           return ListView.separated(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             separatorBuilder: (
               context,
@@ -241,7 +242,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                     .length ??
                 0,
             itemBuilder: (context, index) {
-              Userprofile1ItemModel model = ref
+              final model = ref
                       .watch(profileNotifier)
                       .profileModelObj
                       ?.userprofile1ItemList[index] ??
@@ -268,7 +269,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
           Padding(
             padding: EdgeInsets.only(top: 3.v),
             child: Text(
-              "lbl_my_post".tr,
+              'lbl_my_post'.tr,
               style: TextStyle(
                 color: appTheme.yellow900,
                 fontSize: 14.fSize,
@@ -277,7 +278,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
               ),
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 43,
           ),
           SizedBox(
@@ -287,13 +288,13 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
               thickness: 1.v,
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 56,
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 2.v),
             child: Text(
-              "lbl_favorite".tr,
+              'lbl_favorite'.tr,
               style: TextStyle(
                 color: appTheme.whiteA700,
                 fontSize: 14.fSize,
@@ -331,7 +332,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                     .length ??
                 0,
             itemBuilder: (context, index) {
-              ThirtyItemModel model = ref
+              final model = ref
                       .watch(profileNotifier)
                       .profileModelObj
                       ?.thirtyItemList[index] ??

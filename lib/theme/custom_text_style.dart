@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars,avoid_classes_with_only_static_members, unused_element
+
 import 'package:flutter/material.dart';
 import '../core/app_export.dart';
 
@@ -7,33 +9,40 @@ import '../core/app_export.dart';
 
 class CustomTextStyles {
   // Body text style
-  static get bodyMediumBluegray300 => theme.textTheme.bodyMedium!.copyWith(
+  static TextStyle get bodyMediumBluegray300 =>
+      theme.textTheme.bodyMedium!.copyWith(
         color: appTheme.blueGray300,
       );
-  static get bodySmallGray500 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallGray500 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.gray500,
       );
-  static get bodySmallWhiteA700 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallWhiteA700 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.whiteA700,
       );
   // Label style
-  static get labelLargeInter => theme.textTheme.labelLarge!.inter;
+  static TextStyle get labelLargeInter => theme.textTheme.labelLarge!.inter;
   // Title text style
-  static get titleMediumGray90002 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumGray90002 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.gray90002,
         fontWeight: FontWeight.w500,
       );
-  static get titleMediumMedium => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumMedium =>
+      theme.textTheme.titleMedium!.copyWith(
         fontWeight: FontWeight.w500,
       );
-  static get titleMediumMedium18 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumMedium18 =>
+      theme.textTheme.titleMedium!.copyWith(
         fontSize: 18.fSize,
         fontWeight: FontWeight.w500,
       );
-  static get titleSmallSemiBold => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallSemiBold =>
+      theme.textTheme.titleSmall!.copyWith(
         fontWeight: FontWeight.w600,
       );
-  static get titleSmallYellow900 => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallYellow900 =>
+      theme.textTheme.titleSmall!.copyWith(
         color: appTheme.yellow900,
       );
 }

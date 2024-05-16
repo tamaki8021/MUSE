@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
+import 'package:muse/core/app_export.dart';
 
 // ignore: must_be_immutable
 class AppbarTrailingImage extends StatelessWidget {
@@ -16,7 +16,7 @@ class AppbarTrailingImage extends StatelessWidget {
 
   EdgeInsetsGeometry? margin;
 
-  Function? onTap;
+  VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

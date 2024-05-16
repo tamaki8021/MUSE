@@ -1,38 +1,39 @@
-name: hibiki_tamaki_s_application1
-description: A new Flutter project.
+name: muse
+description: muse mobile application
 version: 1.0.0+1
-environment: 
-  sdk: '>=2.12.0 <3.0.0'
-dependencies: 
-  flutter: 
-    sdk: flutter
-  flutter_localizations: 
-    sdk: flutter
-  flutter_riverpod: ^2.4.9
-  connectivity_plus: ^5.0.2
-  shared_preferences: ^2.2.2
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+dependencies:
   cached_network_image: ^3.3.0
-  flutter_svg: ^2.0.9
+  connectivity_plus: ^5.0.2
   equatable: ^2.0.5
-  flutter_svg_provider: ^1.0.7
-  intl: ^0.18.1
+  firebase_auth: ^4.16.0
   firebase_core: ^2.24.2
   firebase_dynamic_links: ^5.4.8
-  hooks_riverpod: ^2.4.9
-  flutter_hooks: ^0.20.4
-  firebase_auth: ^4.16.0
-
-dev_dependencies: 
-  flutter_test: 
+  flutter:
     sdk: flutter
-flutter: 
+  flutter_hooks: ^0.20.4
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.4.9
+  flutter_svg: ^2.0.9
+  flutter_svg_provider: ^1.0.7
+  hooks_riverpod: ^2.4.9
+  intl: ^0.18.1
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pedantic_mono: any
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/
     - assets/images/
-  fonts: 
+  fonts:
     - family: Poppins
-      fonts: 
+      fonts:
         - asset: assets/fonts/PoppinsMedium.ttf
           weight: 500
         - asset: assets/fonts/PoppinsRegular.ttf
@@ -42,6 +43,6 @@ flutter:
         - asset: assets/fonts/PoppinsSemiBold.ttf
           weight: 600
     - family: Inter
-      fonts: 
+      fonts:
         - asset: assets/fonts/InterMedium.ttf
           weight: 500

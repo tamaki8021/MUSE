@@ -1,11 +1,12 @@
-import 'dart:ui' as ui;
+// ignore_for_file: constant_identifier_names, avoid_classes_with_only_static_members, lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 
 // These are the Viewport values of your Figma Design.
 // These are used in the code as a reference to create your UI Responsively.
-const num FIGMA_DESIGN_WIDTH = 393;
-const num FIGMA_DESIGN_HEIGHT = 852;
-const num FIGMA_DESIGN_STATUS_BAR = 0;
+const FIGMA_DESIGN_WIDTH = 393;
+const FIGMA_DESIGN_HEIGHT = 852;
+const FIGMA_DESIGN_STATUS_BAR = 0;
 typedef ResponsiveBuild = Widget Function(
   BuildContext context,
   Orientation orientation,
@@ -23,12 +24,16 @@ class Sizer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return OrientationBuilder(builder: (context, orientation) {
-        SizeUtils.setScreenSize(constraints, orientation);
-        return builder(context, orientation, SizeUtils.deviceType);
-      });
-    });
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return OrientationBuilder(
+          builder: (context, orientation) {
+            SizeUtils.setScreenSize(constraints, orientation);
+            return builder(context, orientation, SizeUtils.deviceType);
+          },
+        );
+      },
+    );
   }
 }
 
@@ -83,7 +88,7 @@ extension ResponsiveExtension on num {
 
   /// This method is used to set padding/margin (for the left and Right side) &
   /// width of the screen or widget according to the Viewport width.
-  double get h => ((this * _width) / FIGMA_DESIGN_WIDTH);
+  double get h => (this * _width) / FIGMA_DESIGN_WIDTH;
 
   /// This method is used to set padding/margin (for the top and bottom side) &
   /// height of the screen or widget according to the Viewport height.
@@ -92,8 +97,8 @@ extension ResponsiveExtension on num {
 
   /// This method is used to set smallest px in image height and width
   double get adaptSize {
-    var height = v;
-    var width = h;
+    final height = v;
+    final width = h;
     return height < width ? height.toDoubleValue() : width.toDoubleValue();
   }
 
@@ -104,7 +109,7 @@ extension ResponsiveExtension on num {
 extension FormatExtension on double {
   /// Return a [double] value with formatted according to provided fractionDigits
   double toDoubleValue({int fractionDigits = 2}) {
-    return double.parse(this.toStringAsFixed(fractionDigits));
+    return double.parse(toStringAsFixed(fractionDigits));
   }
 
   double isNonZero({num defaultValue = 0.0}) {

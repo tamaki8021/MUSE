@@ -1,13 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
+import 'package:muse/core/app_export.dart';
+import 'package:muse/widgets/app_bar/appbar_title.dart';
+import 'package:muse/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:muse/widgets/app_bar/custom_app_bar.dart';
+import 'package:muse/widgets/custom_icon_button.dart';
+
 import '../home_page/widgets/userprofile_item_widget.dart';
 import 'models/userprofile_item_model.dart';
 import 'notifier/home_notifier.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/appbar_title.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/custom_app_bar.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/custom_icon_button.dart';
 
 // ignore_for_file: must_be_immutable
 class HomePage extends ConsumerStatefulWidget {
@@ -34,8 +35,8 @@ class HomePageState extends ConsumerState<HomePage> {
           height: SizeUtils.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment(-0.06, -0.2),
-              end: Alignment(1.37, 0.82),
+              begin: const Alignment(-0.06, -0.2),
+              end: const Alignment(1.37, 0.82),
               colors: [
                 appTheme.purpleA200,
                 appTheme.purple800,
@@ -131,7 +132,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                         bottom: 9.v,
                                       ),
                                       child: Text(
-                                        "lbl_dianne".tr,
+                                        'lbl_dianne'.tr,
                                         style: TextStyle(
                                           color: appTheme.whiteA700,
                                           fontSize: 12.fSize,
@@ -164,7 +165,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                     Padding(
                                       padding: EdgeInsets.only(bottom: 37.v),
                                       child: Text(
-                                        "lbl_0_42".tr,
+                                        'lbl_0_42'.tr,
                                         style: TextStyle(
                                           color: appTheme.whiteA700,
                                           fontSize: 14.fSize,
@@ -183,7 +184,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                           Align(
                                             alignment: Alignment.topCenter,
                                             child: Text(
-                                              "lbl_stray_sheep".tr,
+                                              'lbl_stray_sheep'.tr,
                                               style: TextStyle(
                                                 color: appTheme.whiteA700,
                                                 fontSize: 16.fSize,
@@ -195,7 +196,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                           Align(
                                             alignment: Alignment.bottomCenter,
                                             child: Text(
-                                              "lbl_kenshi_yonezu".tr,
+                                              'lbl_kenshi_yonezu'.tr,
                                               style: TextStyle(
                                                 color: appTheme.gray500,
                                                 fontSize: 12.fSize,
@@ -210,7 +211,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                     Padding(
                                       padding: EdgeInsets.only(bottom: 37.v),
                                       child: Text(
-                                        "lbl_4_37".tr,
+                                        'lbl_4_37'.tr,
                                         style: TextStyle(
                                           color: appTheme.whiteA700,
                                           fontSize: 14.fSize,
@@ -294,7 +295,7 @@ class HomePageState extends ConsumerState<HomePage> {
     return CustomAppBar(
       centerTitle: true,
       title: AppbarTitle(
-        text: "lbl_muse".tr,
+        text: 'lbl_muse'.tr,
       ),
       actions: [
         AppbarTrailingImage(
@@ -334,7 +335,7 @@ class HomePageState extends ConsumerState<HomePage> {
                       .length ??
                   0,
               itemBuilder: (context, index) {
-                UserprofileItemModel model = ref
+                final model = ref
                         .watch(homeNotifier)
                         .homeModelObj
                         ?.userprofileItemList[index] ??

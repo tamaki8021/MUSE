@@ -1,7 +1,8 @@
-import 'en_us/en_us_translations.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+
 import '../core/app_export.dart';
+import 'en_us/en_us_translations.dart';
 
 class AppLocalization {
   AppLocalization(this.locale);
@@ -12,7 +13,9 @@ class AppLocalization {
 
   static AppLocalization of() {
     return Localizations.of<AppLocalization>(
-        NavigatorService.navigatorKey.currentContext!, AppLocalization)!;
+      NavigatorService.navigatorKey.currentContext!,
+      AppLocalization,
+    )!;
   }
 
   static List<String> languages() => _localizedValues.keys.toList();

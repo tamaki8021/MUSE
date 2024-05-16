@@ -1,5 +1,7 @@
+// ignore_for_file: avoid_classes_with_only_static_members
+
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
+import 'package:muse/core/app_export.dart';
 
 class AppDecoration {
   // Fill decorations
@@ -13,8 +15,8 @@ class AppDecoration {
   // Gradient decorations
   static BoxDecoration get gradientDeepOrangeToDeepPurpleA => BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment(0, 0.5),
-          end: Alignment(1, 0.5),
+          begin: const Alignment(0, 0.5),
+          end: const Alignment(1, 0.5),
           colors: [
             appTheme.deepOrange400,
             appTheme.deepPurpleA200,
@@ -23,8 +25,8 @@ class AppDecoration {
       );
   static BoxDecoration get gradientPurpleAToBlack => BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment(-0.06, -0.2),
-          end: Alignment(1.37, 0.82),
+          begin: const Alignment(-0.06, -0.2),
+          end: const Alignment(1.37, 0.82),
           colors: [
             appTheme.purpleA200,
             appTheme.purple800,

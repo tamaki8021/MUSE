@@ -1,7 +1,8 @@
-import '../models/userprofilegrid_item_model.dart';
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/custom_icon_button.dart';
+import 'package:muse/core/app_export.dart';
+import 'package:muse/widgets/custom_icon_button.dart';
+
+import '../models/userprofilegrid_item_model.dart';
 
 // ignore: must_be_immutable
 class UserprofilegridItemWidget extends StatelessWidget {
@@ -34,7 +35,7 @@ class UserprofilegridItemWidget extends StatelessWidget {
             child: Row(
               children: [
                 CustomImageView(
-                  imagePath: userprofilegridItemModelObj?.userImage,
+                  imagePath: userprofilegridItemModelObj.userImage,
                   height: 36.adaptSize,
                   width: 36.adaptSize,
                   radius: BorderRadius.circular(
@@ -77,7 +78,7 @@ class UserprofilegridItemWidget extends StatelessWidget {
           ),
           SizedBox(height: 9.v),
           CustomImageView(
-            imagePath: userprofilegridItemModelObj?.idolImage,
+            imagePath: userprofilegridItemModelObj.idolImage,
             height: 140.adaptSize,
             width: 140.adaptSize,
             radius: BorderRadius.circular(

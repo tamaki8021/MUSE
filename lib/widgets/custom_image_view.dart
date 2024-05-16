@@ -1,12 +1,28 @@
-// ignore_for_file: must_be_immutable
-
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+// ignore: must_be_immutable
 class CustomImageView extends StatelessWidget {
+  ///a [CustomImageView] it can be used for showing any type of images
+  /// it will shows the placeholder image if image is not found on network image
+  CustomImageView({
+    Key? key,
+    this.imagePath,
+    this.height,
+    this.width,
+    this.color,
+    this.fit,
+    this.alignment,
+    this.onTap,
+    this.radius,
+    this.margin,
+    this.border,
+    this.placeHolder = 'assets/images/image_not_found.png',
+  }) : super(key: key);
+
   ///[imagePath] is required parameter for showing image
   String? imagePath;
 
@@ -20,22 +36,6 @@ class CustomImageView extends StatelessWidget {
   EdgeInsetsGeometry? margin;
   BorderRadius? radius;
   BoxBorder? border;
-
-  ///a [CustomImageView] it can be used for showing any type of images
-  /// it will shows the placeholder image if image is not found on network image
-  CustomImageView({
-    this.imagePath,
-    this.height,
-    this.width,
-    this.color,
-    this.fit,
-    this.alignment,
-    this.onTap,
-    this.radius,
-    this.margin,
-    this.border,
-    this.placeHolder = 'assets/images/image_not_found.png',
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class CustomImageView extends StatelessWidget {
   }
 
   ///build the image with border radius
-  _buildCircleImage() {
+  Widget _buildCircleImage() {
     if (radius != null) {
       return ClipRRect(
         borderRadius: radius ?? BorderRadius.zero,
@@ -70,9 +70,9 @@ class CustomImageView extends StatelessWidget {
   }
 
   ///build the image with border and border radius style
-  _buildImageWithBorder() {
+  Widget _buildImageWithBorder() {
     if (border != null) {
-      return Container(
+      return DecoratedBox(
         decoration: BoxDecoration(
           border: border,
           borderRadius: radius,
@@ -88,7 +88,7 @@ class CustomImageView extends StatelessWidget {
     if (imagePath != null) {
       switch (imagePath!.imageType) {
         case ImageType.svg:
-          return Container(
+          return SizedBox(
             height: height,
             width: width,
             child: SvgPicture.asset(
@@ -115,7 +115,7 @@ class CustomImageView extends StatelessWidget {
             fit: fit,
             imageUrl: imagePath!,
             color: color,
-            placeholder: (context, url) => Container(
+            placeholder: (context, url) => SizedBox(
               height: 30,
               width: 30,
               child: LinearProgressIndicator(
@@ -131,7 +131,14 @@ class CustomImageView extends StatelessWidget {
             ),
           );
         case ImageType.png:
-        default:
+          return Image.asset(
+            imagePath!,
+            height: height,
+            width: width,
+            fit: fit ?? BoxFit.cover,
+            color: color,
+          );
+        case ImageType.unknown:
           return Image.asset(
             imagePath!,
             height: height,
@@ -141,17 +148,17 @@ class CustomImageView extends StatelessWidget {
           );
       }
     }
-    return SizedBox();
+    return const SizedBox.shrink();
   }
 }
 
 extension ImageTypeExtension on String {
   ImageType get imageType {
-    if (this.startsWith('http') || this.startsWith('https')) {
+    if (startsWith('http') || startsWith('https')) {
       return ImageType.network;
-    } else if (this.endsWith('.svg')) {
+    } else if (endsWith('.svg')) {
       return ImageType.svg;
-    } else if (this.startsWith('file://')) {
+    } else if (startsWith('file://')) {
       return ImageType.file;
     } else {
       return ImageType.png;
