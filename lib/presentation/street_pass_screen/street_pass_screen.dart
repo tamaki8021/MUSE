@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:muse/core/app_export.dart';
+
 import '../street_pass_screen/widgets/userprofilegrid_item_widget.dart';
 import 'models/userprofilegrid_item_model.dart';
 import 'notifier/street_pass_notifier.dart';
-import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
 
 class StreetPassScreen extends ConsumerStatefulWidget {
   const StreetPassScreen({Key? key})
@@ -26,8 +27,8 @@ class StreetPassScreenState extends ConsumerState<StreetPassScreen> {
           height: SizeUtils.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment(-0.06, -0.2),
-              end: Alignment(1.37, 0.82),
+              begin: const Alignment(-0.06, -0.2),
+              end: const Alignment(1.37, 0.82),
               colors: [
                 appTheme.purpleA200,
                 appTheme.purple800,
@@ -56,7 +57,7 @@ class StreetPassScreenState extends ConsumerState<StreetPassScreen> {
                       Padding(
                         padding: EdgeInsets.only(left: 103.h),
                         child: Text(
-                          "lbl_street_pass".tr,
+                          'lbl_street_pass'.tr,
                           style: TextStyle(
                             color: appTheme.gray90002,
                             fontSize: 16.fSize,
@@ -90,7 +91,7 @@ class StreetPassScreenState extends ConsumerState<StreetPassScreen> {
             mainAxisSpacing: 13.h,
             crossAxisSpacing: 13.h,
           ),
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: ref
                   .watch(streetPassNotifier)
                   .streetPassModelObj
@@ -98,7 +99,7 @@ class StreetPassScreenState extends ConsumerState<StreetPassScreen> {
                   .length ??
               0,
           itemBuilder: (context, index) {
-            UserprofilegridItemModel model = ref
+            final model = ref
                     .watch(streetPassNotifier)
                     .streetPassModelObj
                     ?.userprofilegridItemList[index] ??

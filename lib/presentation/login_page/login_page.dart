@@ -1,8 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:hibiki_tamaki_s_application1/repositories/firebase_auth_repository_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:muse/repositories/firebase_auth_repository_provider.dart';
 
 class LoginPage extends HookConsumerWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,7 +10,7 @@ class LoginPage extends HookConsumerWidget {
     const email = 'hbk14320@gmail.com';
     return Scaffold(
       appBar: AppBar(
-        title: Text('login'),
+        title: const Text('login'),
       ),
       body: Column(children: [
         TextButton(
@@ -20,10 +18,9 @@ class LoginPage extends HookConsumerWidget {
               await ref
                   .read(firebaseAuthRepositoryProvider)
                   .sendSignInLink(email: email);
-              print('送信しました。');
             },
-            child: Text('send email'))
-      ]),
+            child: const Text('send email'),),
+      ],),
     );
   }
 }

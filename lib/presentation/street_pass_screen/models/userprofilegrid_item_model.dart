@@ -1,3 +1,5 @@
+// ignore_for_file: comment_references
+
 import '../../../core/app_export.dart';
 
 /// This class is used in the [userprofilegrid_item_widget] screen.
@@ -11,11 +13,11 @@ class UserprofilegridItemModel {
     this.id,
   }) {
     userImage = userImage ?? ImageConstant.imgEllipse23;
-    userName = userName ?? "Dianne";
+    userName = userName ?? 'Dianne';
     idolImage = idolImage ?? ImageConstant.img600x600bb44;
-    idolText = idolText ?? "IDOL";
-    yoasobiText = yoasobiText ?? "YOASOBI";
-    id = id ?? "";
+    idolText = idolText ?? 'IDOL';
+    yoasobiText = yoasobiText ?? 'YOASOBI';
+    id = id ?? '';
   }
 
   String? userImage;

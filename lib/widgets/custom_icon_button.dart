@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
+import 'package:muse/core/app_export.dart';
 
 class CustomIconButton extends StatelessWidget {
-  CustomIconButton({
+  const CustomIconButton({
     Key? key,
     this.alignment,
     this.height,
@@ -60,7 +60,8 @@ class CustomIconButton extends StatelessWidget {
       );
 }
 
-/// Extension on [CustomIconButton] to facilitate inclusion of all types of border style etc
+/// Extension on [CustomIconButton] to facilitate inclusion of 
+/// all types of border style etc
 extension IconButtonStyleHelper on CustomIconButton {
   static BoxDecoration get fillGrayTL27 => BoxDecoration(
         color: appTheme.gray900,

@@ -1,13 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:muse/core/app_export.dart';
+import 'package:muse/widgets/app_bar/appbar_title.dart';
+import 'package:muse/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:muse/widgets/app_bar/custom_app_bar.dart';
+
 import '../chat_page/widgets/userprofilelist1_item_widget.dart';
 import '../chat_page/widgets/userprofilelist_item_widget.dart';
 import 'models/userprofilelist1_item_model.dart';
 import 'models/userprofilelist_item_model.dart';
 import 'notifier/chat_notifier.dart';
-import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/appbar_title.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:hibiki_tamaki_s_application1/widgets/app_bar/custom_app_bar.dart';
 
 // ignore_for_file: must_be_immutable
 class ChatPage extends ConsumerStatefulWidget {
@@ -34,8 +35,8 @@ class ChatPageState extends ConsumerState<ChatPage> {
           height: SizeUtils.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment(-0.06, -0.2),
-              end: Alignment(1.37, 0.82),
+              begin: const Alignment(-0.06, -0.2),
+              end: const Alignment(1.37, 0.82),
               colors: [
                 appTheme.purpleA200,
                 appTheme.purple800,
@@ -71,7 +72,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
     return CustomAppBar(
       centerTitle: true,
       title: AppbarTitle(
-        text: "lbl_muse".tr,
+        text: 'lbl_muse'.tr,
       ),
       actions: [
         AppbarTrailingImage(
@@ -111,7 +112,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
                       .length ??
                   0,
               itemBuilder: (context, index) {
-                UserprofilelistItemModel model = ref
+                final model = ref
                         .watch(chatNotifier)
                         .chatModelObj
                         ?.userprofilelistItemList[index] ??
@@ -137,7 +138,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
       child: Consumer(
         builder: (context, ref, _) {
           return ListView.separated(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             separatorBuilder: (
               context,
@@ -154,7 +155,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
                     .length ??
                 0,
             itemBuilder: (context, index) {
-              Userprofilelist1ItemModel model = ref
+              final model = ref
                       .watch(chatNotifier)
                       .chatModelObj
                       ?.userprofilelist1ItemList[index] ??

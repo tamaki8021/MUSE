@@ -1,6 +1,7 @@
-import '../models/thirty_item_model.dart';
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
+import 'package:muse/core/app_export.dart';
+
+import '../models/thirty_item_model.dart';
 
 // ignore: must_be_immutable
 class ThirtyItemWidget extends StatelessWidget {
@@ -18,7 +19,7 @@ class ThirtyItemWidget extends StatelessWidget {
     return SizedBox(
       width: 170.h,
       child: CustomImageView(
-        imagePath: thirtyItemModelObj?.xbb,
+        imagePath: thirtyItemModelObj.xbb,
         height: 170.adaptSize,
         width: 170.adaptSize,
       ),

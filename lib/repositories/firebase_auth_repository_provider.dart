@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
-import 'package:hibiki_tamaki_s_application1/core/utils/pref_utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:muse/core/utils/pref_utils.dart';
 
 abstract class FirebaseAuthRepository {
   Future<String> sendSignInLink({required String email});
@@ -50,15 +50,18 @@ class FirebaseAuthRepositoryImpl implements FirebaseAuthRepository {
   @override
   Future<dynamic> verifyDynamicLink(PendingDynamicLinkData? data) async {
     final auth = FirebaseAuth.instance;
-    print(data);
     // すでにSigninしている場合はスキップ
     // if (currentUser != null) return;
     // メールアドレスの入力がない場合はスキップ
-    final email = PrefUtils().get('email');
-    if (email == null) return;
+    final email = PrefUtils().get('email') as String?;
+    if (email == null) {
+      return;
+    }
 
-    final String? deepLink = data?.link.toString();
-    if (deepLink == null) return;
+    final deepLink = data?.link.toString();
+    if (deepLink == null) {
+      return;
+    }
 
     try {
       // リンク（＝URL）が、メールリンクかどうか検証
@@ -68,9 +71,9 @@ class FirebaseAuthRepositoryImpl implements FirebaseAuthRepository {
         await auth
             .signInWithEmailLink(email: email, emailLink: deepLink)
             .then((credential) {
-          // TODO: Firestoreへuserを登録する(既に存在している場合は行わない)
+          // TODO(tamaki8021): Firestoreへuserを登録する(既に存在している場合は行わない), 2024/05/17
           // You can access the new user via userCredential.user.
-          final emailAddress = credential.user?.email;
+          // final emailAddress = credential.user?.email;
         });
       }
       return 'success';

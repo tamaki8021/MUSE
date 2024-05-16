@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
 
 class CustomFloatingButton extends StatelessWidget {
-  CustomFloatingButton({
+  const CustomFloatingButton({
     Key? key,
     this.alignment,
     this.backgroundColor,

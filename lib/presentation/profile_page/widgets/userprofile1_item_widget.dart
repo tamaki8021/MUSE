@@ -1,6 +1,7 @@
-import '../models/userprofile1_item_model.dart';
 import 'package:flutter/material.dart';
-import 'package:hibiki_tamaki_s_application1/core/app_export.dart';
+import 'package:muse/core/app_export.dart';
+
+import '../models/userprofile1_item_model.dart';
 
 // ignore: must_be_immutable
 class Userprofile1ItemWidget extends StatelessWidget {

@@ -1,10 +1,12 @@
+// ignore_for_file: avoid_classes_with_only_static_members
+
 import 'package:flutter/material.dart';
 
 class NavigatorService {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   static Future<dynamic> pushNamed(String routeName,
-      {dynamic arguments}) async {
+      {dynamic arguments,}) async {
     return navigatorKey.currentState
         ?.pushNamed(routeName, arguments: arguments);
   }
@@ -14,14 +16,14 @@ class NavigatorService {
   }
 
   static Future<dynamic> pushNamedAndRemoveUntil(String routeName,
-      {bool routePredicate = false, dynamic arguments}) async {
+      {bool routePredicate = false, dynamic arguments,}) async {
     return navigatorKey.currentState?.pushNamedAndRemoveUntil(
         routeName, (route) => routePredicate,
-        arguments: arguments);
+        arguments: arguments,);
   }
 
   static Future<dynamic> popAndPushNamed(String routeName,
-      {dynamic arguments}) async {
+      {dynamic arguments,}) async {
     return navigatorKey.currentState
         ?.popAndPushNamed(routeName, arguments: arguments);
   }

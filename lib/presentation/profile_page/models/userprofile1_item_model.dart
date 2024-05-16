@@ -1,4 +1,5 @@
-import '../../../core/app_export.dart';
+
+// ignore_for_file: comment_references
 
 /// This class is used in the [userprofile1_item_widget] screen.
 class Userprofile1ItemModel {
@@ -7,9 +8,9 @@ class Userprofile1ItemModel {
     this.allText,
     this.id,
   }) {
-    friends = friends ?? "Friends";
-    allText = allText ?? "ALL";
-    id = id ?? "";
+    friends = friends ?? 'Friends';
+    allText = allText ?? 'ALL';
+    id = id ?? '';
   }
 
   String? friends;
