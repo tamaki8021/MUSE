@@ -24,17 +24,20 @@ class Sizer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return OrientationBuilder(builder: (context, orientation) {
-        SizeUtils.setScreenSize(constraints, orientation);
-        return builder(context, orientation, SizeUtils.deviceType);
-      },);
-    },);
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return OrientationBuilder(
+          builder: (context, orientation) {
+            SizeUtils.setScreenSize(constraints, orientation);
+            return builder(context, orientation, SizeUtils.deviceType);
+          },
+        );
+      },
+    );
   }
 }
 
 class SizeUtils {
-  
   /// Device's BoxConstraints
   static late BoxConstraints boxConstraints;
 

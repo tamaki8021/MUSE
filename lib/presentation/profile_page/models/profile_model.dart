@@ -6,7 +6,7 @@ import 'thirty_item_model.dart';
 import 'userprofile1_item_model.dart';
 
 /// This class defines the variables used in the [profile_page],
-/// and is typically used to hold data that 
+/// and is typically used to hold data that
 /// is passed between different parts of the application.
 class ProfileModel extends Equatable {
   ProfileModel({

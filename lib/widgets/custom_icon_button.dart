@@ -60,7 +60,7 @@ class CustomIconButton extends StatelessWidget {
       );
 }
 
-/// Extension on [CustomIconButton] to facilitate inclusion of 
+/// Extension on [CustomIconButton] to facilitate inclusion of
 /// all types of border style etc
 extension IconButtonStyleHelper on CustomIconButton {
   static BoxDecoration get fillGrayTL27 => BoxDecoration(

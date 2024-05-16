@@ -12,15 +12,18 @@ class LoginPage extends HookConsumerWidget {
       appBar: AppBar(
         title: const Text('login'),
       ),
-      body: Column(children: [
-        TextButton(
+      body: Column(
+        children: [
+          TextButton(
             onPressed: () async {
               await ref
                   .read(firebaseAuthRepositoryProvider)
                   .sendSignInLink(email: email);
             },
-            child: const Text('send email'),),
-      ],),
+            child: const Text('send email'),
+          ),
+        ],
+      ),
     );
   }
 }

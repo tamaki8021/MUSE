@@ -13,7 +13,9 @@ class AppLocalization {
 
   static AppLocalization of() {
     return Localizations.of<AppLocalization>(
-        NavigatorService.navigatorKey.currentContext!, AppLocalization,)!;
+      NavigatorService.navigatorKey.currentContext!,
+      AppLocalization,
+    )!;
   }
 
   static List<String> languages() => _localizedValues.keys.toList();

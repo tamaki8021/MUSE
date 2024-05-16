@@ -9,33 +9,40 @@ import '../core/app_export.dart';
 
 class CustomTextStyles {
   // Body text style
-  static TextStyle get bodyMediumBluegray300 => theme.textTheme.bodyMedium!.copyWith(
+  static TextStyle get bodyMediumBluegray300 =>
+      theme.textTheme.bodyMedium!.copyWith(
         color: appTheme.blueGray300,
       );
   static TextStyle get bodySmallGray500 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.gray500,
       );
-  static TextStyle get bodySmallWhiteA700 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallWhiteA700 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.whiteA700,
       );
   // Label style
   static TextStyle get labelLargeInter => theme.textTheme.labelLarge!.inter;
   // Title text style
-  static TextStyle get titleMediumGray90002 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumGray90002 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.gray90002,
         fontWeight: FontWeight.w500,
       );
-  static TextStyle get titleMediumMedium => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumMedium =>
+      theme.textTheme.titleMedium!.copyWith(
         fontWeight: FontWeight.w500,
       );
-  static TextStyle get titleMediumMedium18 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumMedium18 =>
+      theme.textTheme.titleMedium!.copyWith(
         fontSize: 18.fSize,
         fontWeight: FontWeight.w500,
       );
-  static TextStyle get titleSmallSemiBold => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallSemiBold =>
+      theme.textTheme.titleSmall!.copyWith(
         fontWeight: FontWeight.w600,
       );
-  static TextStyle get titleSmallYellow900 => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallYellow900 =>
+      theme.textTheme.titleSmall!.copyWith(
         color: appTheme.yellow900,
       );
 }

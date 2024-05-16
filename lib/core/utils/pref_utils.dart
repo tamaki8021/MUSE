@@ -1,7 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefUtils {
-
   PrefUtils() {
     // init();
     SharedPreferences.getInstance().then((value) {
@@ -26,7 +25,7 @@ class PrefUtils {
   String getThemeData() {
     try {
       return _sharedPreferences!.getString('themeData')!;
-    // ignore: avoid_catches_without_on_clauses
+      // ignore: avoid_catches_without_on_clauses
     } catch (e) {
       return 'primary';
     }

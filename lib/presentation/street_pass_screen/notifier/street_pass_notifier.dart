@@ -8,28 +8,35 @@ part 'street_pass_state.dart';
 
 final streetPassNotifier =
     StateNotifierProvider<StreetPassNotifier, StreetPassState>(
-  (ref) => StreetPassNotifier(StreetPassState(
-    streetPassModelObj: StreetPassModel(userprofilegridItemList: [
-      UserprofilegridItemModel(
-          userImage: ImageConstant.imgEllipse23,
-          userName: 'Dianne',
-          idolImage: ImageConstant.img600x600bb44,
-          idolText: 'IDOL',
-          yoasobiText: 'YOASOBI',),
-      UserprofilegridItemModel(
-          userImage: ImageConstant.imgRectangle52,
-          userName: 'Russell',
-          idolImage: ImageConstant.img600x600bb44140x140,
-          idolText: 'STOROBO',
-          yoasobiText: 'Vaundy',),
-      UserprofilegridItemModel(
-          userImage: ImageConstant.imgRectangle5236x36,
-          userName: 'Ross',
-          idolImage: ImageConstant.img600x600bb441,
-          idolText: 'OVERDOSE',
-          yoasobiText: 'Natori',),
-    ],),
-  ),),
+  (ref) => StreetPassNotifier(
+    StreetPassState(
+      streetPassModelObj: StreetPassModel(
+        userprofilegridItemList: [
+          UserprofilegridItemModel(
+            userImage: ImageConstant.imgEllipse23,
+            userName: 'Dianne',
+            idolImage: ImageConstant.img600x600bb44,
+            idolText: 'IDOL',
+            yoasobiText: 'YOASOBI',
+          ),
+          UserprofilegridItemModel(
+            userImage: ImageConstant.imgRectangle52,
+            userName: 'Russell',
+            idolImage: ImageConstant.img600x600bb44140x140,
+            idolText: 'STOROBO',
+            yoasobiText: 'Vaundy',
+          ),
+          UserprofilegridItemModel(
+            userImage: ImageConstant.imgRectangle5236x36,
+            userName: 'Ross',
+            idolImage: ImageConstant.img600x600bb441,
+            idolText: 'OVERDOSE',
+            yoasobiText: 'Natori',
+          ),
+        ],
+      ),
+    ),
+  ),
 );
 
 /// A notifier that manages the state of a StreetPass according to
