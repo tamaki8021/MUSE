@@ -14,7 +14,7 @@ doctor:
 # code format
 .PHONY: format
 format:
-	$(FVM) format lib/
+	fvm dart format lib/
 
 # code analyze
 .PHONY: analyze
