@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
@@ -20,38 +19,25 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  Future.wait([
+  await Future.wait([
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]),
     PrefUtils().init()
   ]).then((value) {
-    runApp(ProviderScope(child: MyApp()));
+    runApp(const ProviderScope(child: MyApp()));
   });
 }
 
 class MyApp extends HookConsumerWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(
     BuildContext context,
     WidgetRef ref,
   ) {
     final themeType = ref.watch(themeNotifier).themeType;
-
-    useEffect(() {
-      // リンクからアプリへ遷移するとき、アプリが開いていると発動
-      final onLinkSubscription = FirebaseDynamicLinks.instance.onLink.listen(
-        (pendingDynamicLinkData) async {
-          final result = await ref
-              .read(firebaseAuthRepositoryProvider)
-              .verifyDynamicLink(pendingDynamicLinkData);
-          print(result);
-        },
-      );
-
-      // ウィジェットが破棄されるときにリッスンをキャンセルする
-      return onLinkSubscription.cancel;
-    }, const []);
 
     return Sizer(
       builder: (context, orientation, deviceType) {
@@ -61,13 +47,13 @@ class MyApp extends HookConsumerWidget {
           navigatorKey: NavigatorService.navigatorKey,
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [
-            AppLocalizationDelegate(),
+            const AppLocalizationDelegate(),
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: [
-            Locale(
+            const Locale(
               'en',
               '',
             ),
