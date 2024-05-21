@@ -6,9 +6,9 @@ import 'package:muse/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:muse/widgets/app_bar/custom_app_bar.dart';
 import 'package:muse/widgets/custom_icon_button.dart';
 
-import '../home_page/widgets/userprofile_item_widget.dart';
 import 'models/userprofile_item_model.dart';
 import 'notifier/home_notifier.dart';
+import 'widgets/userprofile_item_widget.dart';
 
 // ignore_for_file: must_be_immutable
 class HomePage extends ConsumerStatefulWidget {
@@ -46,12 +46,12 @@ class HomePageState extends ConsumerState<HomePage> {
           ),
           child: Container(
             width: double.maxFinite,
-            padding: EdgeInsets.symmetric(vertical: 21.v),
+            padding: EdgeInsets.symmetric(vertical: 21.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 500.v,
+                  height: 500.h,
                   width: double.maxFinite,
                   child: Stack(
                     alignment: Alignment.topCenter,
@@ -59,12 +59,12 @@ class HomePageState extends ConsumerState<HomePage> {
                       Align(
                         alignment: Alignment.topCenter,
                         child: Container(
-                          height: 249.v,
+                          height: 249.h,
                           width: 239.h,
-                          margin: EdgeInsets.only(top: 97.v),
+                          margin: EdgeInsets.only(top: 97.h),
                           padding: EdgeInsets.symmetric(
                             horizontal: 25.h,
-                            vertical: 30.v,
+                            vertical: 30.h,
                           ),
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -90,7 +90,7 @@ class HomePageState extends ConsumerState<HomePage> {
                         child: Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 95.h,
-                            vertical: 1.v,
+                            vertical: 1.h,
                           ),
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -107,7 +107,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                 margin: EdgeInsets.symmetric(horizontal: 26.h),
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 10.h,
-                                  vertical: 8.v,
+                                  vertical: 8.h,
                                 ),
                                 decoration: AppDecoration.fillGray900.copyWith(
                                   borderRadius:
@@ -119,7 +119,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                   children: [
                                     CustomImageView(
                                       imagePath: ImageConstant.imgRectangle521,
-                                      height: 42.v,
+                                      height: 42.h,
                                       width: 36.h,
                                       radius: BorderRadius.circular(
                                         18.h,
@@ -128,8 +128,8 @@ class HomePageState extends ConsumerState<HomePage> {
                                     Padding(
                                       padding: EdgeInsets.only(
                                         left: 10.h,
-                                        top: 8.v,
-                                        bottom: 9.v,
+                                        top: 8.h,
+                                        bottom: 9.h,
                                       ),
                                       child: Text(
                                         'lbl_dianne'.tr,
@@ -147,14 +147,14 @@ class HomePageState extends ConsumerState<HomePage> {
                                       width: 24.adaptSize,
                                       margin: EdgeInsets.only(
                                         left: 20.h,
-                                        top: 7.v,
-                                        bottom: 7.v,
+                                        top: 7.h,
+                                        bottom: 7.h,
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 311.v),
+                              SizedBox(height: 311.h),
                               Padding(
                                 padding: EdgeInsets.only(right: 2.h),
                                 child: Row(
@@ -163,7 +163,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(bottom: 37.v),
+                                      padding: EdgeInsets.only(bottom: 37.h),
                                       child: Text(
                                         'lbl_0_42'.tr,
                                         style: TextStyle(
@@ -175,9 +175,9 @@ class HomePageState extends ConsumerState<HomePage> {
                                       ),
                                     ),
                                     Container(
-                                      height: 38.v,
+                                      height: 38.h,
                                       width: 105.h,
-                                      margin: EdgeInsets.only(top: 20.v),
+                                      margin: EdgeInsets.only(top: 20.h),
                                       child: Stack(
                                         alignment: Alignment.bottomCenter,
                                         children: [
@@ -209,7 +209,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.only(bottom: 37.v),
+                                      padding: EdgeInsets.only(bottom: 37.h),
                                       child: Text(
                                         'lbl_4_37'.tr,
                                         style: TextStyle(
@@ -223,7 +223,7 @@ class HomePageState extends ConsumerState<HomePage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 22.v),
+                              SizedBox(height: 22.h),
                             ],
                           ),
                         ),
@@ -234,7 +234,7 @@ class HomePageState extends ConsumerState<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsets.symmetric(vertical: 5.v),
+                              padding: EdgeInsets.symmetric(vertical: 5.h),
                               child: CustomIconButton(
                                 height: 54.adaptSize,
                                 width: 54.adaptSize,
@@ -260,8 +260,8 @@ class HomePageState extends ConsumerState<HomePage> {
                             Padding(
                               padding: EdgeInsets.only(
                                 left: 13.h,
-                                top: 5.v,
-                                bottom: 5.v,
+                                top: 5.h,
+                                bottom: 5.h,
                               ),
                               child: CustomIconButton(
                                 height: 54.adaptSize,
@@ -279,9 +279,9 @@ class HomePageState extends ConsumerState<HomePage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 37.v),
+                SizedBox(height: 37.h),
                 _buildUserProfile(context),
-                SizedBox(height: 3.v),
+                SizedBox(height: 3.h),
               ],
             ),
           ),
@@ -302,7 +302,7 @@ class HomePageState extends ConsumerState<HomePage> {
           imagePath: ImageConstant.imgUser,
           margin: EdgeInsets.symmetric(
             horizontal: 24.h,
-            vertical: 4.v,
+            vertical: 4.h,
           ),
         ),
       ],
@@ -314,7 +314,7 @@ class HomePageState extends ConsumerState<HomePage> {
     return Align(
       alignment: Alignment.centerRight,
       child: SizedBox(
-        height: 107.v,
+        height: 107.h,
         child: Consumer(
           builder: (context, ref, _) {
             return ListView.separated(

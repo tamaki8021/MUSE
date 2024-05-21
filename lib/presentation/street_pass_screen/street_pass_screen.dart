@@ -40,7 +40,7 @@ class StreetPassScreenState extends ConsumerState<StreetPassScreen> {
             width: double.maxFinite,
             padding: EdgeInsets.symmetric(
               horizontal: 12.h,
-              vertical: 4.v,
+              vertical: 4.h,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +69,7 @@ class StreetPassScreenState extends ConsumerState<StreetPassScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 28.v),
+                SizedBox(height: 28.h),
                 _buildUserProfileGrid(context),
               ],
             ),
@@ -86,7 +86,7 @@ class StreetPassScreenState extends ConsumerState<StreetPassScreen> {
         return GridView.builder(
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisExtent: 245.v,
+            mainAxisExtent: 245.h,
             crossAxisCount: 2,
             mainAxisSpacing: 13.h,
             crossAxisSpacing: 13.h,

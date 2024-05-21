@@ -27,7 +27,7 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 10.v),
+                    SizedBox(height: 10.h),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -44,7 +44,7 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10.v),
+                    SizedBox(height: 10.h),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -63,10 +63,10 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 5.v),
+                    SizedBox(height: 5.h),
                     Divider(
-                      height: 1.v,
-                      thickness: 1.v,
+                      height: 1.h,
+                      thickness: 1.h,
                       color: const Color(0XFF000000),
                     ),
                   ],
@@ -94,7 +94,7 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
             ),
             child: Column(
               children: [
-                SizedBox(height: 10.v),
+                SizedBox(height: 10.h),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
@@ -111,11 +111,11 @@ class AppNavigationScreenState extends ConsumerState<AppNavigationScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10.v),
-                SizedBox(height: 5.v),
+                SizedBox(height: 10.h),
+                SizedBox(height: 5.h),
                 Divider(
-                  height: 1.v,
-                  thickness: 1.v,
+                  height: 1.h,
+                  thickness: 1.h,
                   color: const Color(0XFF888888),
                 ),
               ],

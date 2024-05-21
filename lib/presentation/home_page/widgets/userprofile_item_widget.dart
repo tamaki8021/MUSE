@@ -21,7 +21,7 @@ class UserprofileItemWidget extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerRight,
         child: Padding(
-          padding: EdgeInsets.only(bottom: 1.v),
+          padding: EdgeInsets.only(bottom: 1.h),
           child: Column(
             children: [
               Container(
@@ -42,7 +42,7 @@ class UserprofileItemWidget extends StatelessWidget {
                   alignment: Alignment.center,
                 ),
               ),
-              SizedBox(height: 1.v),
+              SizedBox(height: 1.h),
               Text(
                 userprofileItemModelObj.userName!,
                 style: TextStyle(

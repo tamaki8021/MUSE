@@ -110,7 +110,15 @@ class TextThemes {
 
 /// Class containing the supported color schemes.
 class ColorSchemes {
-  static const primaryColorScheme = ColorScheme.light();
+  static const primaryColorScheme = ColorScheme.light(
+    primary: Color(0XFFE593D6),
+    secondary: Color(0XFF75B6F6),
+    // primaryContainer: Color(0XFF731975),
+    // errorContainer: Color(0XFFFA36FF),
+    // onErrorContainer: Color(0XFF0A141E),
+    // onPrimary: Color(0XFF1C1C1C),
+    // onPrimaryContainer: Color(0XBCFFFFFF),
+  );
 }
 
 /// Class containing custom colors for a primary theme.

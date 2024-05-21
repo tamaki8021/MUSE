@@ -29,8 +29,8 @@ class Userprofilelist1ItemWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(
             left: 12.h,
-            top: 4.v,
-            bottom: 3.v,
+            top: 4.h,
+            bottom: 3.h,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +44,7 @@ class Userprofilelist1ItemWidget extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(height: 3.v),
+              SizedBox(height: 3.h),
               Text(
                 userprofilelist1ItemModelObj.timeAgo!,
                 style: TextStyle(

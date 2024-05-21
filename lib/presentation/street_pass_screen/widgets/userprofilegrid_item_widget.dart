@@ -20,7 +20,7 @@ class UserprofilegridItemWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 8.h,
-        vertical: 3.v,
+        vertical: 3.h,
       ),
       decoration: AppDecoration.fillGray.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder15,
@@ -29,7 +29,7 @@ class UserprofilegridItemWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 4.v),
+          SizedBox(height: 4.h),
           Align(
             alignment: Alignment.centerLeft,
             child: Row(
@@ -45,8 +45,8 @@ class UserprofilegridItemWidget extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(
                     left: 11.h,
-                    top: 7.v,
-                    bottom: 7.v,
+                    top: 7.h,
+                    bottom: 7.h,
                   ),
                   child: Text(
                     userprofilegridItemModelObj.userName!,
@@ -61,11 +61,11 @@ class UserprofilegridItemWidget extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(
                     left: 28.h,
-                    top: 6.v,
-                    bottom: 5.v,
+                    top: 6.h,
+                    bottom: 5.h,
                   ),
                   child: CustomIconButton(
-                    height: 24.v,
+                    height: 24.h,
                     width: 26.h,
                     padding: EdgeInsets.all(5.h),
                     child: CustomImageView(
@@ -76,7 +76,7 @@ class UserprofilegridItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 9.v),
+          SizedBox(height: 9.h),
           CustomImageView(
             imagePath: userprofilegridItemModelObj.idolImage,
             height: 140.adaptSize,
@@ -85,7 +85,7 @@ class UserprofilegridItemWidget extends StatelessWidget {
               10.h,
             ),
           ),
-          SizedBox(height: 9.v),
+          SizedBox(height: 9.h),
           Text(
             userprofilegridItemModelObj.idolText!,
             style: TextStyle(

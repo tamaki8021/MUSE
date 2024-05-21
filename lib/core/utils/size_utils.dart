@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names, avoid_classes_with_only_static_members, lines_longer_than_80_chars
 
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 
 // These are the Viewport values of your Figma Design.
@@ -73,7 +74,15 @@ class SizeUtils {
           boxConstraints.maxHeight.isNonZero(defaultValue: FIGMA_DESIGN_WIDTH);
       height = boxConstraints.maxWidth.isNonZero();
     }
-    deviceType = DeviceType.mobile;
+    // Sets ScreenType
+    if (Platform.isAndroid || Platform.isIOS) {
+      if ((orientation == Orientation.portrait && width < 600) ||
+          (orientation == Orientation.landscape && height < 600)) {
+        deviceType = DeviceType.mobile;
+      } else {
+        deviceType = DeviceType.tablet;
+      }
+    }
   }
 }
 
@@ -88,17 +97,17 @@ extension ResponsiveExtension on num {
 
   /// This method is used to set padding/margin (for the left and Right side) &
   /// width of the screen or widget according to the Viewport width.
-  double get h => (this * _width) / FIGMA_DESIGN_WIDTH;
+  double get w => (this * _width) / FIGMA_DESIGN_WIDTH;
 
   /// This method is used to set padding/margin (for the top and bottom side) &
   /// height of the screen or widget according to the Viewport height.
-  double get v =>
+  double get h =>
       (this * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR);
 
   /// This method is used to set smallest px in image height and width
   double get adaptSize {
-    final height = v;
-    final width = h;
+    final height = h;
+    final width = w;
     return height < width ? height.toDoubleValue() : width.toDoubleValue();
   }
 
