@@ -21,18 +21,18 @@ class AppbarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        onTap!.call();
-      },
+      onTap: onTap,
       child: Padding(
         padding: margin ?? EdgeInsets.zero,
-        child: Text(
-          text,
-          style: TextStyle(
-            color: appTheme.gray90002,
-            fontSize: 16.fSize,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w500,
+        child: ShaderMask(
+          shaderCallback: (bounds) => LinearGradient(
+            colors: [theme.colorScheme.primary, theme.colorScheme.secondary],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ).createShader(bounds),
+          child: Text(
+            text,
+            style: theme.textTheme.titleMedium,
           ),
         ),
       ),
