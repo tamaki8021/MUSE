@@ -11,6 +11,7 @@ class CustomIconButton extends StatelessWidget {
     this.decoration,
     this.child,
     this.onTap,
+    this.isBorderGradient = false,
   }) : super(
           key: key,
         );
@@ -29,6 +30,8 @@ class CustomIconButton extends StatelessWidget {
 
   final VoidCallback? onTap;
 
+  final bool isBorderGradient;
+
   @override
   Widget build(BuildContext context) {
     return alignment != null
@@ -40,20 +43,35 @@ class CustomIconButton extends StatelessWidget {
   }
 
   Widget get iconButtonWidget => SizedBox(
-        height: height ?? 0,
-        width: width ?? 0,
+        height: (height ?? 0) + 2,
+        width: (width ?? 0) + 2,
         child: IconButton(
           padding: EdgeInsets.zero,
-          icon: Container(
-            height: height ?? 0,
-            width: width ?? 0,
-            padding: padding ?? EdgeInsets.zero,
-            decoration: decoration ??
-                BoxDecoration(
-                  color: appTheme.gray900,
-                  borderRadius: BorderRadius.circular(12.h),
-                ),
-            child: child,
+          icon: Stack(
+            alignment: Alignment.center,
+            children: [
+              isBorderGradient
+                  ? Container(
+                      height: (height ?? 0) + 2,
+                      width: (width ?? 0) + 2,
+                      decoration: BoxDecoration(
+                        gradient: AppDecoration.appGradient.gradient,
+                        borderRadius: BorderRadius.circular(12.h),
+                      ),
+                    )
+                  : const SizedBox.shrink(),
+              Container(
+                height: height ?? 0,
+                width: width ?? 0,
+                padding: padding ?? EdgeInsets.zero,
+                decoration: decoration ??
+                    BoxDecoration(
+                      color: appTheme.gray900,
+                      borderRadius: BorderRadius.circular(12.h),
+                    ),
+                child: child,
+              ),
+            ],
           ),
           onPressed: onTap,
         ),
@@ -68,14 +86,16 @@ extension IconButtonStyleHelper on CustomIconButton {
         borderRadius: BorderRadius.circular(27.h),
       );
   static BoxDecoration get fillWhiteA => BoxDecoration(
-        color: appTheme.whiteA700,
+        color: appTheme.white,
         borderRadius: BorderRadius.circular(32.h),
       );
   static BoxDecoration get outlineWhiteA => BoxDecoration(
         borderRadius: BorderRadius.circular(12.h),
         border: Border.all(
-          color: appTheme.whiteA700,
+          color: appTheme.white,
           width: 2.h,
         ),
       );
+  static BoxDecoration get gradientBorderForBackground =>
+      AppDecoration.appGradient;
 }
