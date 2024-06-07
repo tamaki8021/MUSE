@@ -17,37 +17,32 @@ class UserprofileItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 86.h,
+      // width: 21.w,
       child: Align(
         alignment: Alignment.centerRight,
         child: Padding(
-          padding: EdgeInsets.only(bottom: 1.h),
+          padding: EdgeInsets.all(1.w),
           child: Column(
             children: [
               Container(
-                height: 86.adaptSize,
-                width: 86.adaptSize,
-                padding: EdgeInsets.all(1.h),
-                decoration:
-                    AppDecoration.gradientDeepOrangeToDeepPurpleA.copyWith(
-                  borderRadius: BorderRadiusStyle.circleBorder43,
+                height: 21.adaptSize,
+                width: 21.adaptSize,
+                padding: EdgeInsets.all(0.3.h),
+                decoration: AppDecoration.gradientProfileImageBg.copyWith(
+                  borderRadius: BorderRadiusStyle.circleBorder28,
                 ),
                 child: CustomImageView(
                   imagePath: userprofileItemModelObj.userImage,
-                  height: 83.adaptSize,
-                  width: 83.adaptSize,
-                  radius: BorderRadius.circular(
-                    41.h,
-                  ),
+                  radius: BorderRadius.circular(41.h),
                   alignment: Alignment.center,
                 ),
               ),
-              SizedBox(height: 1.h),
+              SizedBox(height: 0.5.h),
               Text(
                 userprofileItemModelObj.userName!,
                 style: TextStyle(
-                  color: appTheme.whiteA700,
-                  fontSize: 12.fSize,
+                  color: appTheme.white,
+                  fontSize: 3.5.fSize,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w400,
                 ),
