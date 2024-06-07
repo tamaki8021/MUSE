@@ -70,7 +70,7 @@ class ThemeHelper {
 class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
         bodyMedium: TextStyle(
-          color: appTheme.whiteA700,
+          color: appTheme.white,
           fontSize: 14.fSize,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w400,
@@ -82,27 +82,23 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         labelLarge: TextStyle(
-          color: appTheme.whiteA700,
+          color: appTheme.white,
           fontSize: 12.fSize,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w500,
         ),
         labelMedium: TextStyle(
-          color: appTheme.whiteA700,
+          color: appTheme.white,
           fontSize: 10.fSize,
           fontFamily: 'Inter',
           fontWeight: FontWeight.w500,
         ),
         titleMedium: TextStyle(
-          color: appTheme.whiteA700,
-          fontSize: 16.fSize,
-          fontFamily: 'Poppins',
+          color: appTheme.white,
           fontWeight: FontWeight.w700,
         ),
         titleSmall: TextStyle(
-          color: appTheme.whiteA700,
-          fontSize: 14.fSize,
-          fontFamily: 'Poppins',
+          color: appTheme.white,
           fontWeight: FontWeight.w500,
         ),
       );
@@ -113,16 +109,13 @@ class ColorSchemes {
   static const primaryColorScheme = ColorScheme.light(
     primary: Color(0XFFE593D6),
     secondary: Color(0XFF75B6F6),
-    // primaryContainer: Color(0XFF731975),
-    // errorContainer: Color(0XFFFA36FF),
-    // onErrorContainer: Color(0XFF0A141E),
-    // onPrimary: Color(0XFF1C1C1C),
-    // onPrimaryContainer: Color(0XBCFFFFFF),
   );
 }
 
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
+  // brand color
+  Color get brandColor => const Color(0XFFFB37FF);
   // Black
   Color get black900 => const Color(0XFF000000);
 
@@ -149,9 +142,11 @@ class PrimaryColors {
   // Purple
   Color get purple800 => const Color(0XFF731975);
   Color get purpleA200 => const Color(0XFFFA36FF);
+  Color get purpleBgStop1 => const Color(0XFFFB37FF);
+  Color get purpleBgStop2 => const Color(0XFF741976);
 
   // White
-  Color get whiteA700 => const Color(0XFFFFFFFF);
+  Color get white => const Color(0XFFFFFFFF);
 
   // Yellow
   Color get yellow900 => const Color(0XFFFF8126);
