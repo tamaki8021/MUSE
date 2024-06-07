@@ -24,16 +24,10 @@ class AppbarTitle extends StatelessWidget {
       onTap: onTap,
       child: Padding(
         padding: margin ?? EdgeInsets.zero,
-        child: ShaderMask(
-          shaderCallback: (bounds) => LinearGradient(
-            colors: [theme.colorScheme.primary, theme.colorScheme.secondary],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ).createShader(bounds),
-          child: Text(
-            text,
-            style: theme.textTheme.titleMedium,
-          ),
+        child: CustomText(
+          text: text,
+          style: theme.textTheme.titleMedium,
+          isGradient: true,
         ),
       ),
     );
