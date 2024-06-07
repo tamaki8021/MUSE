@@ -15,6 +15,7 @@ dependencies:
   flutter_hooks: ^0.20.4
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.3.10
   flutter_riverpod: ^2.4.9
   flutter_svg: ^2.0.9
   flutter_svg_provider: ^1.0.7
@@ -46,3 +47,15 @@ flutter:
       fonts:
         - asset: assets/fonts/InterMedium.ttf
           weight: 500
+
+flutter_native_splash:
+  color: '#000000'
+  image: 'assets/images/splash/splash.png'
+  color_dark: '#262626'
+  image_dark: 'assets/images/splash/splash.png'
+  fullscreen: true
+  android_12:
+    icon_background_color: '#000000'
+    image: 'assets/images/splash/splash-android.png'
+    icon_background_color_dark: '#262626'
+    image_dark: 'assets/images/splash/splash-android.png'
