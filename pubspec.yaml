@@ -47,6 +47,9 @@ flutter:
       fonts:
         - asset: assets/fonts/InterMedium.ttf
           weight: 500
+    - family: AppIcons
+      fonts:
+        - asset: assets/fonts/AppIcons.ttf
 
 flutter_native_splash:
   color: '#000000'
