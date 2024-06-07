@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:muse/core/app_export.dart';
-import 'package:muse/widgets/app_bar/appbar_title.dart';
-import 'package:muse/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:muse/widgets/app_bar/custom_app_bar.dart';
-import 'package:muse/widgets/custom_icon_button.dart';
-
 import '../profile_page/widgets/thirty_item_widget.dart';
 import '../profile_page/widgets/userprofile1_item_widget.dart';
 import 'models/thirty_item_model.dart';
@@ -67,7 +62,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                             Text(
                               'lbl_1_342'.tr,
                               style: TextStyle(
-                                color: appTheme.whiteA700,
+                                color: appTheme.white,
                                 fontSize: 16.fSize,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w500,
@@ -140,7 +135,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                             Text(
                               'lbl_586'.tr,
                               style: TextStyle(
-                                color: appTheme.whiteA700,
+                                color: appTheme.white,
                                 fontSize: 16.fSize,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w500,
@@ -166,7 +161,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                 Text(
                   'lbl_eleanor_mena'.tr,
                   style: TextStyle(
-                    color: appTheme.whiteA700,
+                    color: appTheme.white,
                     fontSize: 18.fSize,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w500,
@@ -296,7 +291,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
             child: Text(
               'lbl_favorite'.tr,
               style: TextStyle(
-                color: appTheme.whiteA700,
+                color: appTheme.white,
                 fontSize: 14.fSize,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w500,

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:muse/core/app_export.dart';
-import 'package:muse/widgets/app_bar/appbar_title.dart';
-import 'package:muse/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:muse/widgets/app_bar/custom_app_bar.dart';
 
 import '../chat_page/widgets/userprofilelist1_item_widget.dart';
 import '../chat_page/widgets/userprofilelist_item_widget.dart';
@@ -53,7 +50,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
                 _buildUserProfileList(context),
                 SizedBox(height: 5.h),
                 Divider(
-                  color: appTheme.whiteA700.withOpacity(0.5),
+                  color: appTheme.white.withOpacity(0.5),
                   indent: 3.h,
                 ),
                 SizedBox(height: 14.h),

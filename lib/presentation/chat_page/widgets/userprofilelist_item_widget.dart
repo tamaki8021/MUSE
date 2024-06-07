@@ -55,7 +55,7 @@ class UserprofilelistItemWidget extends StatelessWidget {
               Text(
                 userprofilelistItemModelObj.userName!,
                 style: TextStyle(
-                  color: appTheme.whiteA700,
+                  color: appTheme.white,
                   fontSize: 12.fSize,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w500,

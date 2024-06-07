@@ -38,7 +38,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                 Text(
                   userprofile1ItemModelObj.friends!,
                   style: TextStyle(
-                    color: appTheme.whiteA700,
+                    color: appTheme.white,
                     fontSize: 14.fSize,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w600,
@@ -70,7 +70,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                               Text(
                                 userprofile1ItemModelObj.allText!,
                                 style: TextStyle(
-                                  color: appTheme.whiteA700,
+                                  color: appTheme.white,
                                   fontSize: 10.fSize,
                                   fontFamily: 'Inter',
                                   fontWeight: FontWeight.w500,

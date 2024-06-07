@@ -51,7 +51,7 @@ class UserprofilegridItemWidget extends StatelessWidget {
                   child: Text(
                     userprofilegridItemModelObj.userName!,
                     style: TextStyle(
-                      color: appTheme.whiteA700,
+                      color: appTheme.white,
                       fontSize: 14.fSize,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w400,
@@ -89,7 +89,7 @@ class UserprofilegridItemWidget extends StatelessWidget {
           Text(
             userprofilegridItemModelObj.idolText!,
             style: TextStyle(
-              color: appTheme.whiteA700,
+              color: appTheme.white,
               fontSize: 16.fSize,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w700,
