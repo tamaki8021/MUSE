@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:muse/core/app_export.dart';
 
+export 'appbar_title.dart';
+export 'appbar_trailing_image.dart';
+
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -31,7 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      toolbarHeight: height ?? 32.v,
+      toolbarHeight: height ?? 5.h,
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
       leadingWidth: leadingWidth ?? 0,
@@ -46,6 +49,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size(
         SizeUtils.width,
-        height ?? 32.v,
+        height ?? 5.h,
       );
 }

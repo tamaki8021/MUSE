@@ -1,0 +1,72 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --dart-define=FLAVOR=dev --target lib/main.dart
+
+## exception
+
+RPCError: _flutter.renderFrameWithRasterStats: (-32000) Raster status not supported on Impeller backend.
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:1930:45)
+#1      VmService._call (package:vm_service/src/vm_service.dart:2499:21)
+#2      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:2470:14)
+#3      VmService.callMethod (package:vm_service/src/vm_service.dart:2452:12)
+#4      FlutterVmService.callMethodWrapper (package:flutter_tools/src/vmservice.dart:501:28)
+#5      FlutterVmService.renderFrameWithRasterStats (package:flutter_tools/src/vmservice.dart:601:49)
+#6      ResidentHandlers.debugFrameJankMetrics (package:flutter_tools/src/resident_runner.dart:727:35)
+<asynchronous suspension>
+#7      TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1830:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.16.5, on macOS 13.2.1 22D68 darwin-arm64, locale ja-JP)
+    • Flutter version 3.16.5 on channel stable at /Users/tamakikyou/fvm/versions/3.16.5
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 78666c8dc5 (6 months ago), 2023-12-19 16:14:14 -0800
+    • Engine revision 3f3e560236
+    • Dart version 3.2.3
+    • DevTools version 2.28.4
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+    • Android SDK at /Users/tamakikyou/Library/Android/sdk
+    • Platform android-33, build-tools 33.0.0
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 14.2)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 14C18
+    • CocoaPods version 1.12.0
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2021.2)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+
+[✓] VS Code (version 1.89.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.88.0
+
+[✓] Connected device (3 available)
+    • iPhone 14 (mobile) • AA72D5D4-F0CA-497F-8E64-75F5D0648814 • ios            • com.apple.CoreSimulator.SimRuntime.iOS-16-2 (simulator)
+    • macOS (desktop)    • macos                                • darwin-arm64   • macOS 13.2.1 22D68 darwin-arm64
+    • Chrome (web)       • chrome                               • web-javascript • Google Chrome 125.0.6422.142
+
+[✓] Network resources
+    • All expected network resources are available.
+
+• No issues found!
+```

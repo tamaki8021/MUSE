@@ -13,7 +13,7 @@ class AppDecoration {
       );
 
   // Gradient decorations
-  static BoxDecoration get gradientDeepOrangeToDeepPurpleA => BoxDecoration(
+  static BoxDecoration get gradientProfileImageBg => BoxDecoration(
         gradient: LinearGradient(
           begin: const Alignment(0, 0.5),
           end: const Alignment(1, 0.5),
@@ -32,6 +32,27 @@ class AppDecoration {
             appTheme.purple800,
             appTheme.black900,
           ],
+        ),
+      );
+
+  static BoxDecoration get appGradient => BoxDecoration(
+        gradient: LinearGradient(
+          colors: [theme.colorScheme.primary, theme.colorScheme.secondary],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      );
+
+  static BoxDecoration get gradientBackground => BoxDecoration(
+        gradient: RadialGradient(
+          center: Alignment.topLeft,
+          radius: 2,
+          colors: [
+            appTheme.purpleBgStop1,
+            appTheme.purpleBgStop2,
+            appTheme.black900,
+          ],
+          stops: const [0, 0.55, 0.9],
         ),
       );
 

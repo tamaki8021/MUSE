@@ -19,7 +19,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 3.h,
-        vertical: 5.v,
+        vertical: 5.h,
       ),
       decoration: AppDecoration.fillGray.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder15,
@@ -38,21 +38,21 @@ class Userprofile1ItemWidget extends StatelessWidget {
                 Text(
                   userprofile1ItemModelObj.friends!,
                   style: TextStyle(
-                    color: appTheme.whiteA700,
+                    color: appTheme.white,
                     fontSize: 14.fSize,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(
-                  height: 19.v,
+                  height: 19.h,
                   width: 45.h,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: [
                       CustomImageView(
                         imagePath: ImageConstant.imgTelevision,
-                        height: 19.v,
+                        height: 19.h,
                         width: 45.h,
                         radius: BorderRadius.circular(
                           9.h,
@@ -62,7 +62,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                       Align(
                         alignment: Alignment.topCenter,
                         child: Padding(
-                          padding: EdgeInsets.only(top: 2.v),
+                          padding: EdgeInsets.only(top: 2.h),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
@@ -70,7 +70,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                               Text(
                                 userprofile1ItemModelObj.allText!,
                                 style: TextStyle(
-                                  color: appTheme.whiteA700,
+                                  color: appTheme.white,
                                   fontSize: 10.fSize,
                                   fontFamily: 'Inter',
                                   fontWeight: FontWeight.w500,
@@ -78,7 +78,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                               ),
                               CustomImageView(
                                 imagePath: ImageConstant.imgArrowRight,
-                                height: 14.v,
+                                height: 14.h,
                                 width: 6.h,
                                 margin: EdgeInsets.only(left: 5.h),
                               ),
@@ -92,9 +92,9 @@ class Userprofile1ItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 4.v),
+          SizedBox(height: 4.h),
           SizedBox(
-            height: 48.v,
+            height: 48.h,
             width: 316.h,
             child: Stack(
               alignment: Alignment.centerLeft,
@@ -185,7 +185,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 6.v),
+          SizedBox(height: 6.h),
         ],
       ),
     );

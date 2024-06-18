@@ -24,7 +24,7 @@ class ImageConstant {
   static String img600x600bb441 = '$imagePath/img_600x600bb_4_4_1.png';
 
   // home images
-  static String imgGroup11 = '$imagePath/img_group_11.svg';
+  static String imgHomeBgMusicCover = '$imagePath/home_bg_music_cover_img.svg';
 
   static String img600x600bb32 = '$imagePath/img_600x600bb_3_2.png';
 

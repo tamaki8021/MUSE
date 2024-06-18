@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:muse/core/app_export.dart';
-import 'package:muse/widgets/app_bar/appbar_title.dart';
-import 'package:muse/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:muse/widgets/app_bar/custom_app_bar.dart';
-import 'package:muse/widgets/custom_icon_button.dart';
-
 import '../profile_page/widgets/thirty_item_widget.dart';
 import '../profile_page/widgets/userprofile1_item_widget.dart';
 import 'models/thirty_item_model.dart';
@@ -47,10 +42,10 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
           ),
           child: Container(
             width: double.maxFinite,
-            padding: EdgeInsets.symmetric(vertical: 3.v),
+            padding: EdgeInsets.symmetric(vertical: 3.h),
             child: Column(
               children: [
-                SizedBox(height: 33.v),
+                SizedBox(height: 33.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 51.h),
                   child: Row(
@@ -59,21 +54,21 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(
-                          top: 26.v,
-                          bottom: 36.v,
+                          top: 26.h,
+                          bottom: 36.h,
                         ),
                         child: Column(
                           children: [
                             Text(
                               'lbl_1_342'.tr,
                               style: TextStyle(
-                                color: appTheme.whiteA700,
+                                color: appTheme.white,
                                 fontSize: 16.fSize,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: 3.v),
+                            SizedBox(height: 3.h),
                             Text(
                               'lbl_my_posts'.tr,
                               style: TextStyle(
@@ -90,7 +85,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                         flex: 52,
                       ),
                       SizedBox(
-                        height: 108.v,
+                        height: 108.h,
                         width: 96.h,
                         child: Stack(
                           alignment: Alignment.topCenter,
@@ -112,7 +107,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                                 44.h,
                               ),
                               alignment: Alignment.topCenter,
-                              margin: EdgeInsets.only(top: 4.v),
+                              margin: EdgeInsets.only(top: 4.h),
                             ),
                             CustomIconButton(
                               height: 24.adaptSize,
@@ -132,21 +127,21 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          top: 25.v,
-                          bottom: 36.v,
+                          top: 25.h,
+                          bottom: 36.h,
                         ),
                         child: Column(
                           children: [
                             Text(
                               'lbl_586'.tr,
                               style: TextStyle(
-                                color: appTheme.whiteA700,
+                                color: appTheme.white,
                                 fontSize: 16.fSize,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: 2.v),
+                            SizedBox(height: 2.h),
                             Text(
                               'lbl_favorites'.tr,
                               style: TextStyle(
@@ -162,17 +157,17 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 9.v),
+                SizedBox(height: 9.h),
                 Text(
                   'lbl_eleanor_mena'.tr,
                   style: TextStyle(
-                    color: appTheme.whiteA700,
+                    color: appTheme.white,
                     fontSize: 18.fSize,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: 8.v),
+                SizedBox(height: 8.h),
                 Text(
                   'msg_sometimes_i_cook'.tr,
                   style: TextStyle(
@@ -182,11 +177,11 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 30.v),
+                SizedBox(height: 30.h),
                 _buildUserProfile(context),
-                SizedBox(height: 17.v),
+                SizedBox(height: 17.h),
                 _buildTabsTabBar(context),
-                SizedBox(height: 17.v),
+                SizedBox(height: 17.h),
                 _buildThirty(context),
               ],
             ),
@@ -208,7 +203,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
           imagePath: ImageConstant.imgUser,
           margin: EdgeInsets.symmetric(
             horizontal: 24.h,
-            vertical: 4.v,
+            vertical: 4.h,
           ),
         ),
       ],
@@ -232,7 +227,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
               index,
             ) {
               return SizedBox(
-                height: 17.v,
+                height: 17.h,
               );
             },
             itemCount: ref
@@ -261,13 +256,13 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
   Widget _buildTabsTabBar(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      padding: EdgeInsets.fromLTRB(74.h, 7.v, 74.h, 6.v),
+      padding: EdgeInsets.fromLTRB(74.h, 7.h, 74.h, 6.h),
       decoration: AppDecoration.outlineGray,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 3.v),
+            padding: EdgeInsets.only(top: 3.h),
             child: Text(
               'lbl_my_post'.tr,
               style: TextStyle(
@@ -282,21 +277,21 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
             flex: 43,
           ),
           SizedBox(
-            height: 24.v,
+            height: 24.h,
             child: VerticalDivider(
               width: 1.h,
-              thickness: 1.v,
+              thickness: 1.h,
             ),
           ),
           const Spacer(
             flex: 56,
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 2.v),
+            padding: EdgeInsets.only(bottom: 2.h),
             child: Text(
               'lbl_favorite'.tr,
               style: TextStyle(
-                color: appTheme.whiteA700,
+                color: appTheme.white,
                 fontSize: 14.fSize,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w500,
@@ -311,7 +306,7 @@ class ProfilePageState extends ConsumerState<ProfilePage> {
   /// Section Widget
   Widget _buildThirty(BuildContext context) {
     return SizedBox(
-      height: 170.v,
+      height: 170.h,
       child: Consumer(
         builder: (context, ref, _) {
           return ListView.separated(

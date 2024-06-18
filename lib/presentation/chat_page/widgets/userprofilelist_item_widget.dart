@@ -21,7 +21,7 @@ class UserprofilelistItemWidget extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerRight,
         child: Padding(
-          padding: EdgeInsets.only(top: 4.v),
+          padding: EdgeInsets.only(top: 4.h),
           child: Column(
             children: [
               SizedBox(
@@ -51,11 +51,11 @@ class UserprofilelistItemWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 7.v),
+              SizedBox(height: 7.h),
               Text(
                 userprofilelistItemModelObj.userName!,
                 style: TextStyle(
-                  color: appTheme.whiteA700,
+                  color: appTheme.white,
                   fontSize: 12.fSize,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w500,

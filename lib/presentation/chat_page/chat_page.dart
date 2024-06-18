@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:muse/core/app_export.dart';
-import 'package:muse/widgets/app_bar/appbar_title.dart';
-import 'package:muse/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:muse/widgets/app_bar/custom_app_bar.dart';
 
 import '../chat_page/widgets/userprofilelist1_item_widget.dart';
 import '../chat_page/widgets/userprofilelist_item_widget.dart';
@@ -46,19 +43,19 @@ class ChatPageState extends ConsumerState<ChatPage> {
           ),
           child: Container(
             width: double.maxFinite,
-            padding: EdgeInsets.symmetric(vertical: 2.v),
+            padding: EdgeInsets.symmetric(vertical: 2.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _buildUserProfileList(context),
-                SizedBox(height: 5.v),
+                SizedBox(height: 5.h),
                 Divider(
-                  color: appTheme.whiteA700.withOpacity(0.5),
+                  color: appTheme.white.withOpacity(0.5),
                   indent: 3.h,
                 ),
-                SizedBox(height: 14.v),
+                SizedBox(height: 14.h),
                 _buildUserProfileList1(context),
-                SizedBox(height: 14.v),
+                SizedBox(height: 14.h),
               ],
             ),
           ),
@@ -79,7 +76,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
           imagePath: ImageConstant.imgUser,
           margin: EdgeInsets.symmetric(
             horizontal: 24.h,
-            vertical: 4.v,
+            vertical: 4.h,
           ),
         ),
       ],
@@ -91,7 +88,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
     return Align(
       alignment: Alignment.centerRight,
       child: SizedBox(
-        height: 82.v,
+        height: 82.h,
         child: Consumer(
           builder: (context, ref, _) {
             return ListView.separated(
@@ -145,7 +142,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
               index,
             ) {
               return SizedBox(
-                height: 16.v,
+                height: 16.h,
               );
             },
             itemCount: ref
