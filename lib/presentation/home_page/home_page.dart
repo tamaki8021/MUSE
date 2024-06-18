@@ -144,9 +144,13 @@ class HomePageState extends ConsumerState<HomePage>
 
   /// 音楽のタイトル、アーティスト名、再生時間を表示するコンポーネント
   Widget _buildSongTitle({
+    // ignore: unused_element
     String? title,
+    // ignore: unused_element
     String? artist,
+    // ignore: unused_element
     String? totalSongTime,
+    // ignore: unused_element
     String? currentSongTime,
   }) {
     return Column(
@@ -235,16 +239,17 @@ class HomePageState extends ConsumerState<HomePage>
         alignment: Alignment.center,
         children: [
           AnimatedBuilder(
-              builder: (BuildContext context, Widget? child) {
-                return Transform.rotate(
-                  angle: _controller.value * 2.0 * pi,
-                  child: child,
-                );
-              },
-              animation: _controller,
-              child: CustomImageView(
-                imagePath: ImageConstant.imgHomeBgMusicCover,
-              ),),
+            builder: (BuildContext context, Widget? child) {
+              return Transform.rotate(
+                angle: _controller.value * 2.0 * pi,
+                child: child,
+              );
+            },
+            animation: _controller,
+            child: CustomImageView(
+              imagePath: ImageConstant.imgHomeBgMusicCover,
+            ),
+          ),
           CustomImageView(
             imagePath: ImageConstant.img600x600bb32170x170,
             height: 48.adaptSize,
@@ -264,14 +269,16 @@ class HomePageState extends ConsumerState<HomePage>
       title: AppbarTitle(
         text: 'lbl_muse'.tr,
       ),
-      actions: [
+      actions: const [
         CustomGradientMask(
-            child: IconButton(
-                onPressed: null,
-                icon: Icon(
-                  AppIcons.menu,
-                  color: Colors.white,
-                ))),
+          child: IconButton(
+            onPressed: null,
+            icon: Icon(
+              AppIcons.menu,
+              color: Colors.white,
+            ),
+          ),
+        ),
         // AppbarTrailingImage(
         //   imagePath: ImageConstant.imgUser,
         //   margin: EdgeInsets.symmetric(
