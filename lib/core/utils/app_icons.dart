@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_redundant_argument_values, dangling_library_doc_comments, constant_identifier_names
+import 'package:flutter/widgets.dart';
 
 /// Flutter icons AppIcons
 /// Copyright (C) 2024 by original authors @ fluttericon.com, fontello.com
@@ -14,7 +14,7 @@
 ///       - asset: fonts/AppIcons.ttf
 ///
 ///
-/// * Web Symbols, Copyright (c) 2011 by Just Be Nice studio. All rights reserved.
+/// * Web Symbols, Copyright (c) 2011 by Just Be Nice studio.
 ///         Author:    Just Be Nice studio
 ///         License:   SIL (http://scripts.sil.org/OFL)
 ///         Homepage:  http://www.justbenicestudio.com/
@@ -40,54 +40,36 @@
 ///         Homepage:  https://linearicons.com
 ///
 
-import 'package:flutter/widgets.dart';
-
 class AppIcons {
   AppIcons._();
 
   static const _kFontFam = 'AppIcons';
-  static const String? _kFontPkg = null;
 
-  static const IconData chat =
-      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData chat_1 =
-      IconData(0xe812, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData heart_empty =
-      IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData home =
-      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData person_outline =
-      IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData keyboard_arrow_down =
-      IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData keyboard_arrow_left =
-      IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData keyboard_arrow_up =
-      IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData bell =
-      IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData chat_alt =
-      IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData edit =
-      IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData beat =
-      IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData arrows_right =
-      IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData logos_spotify_icon =
-      IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData play_arrow =
-      IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData play_circle_outline =
-      IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData play_circle_filled =
-      IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData music =
-      IconData(0xe810, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData path4 =
-      IconData(0xe811, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData checkmark_cicle =
-      IconData(0xe87f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData menu =
-      IconData(0xf0c9, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData chat = IconData(0xe800, fontFamily: _kFontFam);
+  static const IconData heartEmpty = IconData(0xe801, fontFamily: _kFontFam);
+  static const IconData home = IconData(0xe802, fontFamily: _kFontFam);
+  static const IconData personOutline = IconData(0xe803, fontFamily: _kFontFam);
+  static const IconData keyboardArrowDown =
+      IconData(0xe804, fontFamily: _kFontFam);
+  static const IconData keyboardArrowLeft =
+      IconData(0xe805, fontFamily: _kFontFam);
+  static const IconData keyboardArrowUp =
+      IconData(0xe806, fontFamily: _kFontFam);
+  static const IconData bell = IconData(0xe807, fontFamily: _kFontFam);
+  static const IconData chatAlt = IconData(0xe808, fontFamily: _kFontFam);
+  static const IconData edit = IconData(0xe809, fontFamily: _kFontFam);
+  static const IconData beat = IconData(0xe80a, fontFamily: _kFontFam);
+  static const IconData arrowsRight = IconData(0xe80b, fontFamily: _kFontFam);
+  static const IconData logosSpotifyIcon =
+      IconData(0xe80c, fontFamily: _kFontFam);
+  static const IconData playArrow = IconData(0xe80d, fontFamily: _kFontFam);
+  static const IconData playCircleOutline =
+      IconData(0xe80e, fontFamily: _kFontFam);
+  static const IconData playCircleFilled =
+      IconData(0xe80f, fontFamily: _kFontFam);
+  static const IconData music = IconData(0xe810, fontFamily: _kFontFam);
+  static const IconData path4 = IconData(0xe811, fontFamily: _kFontFam);
+  static const IconData checkmarkCicle =
+      IconData(0xe87f, fontFamily: _kFontFam);
+  static const IconData menu = IconData(0xf0c9, fontFamily: _kFontFam);
 }

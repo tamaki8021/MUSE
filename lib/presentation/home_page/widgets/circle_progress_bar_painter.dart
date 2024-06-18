@@ -20,7 +20,6 @@ class CircleProgressBarPainter extends CustomPainter {
       ..strokeWidth = 6 // 線の幅を10に設定します
       // ..color = appTheme.brandColor
       ..shader = SweepGradient(
-        startAngle: 0.0,
         endAngle: 2 * 3.14,
         colors: [
           theme.colorScheme.primary,
@@ -29,11 +28,13 @@ class CircleProgressBarPainter extends CustomPainter {
           appTheme.deepOrange400,
           theme.colorScheme.primary,
         ], // グラデーションの色を指定します
-        stops: [0.0, 0.2, 0.6, 0.9, 1.0], // 各色の位置を指定します
-      ).createShader(Rect.fromCircle(
-        center: Offset(size.width / 2, size.height / 2), // 円の中心を指定します
-        radius: size.width / 2, // 円の半径を指定します
-      ))
+        stops: const [0.0, 0.2, 0.6, 0.9, 1.0], // 各色の位置を指定します
+      ).createShader(
+        Rect.fromCircle(
+          center: Offset(size.width / 2, size.height / 2), // 円の中心を指定します
+          radius: size.width / 2, // 円の半径を指定します
+        ),
+      )
       ..style = PaintingStyle.stroke // 描画スタイルをストローク（線）に設定します
       ..strokeCap = StrokeCap.round; // 線の端を丸く設定します
 

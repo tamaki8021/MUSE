@@ -101,8 +101,7 @@ extension ResponsiveExtension on num {
 
   /// This method is used to set padding/margin (for the top and bottom side) &
   /// height of the screen or widget according to the Viewport height.
-  double get h =>
-      (this * _height) / 100;
+  double get h => (this * _height) / 100;
 
   /// This method is used to set smallest px in image height and width
   double get adaptSize {
