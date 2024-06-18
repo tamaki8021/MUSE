@@ -15,7 +15,6 @@ dependencies:
   flutter_hooks: ^0.20.4
   flutter_localizations:
     sdk: flutter
-  flutter_native_splash: ^2.3.10
   flutter_riverpod: ^2.4.9
   flutter_svg: ^2.0.9
   flutter_svg_provider: ^1.0.7
@@ -24,6 +23,8 @@ dependencies:
   shared_preferences: ^2.2.2
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.13.1"
+  flutter_native_splash: ^2.3.10
   flutter_test:
     sdk: flutter
   pedantic_mono: any
@@ -62,3 +63,10 @@ flutter_native_splash:
     image: 'assets/images/splash/splash-android.png'
     icon_background_color_dark: '#262626'
     image_dark: 'assets/images/splash/splash-android.png'
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/launcher_icons/muse_g.png"
+  min_sdk_android: 21 
