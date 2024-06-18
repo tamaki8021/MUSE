@@ -36,6 +36,11 @@ upgrade:
 clean:
 	$(FVM) clean
 
+# generate launcher icons
+.PHONY: generate-launcher-icons
+generate-launcher-icons:
+	$(FVM) pub run flutter_launcher_icons
+
 # 開発環境（dev）の起動
 .PHONY: run
 run:
