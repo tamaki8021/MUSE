@@ -16,8 +16,7 @@ class CustomTextStyles {
   static TextStyle get bodySmallGray500 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.gray500,
       );
-  static TextStyle get bodySmallWhite =>
-      theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallWhite => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.white,
       );
   // Label style
