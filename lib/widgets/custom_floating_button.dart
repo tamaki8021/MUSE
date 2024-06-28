@@ -1,52 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:muse/core/app_export.dart';
 
 class CustomFloatingButton extends StatelessWidget {
-  const CustomFloatingButton({
-    Key? key,
-    this.alignment,
-    this.backgroundColor,
-    this.onTap,
-    this.width,
-    this.height,
-    this.decoration,
-    this.child,
-  }) : super(
-          key: key,
-        );
-
-  final Alignment? alignment;
-
-  final Color? backgroundColor;
-
-  final VoidCallback? onTap;
-
-  final double? width;
-
-  final double? height;
-
-  final BoxDecoration? decoration;
-
-  final Widget? child;
+  const CustomFloatingButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return alignment != null
-        ? Align(
-            alignment: alignment ?? Alignment.center,
-            child: fabWidget,
-          )
-        : fabWidget;
-  }
-
-  Widget get fabWidget => FloatingActionButton(
-        backgroundColor: backgroundColor,
-        onPressed: onTap,
-        child: Container(
-          alignment: Alignment.center,
-          width: width ?? 0,
-          height: height ?? 0,
-          decoration: decoration,
-          child: child,
+    return Container(
+      height: 16.adaptSize,
+      width: 16.adaptSize,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+          image: AssetImage(ImageConstant.imgFloatingActionButtonBgImg),
+          fit: BoxFit.cover,
         ),
-      );
+      ),
+      child: FloatingActionButton(
+        backgroundColor: Colors.transparent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50),
+        ),
+        elevation: 0,
+        onPressed: () {
+          NavigatorService.pushNamed(AppRoutes.postPage);
+        },
+        child: Center(
+          child: Icon(
+            Icons.add,
+            size: 6.adaptSize,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
 }
