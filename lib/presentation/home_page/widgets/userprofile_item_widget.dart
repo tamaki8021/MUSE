@@ -5,50 +5,42 @@ import '../models/userprofile_item_model.dart';
 
 // ignore: must_be_immutable
 class UserprofileItemWidget extends StatelessWidget {
-  UserprofileItemWidget(
-    this.userprofileItemModelObj, {
-    Key? key,
-  }) : super(
-          key: key,
-        );
+  UserprofileItemWidget(this.userprofileItemModelObj, {Key? key})
+      : super(key: key);
 
   UserprofileItemModel userprofileItemModelObj;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // width: 21.w,
-      child: Align(
-        alignment: Alignment.centerRight,
-        child: Padding(
-          padding: EdgeInsets.all(1.w),
-          child: Column(
-            children: [
-              Container(
-                height: 21.adaptSize,
-                width: 21.adaptSize,
-                padding: EdgeInsets.all(0.3.h),
-                decoration: AppDecoration.gradientProfileImageBg.copyWith(
-                  borderRadius: BorderRadiusStyle.circleBorder28,
-                ),
-                child: CustomImageView(
-                  imagePath: userprofileItemModelObj.userImage,
-                  radius: BorderRadius.circular(41.h),
-                  alignment: Alignment.center,
-                ),
+      child: Padding(
+        padding: EdgeInsets.all(1.w),
+        child: Column(
+          children: [
+            Container(
+              height: 20.adaptSize,
+              width: 20.adaptSize,
+              padding: EdgeInsets.all(0.3.h),
+              decoration: AppDecoration.gradientProfileImageBg.copyWith(
+                borderRadius: BorderRadiusStyle.circleBorder28,
               ),
-              SizedBox(height: 0.5.h),
-              Text(
-                userprofileItemModelObj.userName!,
-                style: TextStyle(
-                  color: appTheme.white,
-                  fontSize: 3.5.fSize,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w400,
-                ),
+              child: CustomImageView(
+                imagePath: userprofileItemModelObj.userImage,
+                radius: BorderRadius.circular(41.h),
+                alignment: Alignment.center,
               ),
-            ],
-          ),
+            ),
+            SizedBox(height: 0.5.h),
+            Text(
+              userprofileItemModelObj.userName!,
+              style: TextStyle(
+                color: appTheme.white,
+                fontSize: 3.5.fSize,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
         ),
       ),
     );

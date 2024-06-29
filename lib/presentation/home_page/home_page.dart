@@ -56,7 +56,7 @@ class HomePageState extends ConsumerState<HomePage>
     return Container(
       width: SizeUtils.width,
       height: SizeUtils.height,
-      padding: EdgeInsets.only(top: appBarHeight + 2.h),
+      padding: EdgeInsets.only(top: appBarHeight + 1.5.h),
       decoration: AppDecoration.gradientBackground,
       child: Column(
         children: [
@@ -93,7 +93,7 @@ class HomePageState extends ConsumerState<HomePage>
   /// 音楽の停止、再生、お気に入り等を行うコントローラー
   Widget _buildSongController() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 2.h),
+      padding: EdgeInsets.symmetric(vertical: 1.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -196,7 +196,7 @@ class HomePageState extends ConsumerState<HomePage>
   /// 音楽再生者の情報を表示するコンポーネント
   Widget _buildUserInfo() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
+      padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 0.8.h),
       decoration: AppDecoration.fillGray900.copyWith(
         borderRadius: BorderRadiusStyle.circleBorder23,
       ),
@@ -295,7 +295,7 @@ class HomePageState extends ConsumerState<HomePage>
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 4.w),
       child: SizedBox(
-        height: 15.h,
+        height: 14.h,
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           separatorBuilder: (context, index) {
