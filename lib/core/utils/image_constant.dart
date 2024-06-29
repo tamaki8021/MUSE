@@ -26,7 +26,8 @@ class ImageConstant {
   // home images
   static String imgHomeBgMusicCover = '$imagePath/home_bg_music_cover_img.svg';
 
-  static String imgFloatingActionButtonBgImg = '$imagePath/floating_action_button_bg_img.png';
+  static String imgFloatingActionButtonBgImg =
+      '$imagePath/floating_action_button_bg_img.png';
 
   static String img600x600bb32 = '$imagePath/img_600x600bb_3_2.png';
 

@@ -22,7 +22,7 @@ class AppRoutes {
   static const String root = '/';
 
   static Map<String, WidgetBuilder> routes = {
-    root:(context) => const MainAppNavigator(),
+    root: (context) => const MainAppNavigator(),
     initialRoute: (context) => const MainAppNavigator(),
     homePage: (context) => const MainAppNavigator(),
     profilePage: (context) => const MainAppNavigator(),
