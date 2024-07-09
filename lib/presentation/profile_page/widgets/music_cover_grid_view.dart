@@ -6,7 +6,7 @@ class MusicCoverGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> imageUrls = List.generate(
+    final imageUrls = List.generate(
       30,
       (index) => 'https://picsum.photos/seed/$index/200/200',
     );
