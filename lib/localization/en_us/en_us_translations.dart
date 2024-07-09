@@ -23,11 +23,12 @@ final Map<String, String> enUs = {
   'lbl_1_342': '1,342',
   'lbl_586': '586',
   'lbl_all': 'ALL',
+  'lbl_profile': 'Profile',
   'lbl_eleanor_mena': 'Eleanor Mena',
   'lbl_favorite': 'Favorite',
   'lbl_favorites': 'Favorites',
   'lbl_friends': 'Friends',
-  'lbl_my_post': 'My Post',
+  'lbl_post': 'Post',
   'lbl_my_posts': 'My Posts',
   'msg_sometimes_i_cook': 'Sometimes I cook and I like to show them',
 

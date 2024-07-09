@@ -6,7 +6,7 @@ import 'package:muse/core/app_export.dart';
 class AppDecoration {
   // Fill decorations
   static BoxDecoration get fillGray => BoxDecoration(
-        color: appTheme.gray800.withOpacity(0.5),
+        color: appTheme.gray900.withOpacity(0.5),
       );
   static BoxDecoration get fillGray900 => BoxDecoration(
         color: appTheme.gray900,
@@ -63,6 +63,13 @@ class AppDecoration {
             color: appTheme.gray800,
             width: 1.h,
           ),
+        ),
+      );
+
+  static BoxDecoration get outlineWhite => BoxDecoration(
+        border: Border.all(
+          color: appTheme.white,
+          width: 0.5.adaptSize,
         ),
       );
 }
