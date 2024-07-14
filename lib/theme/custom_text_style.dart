@@ -1,6 +1,9 @@
 // ignore_for_file: lines_longer_than_80_chars,avoid_classes_with_only_static_members, unused_element
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import '../core/app_export.dart';
 
 /// A collection of pre-defined text styles for customizing text appearance,
@@ -18,9 +21,15 @@ class CustomTextStyles {
       );
   static TextStyle get bodySmallWhite => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.white,
+        fontSize: 4.fSize,
       );
   // Label style
   static TextStyle get labelLargeInter => theme.textTheme.labelLarge!.inter;
+  static TextStyle get labelSmallInter =>
+      theme.textTheme.labelSmall!.copyWith(color: appTheme.white).inter;
+  static TextStyle get labelSmallInterGray500 =>
+      theme.textTheme.labelSmall!.copyWith(color: appTheme.gray500).inter;
+
   // Title text style
   static TextStyle get titleMediumGray90002 =>
       theme.textTheme.titleMedium!.copyWith(
