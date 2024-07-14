@@ -16,7 +16,7 @@ class ProfileEditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: _buildAppBar(context),
         extendBody: true,
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
@@ -27,6 +27,7 @@ class ProfileEditPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 6.h),
           child: Column(
             children: [
+              const Spacer(),
               CustomInputImage(
                 radius: 18.adaptSize,
               ),
@@ -67,7 +68,7 @@ class ProfileEditPage extends StatelessWidget {
                 borderDecoration: InputBorderStyle.outlinedBorderWhiteCircle10,
                 fillColor: Colors.transparent,
               ),
-              const Spacer(),
+              const Spacer(flex: 6),
               SizedBox(
                 width: SizeUtils.width,
                 height: 7.h,
@@ -85,9 +86,28 @@ class ProfileEditPage extends StatelessWidget {
                   ),
                 ),
               ),
+              const Spacer(),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  PreferredSizeWidget _buildAppBar(BuildContext context) {
+    return CustomAppBar(
+      centerTitle: true,
+      title: AppbarTitle(
+        text: 'lbl_edit_profile'.tr,
+      ),
+      leadingWidth: 10,
+      leading: const IconButton(
+        color: Colors.white,
+        icon: Icon(
+          Icons.arrow_back,
+          color: Colors.white,
+        ),
+        onPressed: NavigatorService.goBack,
       ),
     );
   }
