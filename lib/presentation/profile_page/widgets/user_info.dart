@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:muse/core/app_export.dart';
 
 class UserInfo extends StatelessWidget {
@@ -59,6 +62,7 @@ class UserInfo extends StatelessWidget {
             alignment: Alignment.center,
           ),
           CustomIconButton(
+            onTap: () => NavigatorService.pushNamed(AppRoutes.profileEditPage),
             alignment: Alignment.bottomCenter,
             height: 9.adaptSize,
             width: 9.adaptSize,
