@@ -1,4 +1,6 @@
 # パッケージのREADMEに記載のデフォルトはこちらの厳しいルール
 include: package:pedantic_mono/analysis_options.yaml
-# こちらの指定に変えると、従うべきLintルールが減る
-# include: package:pedantic_mono/analysis_options_flutter_samples.yaml
+
+linter:
+  rules:
+    directives_ordering: false
