@@ -1,6 +1,8 @@
+// Package imports:
 import 'package:equatable/equatable.dart';
-import 'package:muse/presentation/street_pass_screen/models/street_pass_model.dart';
 
+// Project imports:
+import 'package:muse/presentation/street_pass_screen/models/street_pass_model.dart';
 import '../models/userprofilegrid_item_model.dart';
 import '/core/app_export.dart';
 

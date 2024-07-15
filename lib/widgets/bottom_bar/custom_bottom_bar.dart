@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:muse/core/app_export.dart';
 
+// Project imports:
+import 'package:muse/core/app_export.dart';
 import 'bottom_bar_item.dart';
 import 'bottom_bar_model.dart';
 

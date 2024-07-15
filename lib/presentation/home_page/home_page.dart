@@ -1,8 +1,11 @@
+// Dart imports:
 import 'dart:math';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:muse/core/app_export.dart';
 
+// Project imports:
+import 'package:muse/core/app_export.dart';
 import 'models/userprofile_item_model.dart';
 import 'notifier/home_notifier.dart';
 import 'widgets/circle_progress_bar_painter.dart';

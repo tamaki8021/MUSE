@@ -1,7 +1,9 @@
 // ignore_for_file: must_be_immutable, comment_references
 
+// Package imports:
 import 'package:equatable/equatable.dart';
 
+// Project imports:
 import 'thirty_item_model.dart';
 import 'userprofile1_item_model.dart';
 

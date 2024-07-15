@@ -1,10 +1,14 @@
-import 'package:firebase_core/firebase_core.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:muse/firebase_options.dart';
 
+// Project imports:
+import 'package:muse/firebase_options.dart';
 import 'core/app_export.dart';
 
 // var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();

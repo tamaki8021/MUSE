@@ -1,6 +1,9 @@
 // ignore_for_file: must_be_immutable, comment_references
 
+// Package imports:
 import 'package:equatable/equatable.dart';
+
+// Project imports:
 import 'userprofile_item_model.dart';
 
 /// This class defines the variables used in the [home_page],

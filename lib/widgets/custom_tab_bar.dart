@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:muse/core/app_export.dart';
 
 class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {

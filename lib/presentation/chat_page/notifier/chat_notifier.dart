@@ -1,6 +1,8 @@
+// Package imports:
 import 'package:equatable/equatable.dart';
-import 'package:muse/presentation/chat_page/models/chat_model.dart';
 
+// Project imports:
+import 'package:muse/presentation/chat_page/models/chat_model.dart';
 import '../models/userprofilelist1_item_model.dart';
 import '../models/userprofilelist_item_model.dart';
 import '/core/app_export.dart';

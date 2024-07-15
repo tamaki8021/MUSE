@@ -1,6 +1,9 @@
 // ignore_for_file: constant_identifier_names, avoid_classes_with_only_static_members, lines_longer_than_80_chars
 
+// Dart imports:
 import 'dart:io' show Platform;
+
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 // These are the Viewport values of your Figma Design.

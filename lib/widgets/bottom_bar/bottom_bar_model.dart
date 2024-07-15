@@ -1,5 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Project imports:
 import 'custom_bottom_bar.dart';
 
 class BottomBarModel {

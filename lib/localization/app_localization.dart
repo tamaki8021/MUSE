@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
+// Project imports:
 import '../core/app_export.dart';
 import 'en_us/en_us_translations.dart';
 

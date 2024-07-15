@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:muse/core/app_export.dart';
 
+// Project imports:
+import 'package:muse/core/app_export.dart';
 import '../street_pass_screen/widgets/userprofilegrid_item_widget.dart';
 import 'models/userprofilegrid_item_model.dart';
 import 'notifier/street_pass_notifier.dart';
