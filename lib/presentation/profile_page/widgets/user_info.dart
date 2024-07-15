@@ -55,7 +55,7 @@ class UserInfo extends StatelessWidget {
             alignment: Alignment.center,
           ),
           CustomImageView(
-            imagePath: ImageConstant.imgImage88x88,
+            imagePath: ImageConstant.imageNotFound,
             height: 9.h,
             width: 9.h,
             fit: BoxFit.cover,

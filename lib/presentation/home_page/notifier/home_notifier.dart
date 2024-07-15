@@ -14,11 +14,11 @@ final homeNotifier = StateNotifierProvider<HomeNotifier, HomeState>(
       homeModelObj: HomeModel(
         userprofileItemList: [
           UserprofileItemModel(
-            userImage: ImageConstant.imgRectangle20,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Eleanor',
           ),
           UserprofileItemModel(
-            userImage: ImageConstant.imgImage,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Edwords',
           ),
           UserprofileItemModel(userName: 'Pena'),

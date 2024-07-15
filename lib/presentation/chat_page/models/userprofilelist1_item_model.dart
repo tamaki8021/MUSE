@@ -11,7 +11,7 @@ class Userprofilelist1ItemModel {
     this.timeAgo,
     this.id,
   }) {
-    userImage = userImage ?? ImageConstant.imgRectangle5248x48;
+    userImage = userImage ?? ImageConstant.imageNotFound;
     userName = userName ?? 'Dianne Russell';
     timeAgo = timeAgo ?? '12 min ago';
     id = id ?? '';

@@ -10,7 +10,7 @@ class UserprofilelistItemModel {
     this.userName,
     this.id,
   }) {
-    userImage2 = userImage2 ?? ImageConstant.imgImage48x48;
+    userImage2 = userImage2 ?? ImageConstant.imageNotFound;
     userName = userName ?? 'Tobey';
     id = id ?? '';
   }

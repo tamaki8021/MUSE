@@ -79,9 +79,6 @@ class ProfilePage extends HookConsumerWidget {
       title: AppbarTitle(
         text: 'lbl_profile'.tr,
       ),
-      actions: [
-        AppbarTrailingImage(imagePath: ImageConstant.imgUser),
-      ],
     );
   }
 }

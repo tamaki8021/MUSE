@@ -208,7 +208,7 @@ class HomePageState extends ConsumerState<HomePage>
         mainAxisSize: MainAxisSize.min,
         children: [
           CustomImageView(
-            imagePath: ImageConstant.img600x600bb3,
+            imagePath: ImageConstant.imageNotFound,
             height: 10.adaptSize,
             width: 10.adaptSize,
             radius: BorderRadius.circular(14.h),
@@ -254,7 +254,7 @@ class HomePageState extends ConsumerState<HomePage>
             ),
           ),
           CustomImageView(
-            imagePath: ImageConstant.img600x600bb32170x170,
+            imagePath: ImageConstant.imageNotFound,
             height: 48.adaptSize,
             width: 48.adaptSize,
             radius: BorderRadius.circular(56.h),
