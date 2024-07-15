@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_classes_with_only_static_members
 
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 class NavigatorService {

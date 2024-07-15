@@ -1,14 +1,4 @@
 final Map<String, String> enUs = {
-  // street pass Screen
-  'lbl_idol': 'IDOL',
-  'lbl_natori': 'Natori',
-  'lbl_overdose': 'OVERDOSE',
-  'lbl_ross': 'Ross',
-  'lbl_russell': 'Russell',
-  'lbl_storobo': 'STOROBO',
-  'lbl_vaundy': 'Vaundy',
-  'lbl_yoasobi': 'YOASOBI',
-
   // home Screen
   'lbl_0_42': '0:42',
   'lbl_4_37': '4:37',
@@ -32,6 +22,17 @@ final Map<String, String> enUs = {
   'lbl_my_posts': 'My Posts',
   'msg_sometimes_i_cook': 'Sometimes I cook and I like to show them',
 
+  // profile edit Screen
+  'lbl_edit_profile': 'Edit Profile',
+  'lbl_name': 'User name',
+  'lbl_bio': 'Bio',
+  'hint_name': 'write name',
+  'hint_bio': 'write bio',
+  'lbl_done': 'DONE',
+  'validator_mes_name_is_empty': 'Please enter your name',
+  'validator_mes_bio_is_empty': 'Please enter your bio',
+  'validator_mes_bio_length': 'Bio must be less than 200 characters',
+
   // chat Screen
   'lbl_12_min_ago': '12 min ago',
   'lbl_21_min_ago': '21 min ago',
@@ -54,7 +55,7 @@ final Map<String, String> enUs = {
   // Common String
   'lbl_dianne': 'Dianne', 'lbl_muse': 'MUSE', 'lbl_street_pass': 'Street Pass',
 
-// Network Error String
+  // Network Error String
   'msg_network_err': 'Network Error',
   'msg_something_went_wrong': 'Something Went Wrong!',
 };

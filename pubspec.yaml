@@ -19,7 +19,9 @@ dependencies:
   flutter_svg: ^2.0.9
   flutter_svg_provider: ^1.0.7
   hooks_riverpod: ^2.4.9
+  image_picker: ^1.0.8
   intl: ^0.18.1
+  outline_gradient_button: ^2.0.1+1
   shared_preferences: ^2.2.2
 
 dev_dependencies:
@@ -54,20 +56,20 @@ flutter:
         - asset: assets/fonts/AppIcons.ttf
 
 flutter_native_splash:
-  color: '#000000'
-  image: 'assets/images/splash/splash.png'
-  color_dark: '#262626'
-  image_dark: 'assets/images/splash/splash.png'
+  color: "#000000"
+  image: "assets/images/splash/splash.png"
+  color_dark: "#262626"
+  image_dark: "assets/images/splash/splash.png"
   fullscreen: true
   android_12:
-    icon_background_color: '#000000'
-    image: 'assets/images/splash/splash-android.png'
-    icon_background_color_dark: '#262626'
-    image_dark: 'assets/images/splash/splash-android.png'
+    icon_background_color: "#000000"
+    image: "assets/images/splash/splash-android.png"
+    icon_background_color_dark: "#262626"
+    image_dark: "assets/images/splash/splash-android.png"
 
 flutter_launcher_icons:
   android: true
   ios: true
   remove_alpha_ios: true
   image_path: "assets/images/launcher_icons/muse_g.png"
-  min_sdk_android: 21 
+  min_sdk_android: 21

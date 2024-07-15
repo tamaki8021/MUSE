@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:muse/core/app_export.dart';
 
 export 'appbar_title.dart';
@@ -37,7 +40,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: height ?? 5.h,
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
-      leadingWidth: leadingWidth ?? 0,
       leading: leading,
       title: title,
       titleSpacing: 0,

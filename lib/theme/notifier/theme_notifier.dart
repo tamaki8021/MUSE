@@ -1,5 +1,9 @@
+// Package imports:
 import 'package:equatable/equatable.dart';
+
+// Project imports:
 import '../../core/app_export.dart';
+
 part 'theme_state.dart';
 
 final themeNotifier = StateNotifierProvider<ThemeNotifier, ThemeState>(

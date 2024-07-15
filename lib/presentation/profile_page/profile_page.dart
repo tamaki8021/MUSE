@@ -1,8 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+// Project imports:
 import 'package:muse/core/app_export.dart';
 import 'package:muse/widgets/custom_tab_bar.dart';
-
 import 'widgets/music_cover_grid_view.dart';
 import 'widgets/user_image_row.dart';
 import 'widgets/user_info.dart';

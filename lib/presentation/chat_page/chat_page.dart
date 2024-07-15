@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:muse/core/app_export.dart';
 
+// Project imports:
+import 'package:muse/core/app_export.dart';
 import '../chat_page/widgets/userprofilelist1_item_widget.dart';
 import '../chat_page/widgets/userprofilelist_item_widget.dart';
 import 'models/userprofilelist1_item_model.dart';

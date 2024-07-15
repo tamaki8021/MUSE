@@ -1,5 +1,6 @@
 // ignore_for_file: comment_references
 
+// Project imports:
 import '../../../core/app_export.dart';
 
 /// This class is used in the [userprofilelist1_item_widget] screen.

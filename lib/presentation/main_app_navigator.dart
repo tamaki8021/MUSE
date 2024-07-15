@@ -1,5 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:muse/core/app_export.dart';
+import 'package:muse/presentation/activity_page/activity_pade.dart';
 import 'package:muse/presentation/chat_page/chat_page.dart';
 import 'package:muse/presentation/home_page/home_page.dart';
 import 'package:muse/presentation/profile_page/profile_page.dart';
@@ -30,6 +34,8 @@ class MainAppNavigator extends StatelessWidget {
         return const ChatPage();
       case AppRoutes.profilePage:
         return const ProfilePage();
+      case AppRoutes.activityPage:
+        return const ActivityPage();
       default:
         return const SizedBox.shrink();
     }

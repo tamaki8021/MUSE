@@ -1,6 +1,9 @@
 // ignore_for_file: avoid_classes_with_only_static_members
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:muse/core/app_export.dart';
 
 class AppDecoration {
@@ -71,6 +74,28 @@ class AppDecoration {
           color: appTheme.white,
           width: 0.5.adaptSize,
         ),
+      );
+}
+
+class InputBorderStyle {
+  static InputBorder get outlinedBorderWhite => OutlineInputBorder(
+        borderSide: BorderSide(
+          color: appTheme.white,
+        ),
+      );
+
+  static InputBorder get outlinedBorderWhiteCircle10 => OutlineInputBorder(
+        borderSide: BorderSide(
+          color: appTheme.white,
+        ),
+        borderRadius: BorderRadius.circular(10),
+      );
+
+  static InputBorder get outlinedBorderPrimaryCircle10 => OutlineInputBorder(
+        borderSide: BorderSide(
+          color: theme.primaryColor,
+        ),
+        borderRadius: BorderRadius.circular(10),
       );
 }
 

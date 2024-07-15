@@ -1,6 +1,8 @@
+// Package imports:
 import 'package:equatable/equatable.dart';
-import 'package:muse/presentation/profile_page/models/profile_model.dart';
 
+// Project imports:
+import 'package:muse/presentation/profile_page/models/profile_model.dart';
 import '../models/thirty_item_model.dart';
 import '../models/userprofile1_item_model.dart';
 import '/core/app_export.dart';

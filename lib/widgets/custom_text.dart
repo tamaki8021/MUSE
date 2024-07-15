@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:muse/widgets/custom_gradient_mask.dart';
 
 class CustomText extends StatelessWidget {
