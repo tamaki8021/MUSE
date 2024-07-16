@@ -34,6 +34,11 @@ class ImageConstant {
   // profile images
   static String imgEllipse3096x96 = '$imagePath/img_ellipse_30_96x96.png';
 
+  // post music images
+  static String imgRecord = '$imagePath/record.png';
+
+  static String imgNeedle = '$imagePath/needle.png';
+
   // Common images
   static String imageNotFound = 'assets/images/image_not_found.png';
 }
