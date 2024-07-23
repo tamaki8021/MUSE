@@ -16,10 +16,14 @@ class SongController extends HookConsumerWidget {
     Key? key,
     required this.isPlaying,
     required this.onChanged,
+    required this.onSkipPreviousAction,
+    required this.onSkipNextAction,
   }) : super(key: key);
 
   final bool isPlaying;
   final FutureOr<void> Function(bool)? onChanged;
+  final VoidCallback onSkipPreviousAction;
+  final VoidCallback onSkipNextAction;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,7 +40,6 @@ class SongController extends HookConsumerWidget {
             ),
             borderWidth: 5,
             height: 7.h,
-            // onChanged: (b) => isPlaying.value = !isPlaying.value,
             onChanged: onChanged,
             styleBuilder: (b) => ToggleStyle(
               backgroundGradient: b ? null : AppDecoration.appGradient.gradient,
@@ -72,8 +75,8 @@ class SongController extends HookConsumerWidget {
                   ),
           ),
           const Spacer(),
-          _buildIconButton(Icons.skip_previous, () {}),
-          _buildIconButton(Icons.skip_next, () {}),
+          _buildIconButton(Icons.skip_previous, onSkipPreviousAction),
+          _buildIconButton(Icons.skip_next, onSkipNextAction),
         ],
       ),
     );

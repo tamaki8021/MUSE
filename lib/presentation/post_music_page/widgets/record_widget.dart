@@ -1,4 +1,6 @@
 // Flutter imports:
+
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 // Project imports:
@@ -8,16 +10,11 @@ class RecordWidget extends StatelessWidget {
   const RecordWidget({
     Key? key,
     required this.diameter,
-  })
-  // : file = File(albumArt),
-  : super(key: key);
+    required this.imagePath,
+  }) : super(key: key);
 
-  // RecordWidget.largeImage({Key? key, @required this.diameter, @required this.albumArt})
-  //     : file = File(albumArt),
-  //       large = true, super(key: key);
   final double diameter;
-  // final File file;
-  // final bool large;
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -32,36 +29,34 @@ class RecordWidget extends StatelessWidget {
             height: diameter,
             fit: BoxFit.fill,
           ),
-
-          // Check that the album art is not null
-          // before building it
-          // file.path == 'null'
-          //     ? const Center()
-          //     : Center(
-          //         child: Container(
-          //           width: diameter / 2.5,
-          //           height: diameter / 2.5,
-          //           decoration: BoxDecoration(
-          //             shape: BoxShape.circle,
-          //             image: DecorationImage(
-          //               image: FileImage(
-          //                 file,
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          Center(
-            child: Container(
-              width: diameter / 20,
-              height: diameter / 20,
-              alignment: Alignment.center,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-            ),
-          ),
+          imagePath.isEmpty
+              ? const Center()
+              : Center(
+                  child: Container(
+                    width: diameter / 2.5,
+                    height: diameter / 2.5,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+          imagePath.isEmpty
+              ? const Center()
+              : Center(
+                  child: Container(
+                    width: diameter / 2.5,
+                    height: diameter / 2.5,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(imagePath),
+                      ),
+                    ),
+                  ),
+                ),
         ],
       ),
     );

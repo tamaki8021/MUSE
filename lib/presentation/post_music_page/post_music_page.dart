@@ -1,6 +1,8 @@
 // Flutter imports:
 
 // Flutter imports:
+
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -27,6 +29,15 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
 
   AnimationController? _needleAnimCtrl;
   AnimationController? recordAnimCtrl;
+  final PageController _pageController = PageController();
+
+  List<String> recordList = [
+    'https://picsum.photos/200',
+    'https://i.scdn.co/image/ab67616d0000b273efcace231caab71d019a11e2',
+    'https://picsum.photos/200/300',
+    'https://picsum.photos/200',
+  ];
+  int currentRecordIndex = 0;
 
   @override
   void initState() {
@@ -47,7 +58,6 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
   // Starts animating the Record Widget as soon as
   // the needle animation is completed.
   void _startRecordAnimation(AnimationStatus status) {
-    print(status);
     if (status == AnimationStatus.completed) recordAnimCtrl?.repeat();
     if (status == AnimationStatus.reverse) recordAnimCtrl?.stop();
   }
@@ -57,6 +67,20 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
     _needleAnimCtrl?.dispose();
     recordAnimCtrl?.dispose();
     super.dispose();
+  }
+
+  void _changeToNextRecord() {
+    _pageController.nextPage(
+      duration: const Duration(milliseconds: 400),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  void _changeToPreviousRecord() {
+    _pageController.previousPage(
+      duration: const Duration(milliseconds: 400),
+      curve: Curves.easeInOut,
+    );
   }
 
   @override
@@ -71,15 +95,33 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
           body: DecoratedBox(
             decoration: AppDecoration.gradientBackground,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const Spacer(),
                 SizedBox(
-                  height: 45.h,
+                  height: 35.h,
                   child: Stack(
                     fit: StackFit.expand,
-                    children: <Widget>[
-                      /// TODO: 横スクロールでレコードを変更できるようにする
-                      _buildRecordWidget(),
+                    children: [
+                      PageView.builder(
+                        controller: _pageController,
+                        itemCount: recordList.length,
+                        itemBuilder: (context, index) => _buildRecordWidget(
+                          recordList[index],
+                        ),
+                        onPageChanged: (index) {
+                          setState(() {
+                            currentRecordIndex = index;
+                          });
+                          if (isPlaying) {
+                            _needleAnimCtrl?.reverse();
+                            setState(() {
+                              isPlaying = !isPlaying;
+                            });
+                          }
+                        },
+                      ),
                       _buildNeedleWidget(),
                     ],
                   ),
@@ -90,7 +132,7 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(right: 2.5.h),
+                        padding: EdgeInsets.only(right: 2.h),
                         child: Icon(
                           AppIcons.arrowsRight,
                           color: appTheme.white,
@@ -143,6 +185,8 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
                       _needleAnimCtrl?.reverse();
                     }
                   },
+                  onSkipNextAction: _changeToNextRecord,
+                  onSkipPreviousAction: _changeToPreviousRecord,
                 ),
                 const Spacer(),
                 OutlineGradientButton(
@@ -187,22 +231,15 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
     );
   }
 
-  Widget _buildRecordWidget() {
-    return Positioned(
-      top: 12.h,
-      child: GestureDetector(
-        child: RotationTransition(
-          turns: recordAnimCtrl!,
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            alignment: Alignment.center,
-            child: Hero(
-              tag: 'widget.album.id',
-              child: RecordWidget(
-                diameter: 70.adaptSize,
-              ),
-            ),
-          ),
+  Widget _buildRecordWidget(String imagePath) {
+    return RotationTransition(
+      turns: recordAnimCtrl!,
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        alignment: Alignment.center,
+        child: RecordWidget(
+          diameter: 70.adaptSize,
+          imagePath: imagePath,
         ),
       ),
     );
@@ -210,7 +247,7 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
 
   Widget _buildNeedleWidget() {
     return Positioned(
-      top: 6.h,
+      top: -3.h,
       right: 0,
       child: RotationTransition(
         turns: _needleAnimCtrl!,
