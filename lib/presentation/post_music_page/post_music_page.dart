@@ -1,11 +1,16 @@
 // Flutter imports:
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:outline_gradient_button/outline_gradient_button.dart';
 
 // Project imports:
 import 'package:muse/core/app_export.dart';
 import 'package:muse/presentation/post_music_page/widgets/needle_widget.dart';
 import 'package:muse/presentation/post_music_page/widgets/record_widget.dart';
-import 'package:muse/presentation/post_music_page/widgets/song_list_clipper.dart';
+import 'package:muse/presentation/post_music_page/widgets/song_controller.dart';
 
 class PostMusicPage extends StatefulWidget {
   const PostMusicPage({Key? key}) : super(key: key);
@@ -18,17 +23,14 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
     with TickerProviderStateMixin {
   final double iconSize = 35;
   final Color iconColor = Colors.deepOrangeAccent;
+  bool isPlaying = false;
 
   AnimationController? _needleAnimCtrl;
   AnimationController? recordAnimCtrl;
-  OverlayState? _overlayState;
-  OverlayEntry? _overlayEntry;
 
   @override
   void initState() {
     super.initState();
-    print('start');
-
     recordAnimCtrl = AnimationController(
       duration: const Duration(milliseconds: 4000),
       vsync: this,
@@ -52,10 +54,8 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
 
   @override
   void dispose() {
-    print('done');
     _needleAnimCtrl?.dispose();
     recordAnimCtrl?.dispose();
-    _removeOverlay();
     super.dispose();
   }
 
@@ -64,30 +64,125 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
     return SafeArea(
       child: Material(
         child: Scaffold(
-          appBar: CustomAppBar(
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.pause),
-                onPressed: () {
-                  _needleAnimCtrl?.forward();
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.stop),
-                onPressed: () {
-                  _needleAnimCtrl?.reverse();
-                },
-              ),
-            ],
-          ),
-          body: Stack(
-            fit: StackFit.expand,
-            children: <Widget>[
-              _buildRecordWidget(),
-              _buildNeedleWidget(),
-            ],
+          extendBody: true,
+          extendBodyBehindAppBar: true,
+          backgroundColor: Colors.transparent,
+          appBar: _buildAppBar(),
+          body: DecoratedBox(
+            decoration: AppDecoration.gradientBackground,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 45.h,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: <Widget>[
+                      /// TODO: 横スクロールでレコードを変更できるようにする
+                      _buildRecordWidget(),
+                      _buildNeedleWidget(),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 1.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 2.5.h),
+                        child: Icon(
+                          AppIcons.arrowsRight,
+                          color: appTheme.white,
+                          size: 5.fSize,
+                        ),
+                      ),
+                      SizedBox(height: 1.h),
+                      CustomText(
+                        text: 'lbl_choose_post_comment'.tr,
+                        style: CustomTextStyles.bodySmallWhite.copyWith(
+                          fontSize: 3.fSize,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 3.h),
+                Padding(
+                  padding: EdgeInsets.all(1.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: 'IDOL',
+                        style: CustomTextStyles.labelSmallInter.copyWith(
+                          fontSize: 7.fSize,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      CustomText(
+                        text: 'アーティスト名',
+                        style: CustomTextStyles.bodySmallGray500.copyWith(
+                          fontSize: 5.fSize,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SongController(
+                  isPlaying: isPlaying,
+                  onChanged: (p0) {
+                    setState(() {
+                      isPlaying = !isPlaying;
+                    });
+                    if (isPlaying) {
+                      _needleAnimCtrl?.forward();
+                    } else {
+                      _needleAnimCtrl?.reverse();
+                    }
+                  },
+                ),
+                const Spacer(),
+                OutlineGradientButton(
+                  gradient: AppDecoration.appGradient.gradient!,
+                  padding: EdgeInsets.all(2.h),
+                  strokeWidth: 1,
+                  radius: const Radius.circular(10),
+                  child: Center(
+                    child: CustomText(
+                      text: 'lbl_POST'.tr,
+                      isGradient: true,
+                      style: CustomTextStyles.bodySmallWhite
+                          .copyWith(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+                const Spacer(),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+
+  PreferredSizeWidget _buildAppBar() {
+    return CustomAppBar(
+      title: AppbarTitle(
+        text: 'lbl_post_music'.tr,
+      ),
+      centerTitle: true,
+      leadingWidth: 10,
+      leading: const IconButton(
+        icon: CustomGradientMask(
+          child: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+        onPressed: NavigatorService.goBack,
       ),
     );
   }
@@ -109,7 +204,6 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
             ),
           ),
         ),
-        onDoubleTap: () => _showSongsList(context),
       ),
     );
   }
@@ -129,43 +223,4 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
       ),
     );
   }
-
-  void _showSongsList(BuildContext context) {
-    _overlayState = Overlay.of(context);
-    _overlayEntry = OverlayEntry(
-      builder: (context) => AspectRatio(
-        aspectRatio: 1,
-        child: GestureDetector(
-          onHorizontalDragUpdate: (_) => _removeOverlay(),
-          child: ClipPath(
-            clipper: SongListClipper(
-              screenWidth: MediaQuery.of(context).size.width,
-              padding: 8,
-            ),
-            child: OverflowBox(
-              maxWidth: MediaQuery.of(context).size.width + 100.0,
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width + 100.0,
-                child: _buildSongList(context),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-    _overlayState?.insert(_overlayEntry!);
-  }
-
-  Widget _buildSongList(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.symmetric(horizontal: 100),
-      child: ColoredBox(
-        color: theme.primaryColor,
-        child: const Text('song title'),
-      ),
-    );
-  }
-
-  void _removeOverlay() => _overlayEntry?.remove();
 }
