@@ -13,6 +13,7 @@ import 'core/app_export.dart';
 
 // var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 Future<void> main() async {
+  // debugPaintSizeEnabled = true;
   WidgetsFlutterBinding.ensureInitialized();
 
   // firebaseの初期化
