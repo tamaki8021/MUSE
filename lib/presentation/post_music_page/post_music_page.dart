@@ -18,17 +18,17 @@ class PostMusicPage extends StatefulWidget {
   const PostMusicPage({Key? key}) : super(key: key);
 
   @override
-  _CurrentPlayingPageState createState() => _CurrentPlayingPageState();
+  PostMusicPageState createState() => PostMusicPageState();
 }
 
-class _CurrentPlayingPageState extends State<PostMusicPage>
+class PostMusicPageState extends State<PostMusicPage>
     with TickerProviderStateMixin {
   final double iconSize = 35;
   final Color iconColor = Colors.deepOrangeAccent;
   bool isPlaying = false;
 
   AnimationController? _needleAnimCtrl;
-  AnimationController? recordAnimCtrl;
+  AnimationController? _recordAnimCtrl;
   final PageController _pageController = PageController();
 
   List<String> recordList = [
@@ -42,7 +42,7 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
   @override
   void initState() {
     super.initState();
-    recordAnimCtrl = AnimationController(
+    _recordAnimCtrl = AnimationController(
       duration: const Duration(milliseconds: 4000),
       vsync: this,
     );
@@ -58,14 +58,19 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
   // Starts animating the Record Widget as soon as
   // the needle animation is completed.
   void _startRecordAnimation(AnimationStatus status) {
-    if (status == AnimationStatus.completed) recordAnimCtrl?.repeat();
-    if (status == AnimationStatus.reverse) recordAnimCtrl?.stop();
+    if (status == AnimationStatus.completed) {
+      _recordAnimCtrl?.repeat();
+    }
+
+    if (status == AnimationStatus.reverse) {
+      _recordAnimCtrl?.stop();
+    }
   }
 
   @override
   void dispose() {
     _needleAnimCtrl?.dispose();
-    recordAnimCtrl?.dispose();
+    _recordAnimCtrl?.dispose();
     super.dispose();
   }
 
@@ -233,7 +238,7 @@ class _CurrentPlayingPageState extends State<PostMusicPage>
 
   Widget _buildRecordWidget(String imagePath) {
     return RotationTransition(
-      turns: recordAnimCtrl!,
+      turns: _recordAnimCtrl!,
       child: Container(
         width: MediaQuery.of(context).size.width,
         alignment: Alignment.center,

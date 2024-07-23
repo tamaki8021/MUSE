@@ -10,12 +10,12 @@ class SongListClipper extends CustomClipper<Path> {
   /// Draw a square clip shape
   @override
   Path getClip(Size size) {
-    final path = Path();
-    path.moveTo(size.width / 2 - screenWidth / 2 + padding, 0);
-    path.lineTo(size.width / 2 - screenWidth / 2 + padding, size.height);
-    path.lineTo(size.width / 2 + screenWidth / 2 - padding, size.height);
-    path.lineTo(size.width / 2 + screenWidth / 2 - padding, 0);
-    path.close();
+    final path = Path()
+      ..moveTo(size.width / 2 - screenWidth / 2 + padding, 0)
+      ..lineTo(size.width / 2 - screenWidth / 2 + padding, size.height)
+      ..lineTo(size.width / 2 + screenWidth / 2 - padding, size.height)
+      ..lineTo(size.width / 2 + screenWidth / 2 - padding, 0)
+      ..close();
 
     return path;
   }
