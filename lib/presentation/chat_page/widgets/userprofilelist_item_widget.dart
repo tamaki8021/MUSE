@@ -33,7 +33,7 @@ class UserprofilelistItemWidget extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     CustomImageView(
-                      imagePath: ImageConstant.imgEllipse3056x56,
+                      imagePath: ImageConstant.imageNotFound,
                       height: 56.adaptSize,
                       width: 56.adaptSize,
                       radius: BorderRadius.circular(

@@ -75,7 +75,7 @@ class ChatPageState extends ConsumerState<ChatPage> {
       ),
       actions: [
         AppbarTrailingImage(
-          imagePath: ImageConstant.imgUser,
+          imagePath: ImageConstant.imageNotFound,
           margin: EdgeInsets.symmetric(
             horizontal: 24.h,
             vertical: 4.h,

@@ -69,8 +69,7 @@ class UserImageRow extends StatelessWidget {
                     left: index * 40.0, // 画像を少し重ねる
                     child: CircleAvatar(
                       radius: 30,
-                      backgroundImage:
-                          AssetImage(ImageConstant.imgEllipse2348x48),
+                      backgroundImage: AssetImage(ImageConstant.imageNotFound),
                     ),
                   );
                 }),

@@ -52,6 +52,14 @@ final Map<String, String> enUs = {
   'lbl_tobey': 'Tobey',
   'lbl_tobey_cohan': 'Tobey Cohan',
 
+  // post Screen
+  'lbl_post_music': 'Post',
+  'lbl_choose_post_comment':
+      'You can choose from the 10 songs you recently listened to.',
+  'lbl_play': 'Play',
+  'lbl_stop': 'Stop',
+  'lbl_POST': 'POST',
+
   // Common String
   'lbl_dianne': 'Dianne', 'lbl_muse': 'MUSE', 'lbl_street_pass': 'Street Pass',
 

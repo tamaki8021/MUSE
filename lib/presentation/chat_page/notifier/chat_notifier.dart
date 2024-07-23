@@ -15,60 +15,60 @@ final chatNotifier = StateNotifierProvider<ChatNotifier, ChatState>(
       chatModelObj: ChatModel(
         userprofilelistItemList: [
           UserprofilelistItemModel(
-            userImage2: ImageConstant.imgImage48x48,
+            userImage2: ImageConstant.imageNotFound,
             userName: 'Tobey',
           ),
           UserprofilelistItemModel(
-            userImage2: ImageConstant.imgRectangle2048x48,
+            userImage2: ImageConstant.imageNotFound,
             userName: 'Lauren',
           ),
           UserprofilelistItemModel(
-            userImage2: ImageConstant.imgImage1,
+            userImage2: ImageConstant.imageNotFound,
             userName: 'Rueesll',
           ),
           UserprofilelistItemModel(
-            userImage2: ImageConstant.imgRectangle5248x48,
+            userImage2: ImageConstant.imageNotFound,
             userName: 'Dianne',
           ),
           UserprofilelistItemModel(
-            userImage2: ImageConstant.imgRectangle23,
+            userImage2: ImageConstant.imageNotFound,
             userName: 'Marvin',
           ),
           UserprofilelistItemModel(userName: 'Ralph'),
         ],
         userprofilelist1ItemList: [
           Userprofilelist1ItemModel(
-            userImage: ImageConstant.imgRectangle5248x48,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Dianne Russell',
             timeAgo: '12 min ago',
           ),
           Userprofilelist1ItemModel(
-            userImage: ImageConstant.imgRectangle23,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Marvin McKinney',
             timeAgo: '42 min ago',
           ),
           Userprofilelist1ItemModel(
-            userImage: ImageConstant.imgRectangle522,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Ralph Edwards',
             timeAgo: '21 min ago',
           ),
           Userprofilelist1ItemModel(
-            userImage: ImageConstant.imgRectangle2048x48,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Lauren Edwards',
             timeAgo: '43 min ago',
           ),
           Userprofilelist1ItemModel(
-            userImage: ImageConstant.imgEllipse2348x48,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Dianne Russell',
             timeAgo: '22 min ago',
           ),
           Userprofilelist1ItemModel(
-            userImage: ImageConstant.imgRectangle523,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Tobey Cohan',
             timeAgo: '42 min ago',
           ),
           Userprofilelist1ItemModel(
-            userImage: ImageConstant.imgRectangle522,
+            userImage: ImageConstant.imageNotFound,
             userName: 'Jenny Ross',
             timeAgo: '50 min ago',
           ),

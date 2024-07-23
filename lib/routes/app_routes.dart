@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 // Project imports:
 import 'package:muse/presentation/main_app_navigator.dart';
+import 'package:muse/presentation/post_music_page/post_music_page.dart';
 import 'package:muse/presentation/profile_edit_page/profile_edit_pade.dart';
 import 'package:muse/presentation/street_pass_screen/street_pass_screen.dart';
 
@@ -28,6 +29,7 @@ class AppRoutes {
     activityPage: (context) => const MainAppNavigator(),
     profileEditPage: (context) => const ProfileEditPage(),
     // chatPage: (context) => const ChatPage(),
+    postPage: (context) => const PostMusicPage(),
     streetPassScreen: (context) => const StreetPassScreen(),
   };
 }
