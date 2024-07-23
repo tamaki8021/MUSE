@@ -102,10 +102,11 @@ class ProfileEditPage extends StatelessWidget {
       ),
       leadingWidth: 10,
       leading: const IconButton(
-        color: Colors.white,
-        icon: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
+        icon: CustomGradientMask(
+          child: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
         ),
         onPressed: NavigatorService.goBack,
       ),
