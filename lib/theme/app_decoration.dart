@@ -14,6 +14,10 @@ class AppDecoration {
   static BoxDecoration get fillGray900 => BoxDecoration(
         color: appTheme.gray900,
       );
+  static BoxDecoration get fillGray90001Circle20 => BoxDecoration(
+        color: appTheme.gray90001,
+        borderRadius: BorderRadius.circular(20.adaptSize),
+      );
 
   // Gradient decorations
   static BoxDecoration get gradientProfileImageBg => BoxDecoration(
