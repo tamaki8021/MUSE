@@ -1,5 +1,4 @@
 // Dart imports:
-import 'dart:async';
 
 // Flutter imports:
 import 'package:flutter/material.dart';
@@ -21,8 +20,7 @@ class SongController extends HookConsumerWidget {
   }) : super(key: key);
 
   final bool isPlaying;
-  // ignore: avoid_positional_boolean_parameters
-  final FutureOr<void> Function(bool)? onChanged;
+  final ValueChanged<bool> onChanged;
   final VoidCallback onSkipPreviousAction;
   final VoidCallback onSkipNextAction;
 
