@@ -60,8 +60,17 @@ final Map<String, String> enUs = {
   'lbl_stop': 'Stop',
   'lbl_POST': 'POST',
 
+  // activity Screen
+  'lbl_activity': 'Activity',
+  'lbl_follows': 'follows',
+  'lbl_music': 'music',
+  'lbl_notifications': 'notifications',
+  'lbl_follow_message': 'Followed you',
+
   // Common String
-  'lbl_dianne': 'Dianne', 'lbl_muse': 'MUSE', 'lbl_street_pass': 'Street Pass',
+  'lbl_muse': 'MUSE',
+  'lbl_following': 'Following',
+  'lbl_follow_back': 'Follow back',
 
   // Network Error String
   'msg_network_err': 'Network Error',
