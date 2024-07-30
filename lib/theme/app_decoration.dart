@@ -79,6 +79,14 @@ class AppDecoration {
           width: 0.5.adaptSize,
         ),
       );
+
+  static BoxDecoration get outlineBottomWhite => BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: appTheme.white.withOpacity(0.2),
+          ),
+        ),
+      );
 }
 
 class InputBorderStyle {
@@ -100,6 +108,12 @@ class InputBorderStyle {
           color: theme.primaryColor,
         ),
         borderRadius: BorderRadius.circular(10),
+      );
+
+  static InputBorder get outLinedBottomBorder => UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: appTheme.white.withOpacity(0.5),
+        ),
       );
 }
 

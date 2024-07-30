@@ -97,122 +97,126 @@ class PostMusicPageState extends State<PostMusicPage>
           extendBodyBehindAppBar: true,
           backgroundColor: Colors.transparent,
           appBar: _buildAppBar(),
-          body: DecoratedBox(
-            decoration: AppDecoration.gradientBackground,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+          body: _buildBody(),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBody() {
+    return DecoratedBox(
+      decoration: AppDecoration.gradientBackground,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Spacer(),
+          SizedBox(
+            height: 35.h,
+            child: Stack(
+              fit: StackFit.expand,
               children: [
-                const Spacer(),
-                SizedBox(
-                  height: 35.h,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      PageView.builder(
-                        controller: _pageController,
-                        itemCount: recordList.length,
-                        itemBuilder: (context, index) => _buildRecordWidget(
-                          recordList[index],
-                        ),
-                        onPageChanged: (index) {
-                          setState(() {
-                            currentRecordIndex = index;
-                          });
-                          if (isPlaying) {
-                            _needleAnimCtrl?.reverse();
-                            setState(() {
-                              isPlaying = !isPlaying;
-                            });
-                          }
-                        },
-                      ),
-                      _buildNeedleWidget(),
-                    ],
+                PageView.builder(
+                  controller: _pageController,
+                  itemCount: recordList.length,
+                  itemBuilder: (context, index) => _buildRecordWidget(
+                    recordList[index],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 1.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(right: 2.h),
-                        child: Icon(
-                          AppIcons.arrowsRight,
-                          color: appTheme.white,
-                          size: 5.fSize,
-                        ),
-                      ),
-                      SizedBox(height: 1.h),
-                      CustomText(
-                        text: 'lbl_choose_post_comment'.tr,
-                        style: CustomTextStyles.bodySmallWhite.copyWith(
-                          fontSize: 3.fSize,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 3.h),
-                Padding(
-                  padding: EdgeInsets.all(1.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: 'IDOL',
-                        style: CustomTextStyles.labelSmallInter.copyWith(
-                          fontSize: 7.fSize,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      CustomText(
-                        text: 'アーティスト名',
-                        style: CustomTextStyles.bodySmallGray500.copyWith(
-                          fontSize: 5.fSize,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SongController(
-                  isPlaying: isPlaying,
-                  onChanged: (p0) {
+                  onPageChanged: (index) {
                     setState(() {
-                      isPlaying = !isPlaying;
+                      currentRecordIndex = index;
                     });
                     if (isPlaying) {
-                      _needleAnimCtrl?.forward();
-                    } else {
                       _needleAnimCtrl?.reverse();
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
                     }
                   },
-                  onSkipNextAction: _changeToNextRecord,
-                  onSkipPreviousAction: _changeToPreviousRecord,
                 ),
-                const Spacer(),
-                OutlineGradientButton(
-                  gradient: AppDecoration.appGradient.gradient!,
-                  padding: EdgeInsets.all(2.h),
-                  strokeWidth: 1,
-                  radius: const Radius.circular(10),
-                  child: Center(
-                    child: CustomText(
-                      text: 'lbl_POST'.tr,
-                      isGradient: true,
-                      style: CustomTextStyles.bodySmallWhite
-                          .copyWith(fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
-                const Spacer(),
+                _buildNeedleWidget(),
               ],
             ),
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 1.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(right: 2.h),
+                  child: Icon(
+                    AppIcons.arrowsRight,
+                    color: appTheme.white,
+                    size: 5.fSize,
+                  ),
+                ),
+                SizedBox(height: 1.h),
+                CustomText(
+                  text: 'lbl_choose_post_comment'.tr,
+                  style: CustomTextStyles.bodySmallWhite.copyWith(
+                    fontSize: 3.fSize,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 3.h),
+          Padding(
+            padding: EdgeInsets.all(1.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomText(
+                  text: 'IDOL',
+                  style: CustomTextStyles.labelSmallInter.copyWith(
+                    fontSize: 7.fSize,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                CustomText(
+                  text: 'アーティスト名',
+                  style: CustomTextStyles.bodySmallGray500.copyWith(
+                    fontSize: 5.fSize,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SongController(
+            isPlaying: isPlaying,
+            onChanged: (p0) {
+              setState(() {
+                isPlaying = !isPlaying;
+              });
+              if (isPlaying) {
+                _needleAnimCtrl?.forward();
+              } else {
+                _needleAnimCtrl?.reverse();
+              }
+            },
+            onSkipNextAction: _changeToNextRecord,
+            onSkipPreviousAction: _changeToPreviousRecord,
+          ),
+          const Spacer(),
+          OutlineGradientButton(
+            gradient: AppDecoration.appGradient.gradient!,
+            padding: EdgeInsets.all(2.h),
+            strokeWidth: 1,
+            radius: const Radius.circular(10),
+            child: Center(
+              child: CustomText(
+                text: 'lbl_POST'.tr,
+                isGradient: true,
+                style: CustomTextStyles.bodySmallWhite
+                    .copyWith(fontWeight: FontWeight.w600),
+              ),
+            ),
+          ),
+          const Spacer(),
+        ],
       ),
     );
   }
