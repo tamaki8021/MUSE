@@ -4,3 +4,4 @@ include: package:pedantic_mono/analysis_options.yaml
 linter:
   rules:
     directives_ordering: false
+    flutter_style_todos: false
