@@ -67,6 +67,12 @@ final Map<String, String> enUs = {
   'lbl_notifications': 'notifications',
   'lbl_follow_message': 'Followed you',
 
+  // sign in Screen
+  'lbl_welcome_to_muse': 'Welcome to MUSE',
+  'msg_welcome': 'A fresh music experience born of discovery, connection, fun, '
+      'and serendipity.',
+  'lbl_sign_in_with_spotify': 'Continue with Spotify',
+
   // Common String
   'lbl_muse': 'MUSE',
   'lbl_following': 'Following',
