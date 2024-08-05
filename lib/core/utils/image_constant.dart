@@ -41,4 +41,6 @@ class ImageConstant {
 
   // Common images
   static String imageNotFound = 'assets/images/image_not_found.png';
+
+  static String imageMuseLogo = '$imagePath/muse_logo.png';
 }
