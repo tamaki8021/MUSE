@@ -6,9 +6,6 @@ import 'package:muse/core/app_export.dart';
 import 'package:muse/presentation/activity_page/widgets/column_title_two.dart';
 import 'package:muse/widgets/followed_button.dart';
 
-// Package imports:
-
-
 class FollowedItem extends StatelessWidget {
   const FollowedItem({
     Key? key,
