@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:muse/presentation/main_app_navigator.dart';
 import 'package:muse/presentation/post_music_page/post_music_page.dart';
 import 'package:muse/presentation/profile_edit_page/profile_edit_pade.dart';
+import 'package:muse/presentation/sign_in_page/sign_in_page.dart';
 import 'package:muse/presentation/street_pass_screen/street_pass_screen.dart';
 
 class AppRoutes {
@@ -23,7 +24,7 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> routes = {
     root: (context) => const MainAppNavigator(),
-    initialRoute: (context) => const MainAppNavigator(),
+    initialRoute: (context) => const SignInPage(),
     homePage: (context) => const MainAppNavigator(),
     profilePage: (context) => const MainAppNavigator(),
     activityPage: (context) => const MainAppNavigator(),
