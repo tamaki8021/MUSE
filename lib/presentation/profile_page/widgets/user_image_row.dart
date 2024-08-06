@@ -41,6 +41,8 @@ class UserImageRow extends StatelessWidget {
                   decoration: AppDecoration.outlineWhite.copyWith(
                     borderRadius: BorderRadiusStyle.roundedBorder10,
                   ),
+                  onTap: () =>
+                      NavigatorService.pushNamed(AppRoutes.friendsPage),
                   child: Row(
                     children: [
                       CustomText(
