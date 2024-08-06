@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
+import 'package:muse/presentation/friend_page/friend_page.dart';
 import 'package:muse/presentation/main_app_navigator.dart';
 import 'package:muse/presentation/post_music_page/post_music_page.dart';
 import 'package:muse/presentation/profile_edit_page/profile_edit_pade.dart';
@@ -19,6 +20,7 @@ class AppRoutes {
   static const String chatPage = '/chat_page';
   static const String activityPage = '/activity_page';
   static const String profileEditPage = '/profile_edit_page';
+  static const String friendsPage = '/friends_page';
 
   static const String streetPassScreen = '/street_pass_screen';
 
@@ -31,6 +33,7 @@ class AppRoutes {
     profileEditPage: (context) => const ProfileEditPage(),
     // chatPage: (context) => const ChatPage(),
     postPage: (context) => const PostMusicPage(),
+    friendsPage: (context) => const FriendPage(),
     streetPassScreen: (context) => const StreetPassScreen(),
   };
 }
