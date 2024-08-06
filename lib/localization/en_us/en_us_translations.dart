@@ -33,25 +33,6 @@ final Map<String, String> enUs = {
   'validator_mes_bio_is_empty': 'Please enter your bio',
   'validator_mes_bio_length': 'Bio must be less than 200 characters',
 
-  // chat Screen
-  'lbl_12_min_ago': '12 min ago',
-  'lbl_21_min_ago': '21 min ago',
-  'lbl_22_min_ago': '22 min ago',
-  'lbl_42_min_ago': '42 min ago',
-  'lbl_43_min_ago': '43 min ago',
-  'lbl_50_min_ago': '50 min ago',
-  'lbl_dianne_russell': 'Dianne Russell',
-  'lbl_jenny_ross': 'Jenny Ross',
-  'lbl_lauren': 'Lauren',
-  'lbl_lauren_edwards': 'Lauren Edwards',
-  'lbl_marvin': 'Marvin',
-  'lbl_marvin_mckinney': 'Marvin McKinney',
-  'lbl_ralph': 'Ralph',
-  'lbl_ralph_edwards': 'Ralph Edwards',
-  'lbl_rueesll': 'Rueesll',
-  'lbl_tobey': 'Tobey',
-  'lbl_tobey_cohan': 'Tobey Cohan',
-
   // post Screen
   'lbl_post_music': 'Post',
   'lbl_choose_post_comment':
@@ -72,6 +53,9 @@ final Map<String, String> enUs = {
   'msg_welcome': 'A fresh music experience born of discovery, connection, fun, '
       'and serendipity.',
   'lbl_sign_in_with_spotify': 'Continue with Spotify',
+
+  // frends Screen
+  'lbl_frends': 'Frends',
 
   // Common String
   'lbl_muse': 'MUSE',
