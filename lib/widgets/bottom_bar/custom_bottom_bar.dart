@@ -54,7 +54,7 @@ class CustomBottomBar extends StatelessWidget {
                 icon: bottomBar.icon,
                 isSelected: getCurrentRoute(bottomBar.type) == currentRoute,
                 onPressed: () {
-                  NavigatorService.pushNamed(
+                  NavigatorService.pushNamedNoAnimation(
                     getCurrentRoute(bottomBar.type),
                   );
                 },
