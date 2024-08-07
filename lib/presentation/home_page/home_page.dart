@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 // Project imports:
 import 'package:muse/core/app_export.dart';
+import 'package:muse/widgets/bottom_bar/custom_bottom_bar.dart';
 import 'models/userprofile_item_model.dart';
 import 'notifier/home_notifier.dart';
 import 'widgets/circle_progress_bar_painter.dart';
@@ -49,6 +50,7 @@ class HomePageState extends ConsumerState<HomePage>
         backgroundColor: Colors.transparent,
         appBar: _buildAppBar(context),
         body: _buildBody(context),
+        bottomNavigationBar: const CustomBottomBar(),
       ),
     );
   }

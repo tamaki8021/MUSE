@@ -10,6 +10,7 @@ import 'package:muse/core/app_export.dart';
 import 'package:muse/presentation/activity_page/widgets/custom_chip.dart';
 import 'package:muse/presentation/activity_page/widgets/followed_item.dart';
 import 'package:muse/presentation/activity_page/widgets/notification_item.dart';
+import 'package:muse/widgets/bottom_bar/custom_bottom_bar.dart';
 
 class ActivityPage extends HookConsumerWidget {
   const ActivityPage({Key? key}) : super(key: key);
@@ -22,6 +23,7 @@ class ActivityPage extends HookConsumerWidget {
         backgroundColor: Colors.transparent,
         appBar: _buildAppBar(context),
         body: _buildBody(context),
+        bottomNavigationBar: const CustomBottomBar(),
       ),
     );
   }
@@ -45,7 +47,7 @@ class ActivityPage extends HookConsumerWidget {
                     (context, index) {
                       return _buildActivityItem(index);
                     },
-                    childCount: 10,
+                    childCount: 20,
                   ),
                 ),
               ],

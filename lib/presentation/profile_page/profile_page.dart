@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import 'package:muse/core/app_export.dart';
+import 'package:muse/widgets/bottom_bar/custom_bottom_bar.dart';
 import 'package:muse/widgets/custom_tab_bar.dart';
 import 'widgets/music_cover_grid_view.dart';
 import 'widgets/user_image_row.dart';
@@ -22,6 +23,7 @@ class ProfilePage extends HookConsumerWidget {
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
         appBar: _buildAppBar(context),
+        bottomNavigationBar: const CustomBottomBar(),
         body: Container(
           width: SizeUtils.width,
           height: SizeUtils.height,
