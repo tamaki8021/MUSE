@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -20,6 +21,18 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // firebaseのエミュレーターを使う場合
+  if (kDebugMode) {
+    try {
+      //  FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
+      //  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+      // ignore: avoid_catches_without_on_clauses
+    } catch (e) {
+      // ignore: avoid_print
+      print(e);
+    }
+  }
 
   await Future.wait([
     SystemChrome.setPreferredOrientations([

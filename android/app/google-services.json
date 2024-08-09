@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "980095994892",
-    "project_id": "muse-dev-e029c",
-    "storage_bucket": "muse-dev-e029c.appspot.com"
+    "project_number": "42495318910",
+    "project_id": "muse-dev-3e04e",
+    "storage_bucket": "muse-dev-3e04e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:980095994892:android:4a5c890b15546565327229",
+        "mobilesdk_app_id": "1:42495318910:android:b30d55af39245b1026712f",
         "android_client_info": {
           "package_name": "com.muse.app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDBBpGg-n0KgDbFT6YbXuDCZ23q0pyf7Tg"
+          "current_key": "AIzaSyD6J6lw1l4zQEiAJLNM-1MkgYaGfbCTJI0"
         }
       ],
       "services": {

@@ -53,19 +53,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDBBpGg-n0KgDbFT6YbXuDCZ23q0pyf7Tg',
-    appId: '1:980095994892:android:4a5c890b15546565327229',
-    messagingSenderId: '980095994892',
-    projectId: 'muse-dev-e029c',
-    storageBucket: 'muse-dev-e029c.appspot.com',
+    apiKey: 'AIzaSyD6J6lw1l4zQEiAJLNM-1MkgYaGfbCTJI0',
+    appId: '1:42495318910:android:b30d55af39245b1026712f',
+    messagingSenderId: '42495318910',
+    projectId: 'muse-dev-3e04e',
+    storageBucket: 'muse-dev-3e04e.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCKNKW0tsC_tQ7bksb0NhJyQqd9_qGA4tQ',
-    appId: '1:980095994892:ios:d24b83b0b4e4f590327229',
-    messagingSenderId: '980095994892',
-    projectId: 'muse-dev-e029c',
-    storageBucket: 'muse-dev-e029c.appspot.com',
-    iosBundleId: 'com.muse.app',
+    apiKey: 'AIzaSyB-vfkMFhJdQBUsAHaJ6ncGhht3zysazeU',
+    appId: '1:42495318910:ios:4588a5ff9968fe6326712f',
+    messagingSenderId: '42495318910',
+    projectId: 'muse-dev-3e04e',
+    storageBucket: 'muse-dev-3e04e.appspot.com',
+    iosBundleId: 'com.muse.muse',
   );
 }
