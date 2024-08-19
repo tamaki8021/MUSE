@@ -1,6 +1,11 @@
 # パッケージのREADMEに記載のデフォルトはこちらの厳しいルール
 include: package:pedantic_mono/analysis_options.yaml
 
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+
 linter:
   rules:
     directives_ordering: false
