@@ -9,8 +9,6 @@ export 'package:muse/core/utils/image_constant.dart';
 export 'package:muse/core/utils/navigator_service.dart';
 export 'package:muse/core/utils/pref_utils.dart';
 export 'package:muse/core/utils/size_utils.dart';
-// datas
-export 'package:muse/data/models/selectionPopupModel/selection_popup_model.dart';
 // localizations
 export 'package:muse/localization/app_localization.dart';
 // routes
