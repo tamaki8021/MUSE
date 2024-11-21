@@ -8,10 +8,10 @@ import 'package:muse/core/app_export.dart';
 
 class RecordWidget extends StatelessWidget {
   const RecordWidget({
-    Key? key,
+    super.key,
     required this.diameter,
     required this.imagePath,
-  }) : super(key: key);
+  });
 
   final double diameter;
   final String imagePath;

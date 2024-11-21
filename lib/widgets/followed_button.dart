@@ -9,9 +9,9 @@ import 'package:muse/core/app_export.dart';
 
 class FollowedButton extends StatelessWidget {
   const FollowedButton({
-    Key? key,
+    super.key,
     this.isFollowing = false,
-  }) : super(key: key);
+  });
 
   final bool isFollowing;
 

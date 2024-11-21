@@ -44,5 +44,5 @@ final streetPassNotifier =
 /// A notifier that manages the state of a StreetPass according to
 /// the event that is dispatched to it.
 class StreetPassNotifier extends StateNotifier<StreetPassState> {
-  StreetPassNotifier(StreetPassState state) : super(state);
+  StreetPassNotifier(super.state);
 }

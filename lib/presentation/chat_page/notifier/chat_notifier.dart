@@ -81,5 +81,5 @@ final chatNotifier = StateNotifierProvider<ChatNotifier, ChatState>(
 /// A notifier that manages the state of a Chat according
 /// to the event that is dispatched to it.
 class ChatNotifier extends StateNotifier<ChatState> {
-  ChatNotifier(ChatState state) : super(state);
+  ChatNotifier(super.state);
 }

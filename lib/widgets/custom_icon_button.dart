@@ -6,7 +6,7 @@ import 'package:muse/core/app_export.dart';
 
 class CustomIconButton extends StatelessWidget {
   const CustomIconButton({
-    Key? key,
+    super.key,
     this.alignment,
     this.height,
     this.width,
@@ -15,9 +15,7 @@ class CustomIconButton extends StatelessWidget {
     this.child,
     this.onTap,
     this.isBorderGradient = false,
-  }) : super(
-          key: key,
-        );
+  });
 
   final Alignment? alignment;
 

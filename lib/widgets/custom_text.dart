@@ -6,13 +6,13 @@ import 'package:muse/widgets/custom_gradient_mask.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({
-    Key? key,
+    super.key,
     required this.text,
     this.isGradient = false,
     this.style,
     this.textAlign,
     this.gradient,
-  }) : super(key: key);
+  });
   final String text;
   final TextStyle? style;
   final TextAlign? textAlign;

@@ -8,12 +8,12 @@ import 'package:muse/widgets/followed_button.dart';
 
 class FollowedItem extends StatelessWidget {
   const FollowedItem({
-    Key? key,
+    super.key,
     required this.name,
     required this.time,
     required this.imagePath,
     this.isFollowing = false,
-  }) : super(key: key);
+  });
 
   final String name;
   final String time;

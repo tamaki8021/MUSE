@@ -10,16 +10,14 @@ export 'appbar_trailing_image.dart';
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
-    Key? key,
+    super.key,
     this.height,
     this.leadingWidth,
     this.leading,
     this.title,
     this.centerTitle,
     this.actions,
-  }) : super(
-          key: key,
-        );
+  });
 
   final double? height;
 

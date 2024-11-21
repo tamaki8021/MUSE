@@ -11,10 +11,7 @@ import 'notifier/chat_notifier.dart';
 
 // ignore_for_file: must_be_immutable
 class ChatPage extends ConsumerStatefulWidget {
-  const ChatPage({Key? key})
-      : super(
-          key: key,
-        );
+  const ChatPage({super.key});
 
   @override
   ChatPageState createState() => ChatPageState();

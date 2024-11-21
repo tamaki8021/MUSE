@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:muse/core/app_export.dart';
 
 class UserInfo extends StatelessWidget {
-  const UserInfo({Key? key}) : super(key: key);
+  const UserInfo({super.key});
 
   @override
   Widget build(BuildContext context) {

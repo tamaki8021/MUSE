@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:muse/core/app_export.dart';
 
 class NeedleWidget extends StatelessWidget {
-  const NeedleWidget({Key? key, required this.size}) : super(key: key);
+  const NeedleWidget({super.key, required this.size});
 
   final double size;
 

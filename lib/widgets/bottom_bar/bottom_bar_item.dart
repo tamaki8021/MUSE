@@ -6,11 +6,11 @@ import 'package:muse/core/app_export.dart';
 
 class BottomBarItem extends StatelessWidget {
   const BottomBarItem({
-    Key? key,
+    super.key,
     required this.icon,
     required this.isSelected,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final IconData icon;
   final bool isSelected;

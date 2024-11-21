@@ -6,10 +6,10 @@ import 'package:muse/core/app_export.dart';
 
 class CustomGradientMask extends StatelessWidget {
   const CustomGradientMask({
-    Key? key,
+    super.key,
     required this.child,
     this.gradient,
-  }) : super(key: key);
+  });
   final Widget child;
   final Gradient? gradient;
 

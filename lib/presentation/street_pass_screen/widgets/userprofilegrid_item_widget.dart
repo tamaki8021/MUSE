@@ -9,10 +9,8 @@ import '../models/userprofilegrid_item_model.dart';
 class UserprofilegridItemWidget extends StatelessWidget {
   UserprofilegridItemWidget(
     this.userprofilegridItemModelObj, {
-    Key? key,
-  }) : super(
-          key: key,
-        );
+    super.key,
+  });
 
   UserprofilegridItemModel userprofilegridItemModelObj;
 

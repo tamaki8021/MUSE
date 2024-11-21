@@ -39,6 +39,10 @@ After successful build, your application structure should look like this:
     │   ├── app_export.dart         - It contains commonly used file imports
     │   ├── constants               - It contains static constant class file
     │   └── utils                   - It contains common files and utilities of the application
+    ├── data
+    │   ├── models                  - It contains data models
+    │   ├── providers               - It contains state management and business logic
+    │   ├── repositories            - It contains API calls and data repositories
     ├── presentation                - It contains widgets of the screens 
     ├── routes                      - It contains all the routes of the application
     └── theme                       - It contains app theme and decoration classes

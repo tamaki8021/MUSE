@@ -10,7 +10,7 @@ import 'package:muse/widgets/custom_input_image.dart';
 import 'package:muse/widgets/custom_text_form_field.dart';
 
 class ProfileEditPage extends StatelessWidget {
-  const ProfileEditPage({Key? key}) : super(key: key);
+  const ProfileEditPage({super.key});
 
   @override
   Widget build(BuildContext context) {

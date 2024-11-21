@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class MusicCoverGridView extends StatelessWidget {
-  const MusicCoverGridView({Key? key}) : super(key: key);
+  const MusicCoverGridView({super.key});
 
   @override
   Widget build(BuildContext context) {

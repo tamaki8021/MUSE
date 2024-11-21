@@ -2,7 +2,7 @@ name: muse
 description: muse mobile application
 version: 1.0.0+1
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 dependencies:
   animated_toggle_switch: ^0.8.2
   cached_network_image: ^3.3.0
@@ -23,7 +23,9 @@ dependencies:
   hooks_riverpod: ^2.4.9
   image_picker: ^1.0.8
   intl: ^0.18.1
+  json_annotation: ^4.9.0
   outline_gradient_button: ^2.0.1+1
+  riverpod_annotation: ^2.6.1
   shared_preferences: ^2.2.2
 
 dev_dependencies:
@@ -36,6 +38,10 @@ dev_dependencies:
   import_sorter: ^4.6.0
   json_serializable: ^6.8.0
   pedantic_mono: any
+  riverpod_generator: ^2.4.0
+  riverpod_lint: ^2.3.10
+
+
 flutter:
   uses-material-design: true
   assets:

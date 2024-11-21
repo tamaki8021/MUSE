@@ -6,12 +6,12 @@ import 'package:muse/core/app_export.dart';
 
 class CustomChip extends StatelessWidget {
   const CustomChip({
-    Key? key,
+    super.key,
     required this.iconData,
     required this.label,
     required this.isSelected,
     required this.onSelected,
-  }) : super(key: key);
+  });
 
   final IconData iconData;
   final String label;

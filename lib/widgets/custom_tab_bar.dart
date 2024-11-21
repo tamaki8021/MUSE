@@ -6,10 +6,10 @@ import 'package:muse/core/app_export.dart';
 
 class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomTabBar({
-    Key? key,
+    super.key,
     required this.rightLabel,
     required this.leftLabel,
-  }) : super(key: key);
+  });
 
   final String rightLabel;
   final String leftLabel;

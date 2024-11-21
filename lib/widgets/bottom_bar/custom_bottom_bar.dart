@@ -14,7 +14,7 @@ enum BottomBarEnum {
 }
 
 class CustomBottomBar extends StatelessWidget {
-  const CustomBottomBar({Key? key}) : super(key: key);
+  const CustomBottomBar({super.key});
 
   @override
   Widget build(BuildContext context) {

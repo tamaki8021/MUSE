@@ -10,7 +10,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CustomInputImage extends HookConsumerWidget {
-  const CustomInputImage({Key? key, this.radius = 60}) : super(key: key);
+  const CustomInputImage({super.key, this.radius = 60});
 
   final double radius;
 

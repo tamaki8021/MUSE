@@ -13,7 +13,7 @@ abstract class FirebaseAuthRepository {
 }
 
 final firebaseAuthRepositoryProvider = Provider<FirebaseAuthRepositoryImpl>(
-  (ref) => FirebaseAuthRepositoryImpl(ref),
+  FirebaseAuthRepositoryImpl.new,
 );
 
 class FirebaseAuthRepositoryImpl implements FirebaseAuthRepository {

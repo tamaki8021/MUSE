@@ -32,5 +32,5 @@ final homeNotifier = StateNotifierProvider<HomeNotifier, HomeState>(
 /// A notifier that manages the state of a Home according
 /// to the event that is dispatched to it.
 class HomeNotifier extends StateNotifier<HomeState> {
-  HomeNotifier(HomeState state) : super(state);
+  HomeNotifier(super.state);
 }
