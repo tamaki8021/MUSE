@@ -1,14 +1,20 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 // Project imports:
 import 'package:muse/core/app_export.dart';
+import 'package:muse/data/providers/user_provider.dart';
 
-class UserInfo extends StatelessWidget {
+class UserInfo extends HookConsumerWidget {
   const UserInfo({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final user = ref.watch(userProvider);
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 3.h),
       child: Column(
@@ -17,20 +23,20 @@ class UserInfo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildLabelAndNumber('lbl_my_posts'.tr, 10),
-              _buildProfileImage(),
+              _buildProfileImage(user.profileImageUrl),
               _buildLabelAndNumber('lbl_favorites'.tr, 4),
             ],
           ),
           SizedBox(height: 1.h),
           Text(
-            'lbl_eleanor_mena'.tr,
+            user.name,
             style: CustomTextStyles.bodySmallWhite.copyWith(
               fontSize: 5.fSize,
               fontWeight: FontWeight.w700,
             ),
           ),
           Text(
-            'msg_sometimes_i_cook'.tr,
+            user.bio,
             style: CustomTextStyles.bodySmallWhite.copyWith(
               fontSize: 4.fSize,
               fontWeight: FontWeight.w500,
@@ -41,7 +47,7 @@ class UserInfo extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileImage() {
+  Widget _buildProfileImage(String profileImageUrl) {
     return SizedBox(
       height: 13.h,
       width: 14.h,
@@ -55,7 +61,9 @@ class UserInfo extends StatelessWidget {
             alignment: Alignment.center,
           ),
           CustomImageView(
-            imagePath: ImageConstant.imageNotFound,
+            imagePath: profileImageUrl.isEmpty
+                ? ImageConstant.imageNotFound
+                : profileImageUrl,
             height: 9.h,
             width: 9.h,
             fit: BoxFit.cover,

@@ -6,7 +6,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import 'package:muse/core/app_export.dart';
-import 'package:muse/data/providers/user_provider.dart';
 import 'package:muse/widgets/bottom_bar/custom_bottom_bar.dart';
 import 'package:muse/widgets/custom_tab_bar.dart';
 import 'widgets/music_cover_grid_view.dart';
@@ -18,9 +17,6 @@ class ProfilePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final user = ref.watch(userProvider);
-    print(user.name);
-
     return SafeArea(
       child: Scaffold(
         extendBody: true,
