@@ -13,3 +13,4 @@ linter:
   rules:
     directives_ordering: false
     flutter_style_todos: false
+    matching_super_parameters: false
