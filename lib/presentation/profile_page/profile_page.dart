@@ -9,8 +9,8 @@ import 'package:muse/core/app_export.dart';
 import 'package:muse/widgets/bottom_bar/custom_bottom_bar.dart';
 import 'package:muse/widgets/custom_tab_bar.dart';
 import 'widgets/music_cover_grid_view.dart';
+import 'widgets/profile_info.dart';
 import 'widgets/user_image_row.dart';
-import 'widgets/user_info.dart';
 
 class ProfilePage extends HookConsumerWidget {
   const ProfilePage({super.key});
@@ -56,7 +56,7 @@ class ProfilePage extends HookConsumerWidget {
     return SliverList(
       delegate: SliverChildListDelegate(
         [
-          const UserInfo(),
+          const ProfileInfo(),
           UserImageRow(label: 'lbl_friends'.tr),
         ],
       ),

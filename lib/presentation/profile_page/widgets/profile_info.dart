@@ -8,8 +8,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:muse/core/app_export.dart';
 import 'package:muse/data/providers/user_provider.dart';
 
-class UserInfo extends HookConsumerWidget {
-  const UserInfo({super.key});
+class ProfileInfo extends HookConsumerWidget {
+  const ProfileInfo({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
