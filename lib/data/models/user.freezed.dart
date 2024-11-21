@@ -20,11 +20,23 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  int get id => throw _privateConstructorUsedError;
+  /// Firestore上のユーザーID（ドキュメントID）
+  String get userId => throw _privateConstructorUsedError;
+
+  /// ユーザー名
   String get name => throw _privateConstructorUsedError;
+
+  /// ユーザーの自己紹介文
   String get bio => throw _privateConstructorUsedError;
+
+  /// プロフィール画像のURL
   String get profileImageUrl => throw _privateConstructorUsedError;
-  int get postCount => throw _privateConstructorUsedError;
+
+  /// ユーザー作成日時
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+
+  /// 最後にユーザー情報が更新された日時
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +49,12 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {int id, String name, String bio, String profileImageUrl, int postCount});
+      {String userId,
+      String name,
+      String bio,
+      String profileImageUrl,
+      DateTime? createdAt,
+      DateTime? updatedAt});
 }
 
 /// @nodoc
@@ -53,17 +70,18 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? userId = null,
     Object? name = null,
     Object? bio = null,
     Object? profileImageUrl = null,
-    Object? postCount = null,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -76,10 +94,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.profileImageUrl
           : profileImageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      postCount: null == postCount
-          ? _value.postCount
-          : postCount // ignore: cast_nullable_to_non_nullable
-              as int,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -92,7 +114,12 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id, String name, String bio, String profileImageUrl, int postCount});
+      {String userId,
+      String name,
+      String bio,
+      String profileImageUrl,
+      DateTime? createdAt,
+      DateTime? updatedAt});
 }
 
 /// @nodoc
@@ -105,17 +132,18 @@ class __$$UserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? userId = null,
     Object? name = null,
     Object? bio = null,
     Object? profileImageUrl = null,
-    Object? postCount = null,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_$UserImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -128,10 +156,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.profileImageUrl
           : profileImageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      postCount: null == postCount
-          ? _value.postCount
-          : postCount // ignore: cast_nullable_to_non_nullable
-              as int,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -140,33 +172,46 @@ class __$$UserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserImpl implements _User {
   const _$UserImpl(
-      {required this.id,
+      {required this.userId,
       this.name = '',
       this.bio = '',
       this.profileImageUrl = '',
-      this.postCount = 0});
+      this.createdAt,
+      this.updatedAt});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
 
+  /// Firestore上のユーザーID（ドキュメントID）
   @override
-  final int id;
+  final String userId;
+
+  /// ユーザー名
   @override
   @JsonKey()
   final String name;
+
+  /// ユーザーの自己紹介文
   @override
   @JsonKey()
   final String bio;
+
+  /// プロフィール画像のURL
   @override
   @JsonKey()
   final String profileImageUrl;
+
+  /// ユーザー作成日時
   @override
-  @JsonKey()
-  final int postCount;
+  final DateTime? createdAt;
+
+  /// 最後にユーザー情報が更新された日時
+  @override
+  final DateTime? updatedAt;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, bio: $bio, profileImageUrl: $profileImageUrl, postCount: $postCount)';
+    return 'User(userId: $userId, name: $name, bio: $bio, profileImageUrl: $profileImageUrl, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -174,19 +219,21 @@ class _$UserImpl implements _User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserImpl &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.bio, bio) || other.bio == bio) &&
             (identical(other.profileImageUrl, profileImageUrl) ||
                 other.profileImageUrl == profileImageUrl) &&
-            (identical(other.postCount, postCount) ||
-                other.postCount == postCount));
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, bio, profileImageUrl, postCount);
+  int get hashCode => Object.hash(
+      runtimeType, userId, name, bio, profileImageUrl, createdAt, updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -204,24 +251,39 @@ class _$UserImpl implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required final int id,
+      {required final String userId,
       final String name,
       final String bio,
       final String profileImageUrl,
-      final int postCount}) = _$UserImpl;
+      final DateTime? createdAt,
+      final DateTime? updatedAt}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
-  int get id;
+
+  /// Firestore上のユーザーID（ドキュメントID）
+  String get userId;
   @override
+
+  /// ユーザー名
   String get name;
   @override
+
+  /// ユーザーの自己紹介文
   String get bio;
   @override
+
+  /// プロフィール画像のURL
   String get profileImageUrl;
   @override
-  int get postCount;
+
+  /// ユーザー作成日時
+  DateTime? get createdAt;
+  @override
+
+  /// 最後にユーザー情報が更新された日時
+  DateTime? get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

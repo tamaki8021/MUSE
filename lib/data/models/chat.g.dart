@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user.dart';
+part of 'chat.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
-      userId: json['userId'] as String,
-      name: json['name'] as String? ?? '',
-      bio: json['bio'] as String? ?? '',
-      profileImageUrl: json['profileImageUrl'] as String? ?? '',
+_$ChatImpl _$$ChatImplFromJson(Map<String, dynamic> json) => _$ChatImpl(
+      chatId: json['chatId'] as String,
+      members:
+          (json['members'] as List<dynamic>).map((e) => e as String).toList(),
+      isGroup: json['isGroup'] as bool? ?? false,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
@@ -19,12 +19,11 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+Map<String, dynamic> _$$ChatImplToJson(_$ChatImpl instance) =>
     <String, dynamic>{
-      'userId': instance.userId,
-      'name': instance.name,
-      'bio': instance.bio,
-      'profileImageUrl': instance.profileImageUrl,
+      'chatId': instance.chatId,
+      'members': instance.members,
+      'isGroup': instance.isGroup,
       'createdAt': instance.createdAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
     };
