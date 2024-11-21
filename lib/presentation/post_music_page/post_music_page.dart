@@ -15,7 +15,7 @@ import 'package:muse/presentation/post_music_page/widgets/record_widget.dart';
 import 'package:muse/presentation/post_music_page/widgets/song_controller.dart';
 
 class PostMusicPage extends StatefulWidget {
-  const PostMusicPage({Key? key}) : super(key: key);
+  const PostMusicPage({super.key});
 
   @override
   PostMusicPageState createState() => PostMusicPageState();

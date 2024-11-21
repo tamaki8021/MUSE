@@ -6,7 +6,7 @@ import 'package:muse/core/app_export.dart';
 import 'package:muse/widgets/followed_button.dart';
 
 class FriendPage extends StatelessWidget {
-  const FriendPage({Key? key}) : super(key: key);
+  const FriendPage({super.key});
 
   @override
   Widget build(BuildContext context) {

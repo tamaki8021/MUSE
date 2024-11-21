@@ -14,10 +14,7 @@ import 'widgets/userprofile_item_widget.dart';
 
 // ignore_for_file: must_be_immutable
 class HomePage extends ConsumerStatefulWidget {
-  const HomePage({Key? key})
-      : super(
-          key: key,
-        );
+  const HomePage({super.key});
 
   @override
   HomePageState createState() => HomePageState();

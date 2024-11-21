@@ -6,13 +6,13 @@ import 'package:muse/core/app_export.dart';
 
 class ColumnTitleTwo extends StatelessWidget {
   const ColumnTitleTwo({
-    Key? key,
+    super.key,
     required this.title,
     required this.time,
     required this.message,
     this.iconData,
     this.imagePath,
-  }) : super(key: key);
+  });
 
   final String title;
   final String time;

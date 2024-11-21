@@ -8,10 +8,7 @@ import 'models/userprofilegrid_item_model.dart';
 import 'notifier/street_pass_notifier.dart';
 
 class StreetPassScreen extends ConsumerStatefulWidget {
-  const StreetPassScreen({Key? key})
-      : super(
-          key: key,
-        );
+  const StreetPassScreen({super.key});
 
   @override
   StreetPassScreenState createState() => StreetPassScreenState();

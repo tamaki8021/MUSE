@@ -6,7 +6,7 @@ import 'package:muse/core/app_export.dart';
 import 'package:muse/presentation/activity_page/widgets/column_title_two.dart';
 
 class NotificationItem extends StatelessWidget {
-  const NotificationItem({Key? key}) : super(key: key);
+  const NotificationItem({super.key});
 
   @override
   Widget build(BuildContext context) {

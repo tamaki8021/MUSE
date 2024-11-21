@@ -13,7 +13,7 @@ import 'package:muse/presentation/activity_page/widgets/notification_item.dart';
 import 'package:muse/widgets/bottom_bar/custom_bottom_bar.dart';
 
 class ActivityPage extends HookConsumerWidget {
-  const ActivityPage({Key? key}) : super(key: key);
+  const ActivityPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

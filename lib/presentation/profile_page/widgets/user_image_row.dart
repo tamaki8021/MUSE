@@ -6,10 +6,10 @@ import 'package:muse/core/app_export.dart';
 
 class UserImageRow extends StatelessWidget {
   const UserImageRow({
-    Key? key,
+    super.key,
     required this.label,
     this.userImagePaths,
-  }) : super(key: key);
+  });
 
   final String label;
   final List<String>? userImagePaths;

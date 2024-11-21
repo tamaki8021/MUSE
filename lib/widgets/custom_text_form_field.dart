@@ -6,7 +6,7 @@ import 'package:muse/core/app_export.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
-    Key? key,
+    super.key,
     this.alignment,
     this.width,
     this.scrollPadding,
@@ -31,7 +31,7 @@ class CustomTextFormField extends StatelessWidget {
     this.fillColor,
     this.filled = true,
     this.validator,
-  }) : super(key: key);
+  });
 
   final Alignment? alignment;
 

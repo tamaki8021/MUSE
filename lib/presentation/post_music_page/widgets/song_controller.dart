@@ -12,12 +12,12 @@ import 'package:muse/core/app_export.dart';
 
 class SongController extends HookConsumerWidget {
   const SongController({
-    Key? key,
+    super.key,
     required this.isPlaying,
     required this.onChanged,
     required this.onSkipPreviousAction,
     required this.onSkipNextAction,
-  }) : super(key: key);
+  });
 
   final bool isPlaying;
   final ValueChanged<bool> onChanged;

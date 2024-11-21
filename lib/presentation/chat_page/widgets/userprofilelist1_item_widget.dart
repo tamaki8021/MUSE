@@ -9,10 +9,8 @@ import '../models/userprofilelist1_item_model.dart';
 class Userprofilelist1ItemWidget extends StatelessWidget {
   Userprofilelist1ItemWidget(
     this.userprofilelist1ItemModelObj, {
-    Key? key,
-  }) : super(
-          key: key,
-        );
+    super.key,
+  });
 
   Userprofilelist1ItemModel userprofilelist1ItemModelObj;
 

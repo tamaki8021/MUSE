@@ -7,8 +7,7 @@ import '../models/userprofile_item_model.dart';
 
 // ignore: must_be_immutable
 class UserprofileItemWidget extends StatelessWidget {
-  UserprofileItemWidget(this.userprofileItemModelObj, {Key? key})
-      : super(key: key);
+  UserprofileItemWidget(this.userprofileItemModelObj, {super.key});
 
   UserprofileItemModel userprofileItemModelObj;
 
