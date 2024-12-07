@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // Package imports:
+import 'package:cloud_functions/cloud_functions.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -26,7 +29,9 @@ Future<void> main() async {
   if (kDebugMode) {
     try {
       //  FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
-      //  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+      await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+      FirebaseFunctions.instance.useFunctionsEmulator('localhost', 5001);
+      FirebaseDatabase.instance.useDatabaseEmulator('localhost', 9000);
       // ignore: avoid_catches_without_on_clauses
     } catch (e) {
       // ignore: avoid_print

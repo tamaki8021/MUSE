@@ -843,3 +843,19 @@ The Dart DevTools debugger and profiler is available at: http://127.0.0.1:55448/
 [WrapWithProviderScope] 2024-11-25T11:37:33.026342 #104    ServerPlugin._onRequest (package:analyzer_plugin/plugin/plugin.dart:599:18)
 [WrapWithProviderScope] 2024-11-25T11:37:33.026342 <asynchronous suspension>
 [WrapWithProviderScope] 2024-11-25T11:37:33.026342
+The Dart VM service is listening on http://127.0.0.1:50077/WGILItirc9U=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:50077/WGILItirc9U=/devtools?uri=ws://127.0.0.1:50077/WGILItirc9U=/ws
+The Dart VM service is listening on http://127.0.0.1:50155/McSaYbvdkzU=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:50155/McSaYbvdkzU=/devtools?uri=ws://127.0.0.1:50155/McSaYbvdkzU=/ws
+The Dart VM service is listening on http://127.0.0.1:64169/QsfFsJmOFS4=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:64169/QsfFsJmOFS4=/devtools?uri=ws://127.0.0.1:64169/QsfFsJmOFS4=/ws
+The Dart VM service is listening on http://127.0.0.1:56461/UxHIKFb7xBo=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:56461/UxHIKFb7xBo=/devtools?uri=ws://127.0.0.1:56461/UxHIKFb7xBo=/ws
+The Dart VM service is listening on http://127.0.0.1:60653/7qDV6D6Rnzk=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:60653/7qDV6D6Rnzk=/devtools?uri=ws://127.0.0.1:60653/7qDV6D6Rnzk=/ws
+The Dart VM service is listening on http://127.0.0.1:60715/SFNTkVk3_iA=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:60715/SFNTkVk3_iA=/devtools?uri=ws://127.0.0.1:60715/SFNTkVk3_iA=/ws
+The Dart VM service is listening on http://127.0.0.1:60842/G-buZ8hct-o=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:60842/G-buZ8hct-o=/devtools?uri=ws://127.0.0.1:60842/G-buZ8hct-o=/ws
+The Dart VM service is listening on http://127.0.0.1:60968/pVAfTBgyvyY=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:60968/pVAfTBgyvyY=/devtools?uri=ws://127.0.0.1:60968/pVAfTBgyvyY=/ws

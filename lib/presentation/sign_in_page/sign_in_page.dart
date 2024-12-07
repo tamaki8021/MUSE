@@ -7,12 +7,17 @@ import 'package:outline_gradient_button/outline_gradient_button.dart';
 
 // Project imports:
 import 'package:muse/core/app_export.dart';
+import 'package:muse/data/repositories/auth_repository.dart';
 
 class SignInPage extends HookConsumerWidget {
   const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    Future<void> spotifySignIn() async {
+      await ref.read(authRepositoryProvider).spotifySignIn();
+    }
+
     return Scaffold(
       body: Container(
         height: SizeUtils.height,
@@ -51,7 +56,8 @@ class SignInPage extends HookConsumerWidget {
               padding: EdgeInsets.symmetric(
                 vertical: 5.adaptSize,
               ),
-              onTap: () => NavigatorService.pushNamed(AppRoutes.homePage),
+              // onTap: () => NavigatorService.pushNamed(AppRoutes.homePage),
+              onTap: spotifySignIn,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
