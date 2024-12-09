@@ -57,15 +57,14 @@ export const spotifyAuth = onRequest(async (req, res) => {
           email,
           accessToken
         );
-        // Serve an HTML page that signs the user in and updates the user profile.
-        res.send({ token: firebaseToken });
+        res.jsonp({ data: firebaseToken });
       })
       .catch((err) => {
         logger.error("Error fetching access token:", err);
       });
   } catch (error: any) {
     logger.error("Error during Spotify token exchange:", error);
-    res.send({ error: error.toString() });
+    res.status(500).jsonp({ data: error.toString() });
   }
   return;
 });
