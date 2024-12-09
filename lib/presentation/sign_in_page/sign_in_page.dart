@@ -1,4 +1,7 @@
 // Flutter imports:
+// ignore_for_file: use_build_context_synchronously
+
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -8,14 +11,21 @@ import 'package:outline_gradient_button/outline_gradient_button.dart';
 // Project imports:
 import 'package:muse/core/app_export.dart';
 import 'package:muse/data/repositories/auth_repository.dart';
+import 'package:muse/widgets/common/snack_bar.dart';
 
 class SignInPage extends HookConsumerWidget {
   const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Future<void> spotifySignIn() async {
-      await ref.read(authRepositoryProvider).spotifySignIn();
+    Future<void> handleSignIn() async {
+      try {
+        await ref.read(authRepositoryProvider).spotifySignIn();
+        // サインインが成功した場合、ホームページにリダイレクト
+        // Navigator.of(context).pushReplacementNamed(AppRoutes.homeRoute);
+      } on Exception catch (_) {
+        openSnackBar(context: context, message: 'サインインに失敗しました');
+      }
     }
 
     return Scaffold(
@@ -57,7 +67,7 @@ class SignInPage extends HookConsumerWidget {
                 vertical: 5.adaptSize,
               ),
               // onTap: () => NavigatorService.pushNamed(AppRoutes.homePage),
-              onTap: spotifySignIn,
+              onTap: handleSignIn,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -2,12 +2,17 @@
 import 'dart:convert';
 import 'dart:math';
 
+// Flutter imports:
+import 'package:flutter/foundation.dart';
+
 // Package imports:
 import 'package:crypto/crypto.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_web_auth/flutter_web_auth.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
+import 'package:muse/core/extensions/firebase_auth_error_type_extension.dart';
 import 'package:muse/core/libs/firebase.dart';
 
 final authRepositoryProvider = Provider(AuthRepositoryImpl.new);
@@ -16,13 +21,22 @@ const redirectUri = 'com.muse.muse://callback';
 const scopes = 'user-read-private user-read-email';
 
 abstract class AuthRepository {
-  Future<void> spotifySignIn();
+  Future<String> spotifySignIn();
+  Stream<User?> get authStateChanged;
+  User? get currentUser;
 }
 
 class AuthRepositoryImpl implements AuthRepository {
   const AuthRepositoryImpl(this.ref);
 
   final Ref ref;
+
+  @override
+  Stream<User?> get authStateChanged =>
+      ref.read(firebaseAuth).authStateChanges();
+
+  @override
+  User? get currentUser => ref.read(firebaseAuth).currentUser;
 
   String generateRandomString(int length) {
     const possible =
@@ -42,7 +56,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<void> spotifySignIn() async {
+  Future<String> spotifySignIn() async {
     try {
       final codeVerifier = generateRandomString(64);
       final codeChallenge = await generateCodeChallenge(codeVerifier);
@@ -62,19 +76,26 @@ class AuthRepositoryImpl implements AuthRepository {
       );
 
       final code = Uri.parse(result).queryParameters['code'];
-      print('Authorization code: $code');
+      if (kDebugMode) {
+        print('Authorization code: $code');
+      }
 
-      final resultSpotifySignIn =
-          await ref.read(firebaseFunctions).httpsCallable('spotifyAuth').call({
+      final resultSpotifySignIn = await ref
+          .read(firebaseFunctions)
+          .httpsCallable('spotifyAuth')
+          .call<String>({
         'code': code,
         'codeVerifier': codeVerifier,
         'redirectUri': redirectUri,
       });
-      print(resultSpotifySignIn);
       final firebaseToken = resultSpotifySignIn.data;
-      print(firebaseToken);
-    } catch (e) {
-      print('Error: $e');
+      if (kDebugMode) {
+        print(firebaseToken);
+      }
+      await ref.read(firebaseAuth).signInWithCustomToken(firebaseToken);
+      return 'success';
+    } on FirebaseAuthException catch (e) {
+      return FirebaseAuthErrorExt.fromCode(e.code).message;
     }
   }
 }
