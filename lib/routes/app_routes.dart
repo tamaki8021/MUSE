@@ -13,10 +13,12 @@ import 'package:muse/presentation/profile_edit_page/profile_edit_pade.dart';
 import 'package:muse/presentation/profile_page/profile_page.dart';
 import 'package:muse/presentation/sign_in_page/sign_in_page.dart';
 import 'package:muse/presentation/street_pass_screen/street_pass_screen.dart';
+import 'package:muse/routes/auth_guard.dart';
 
 class AppRoutes {
   static const String root = '/';
   static const String initialRoute = '/initialRoute';
+  static const String signInPage = '/sign_in_page';
   static const String homePage = '/home_page';
   static const String postPage = '/post_page';
   static const String profilePage = '/profile_page';
@@ -28,7 +30,10 @@ class AppRoutes {
   static const String streetPassScreen = '/street_pass_screen';
 
   static Map<String, WidgetBuilder> routes = {
-    initialRoute: (context) => const SignInPage(),
+    initialRoute: (context) => const AuthGuard(
+          child: HomePage(),
+        ),
+    signInPage: (context) => const SignInPage(),
     homePage: (context) => const HomePage(),
     profilePage: (context) => const ProfilePage(),
     activityPage: (context) => const ActivityPage(),
