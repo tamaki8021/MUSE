@@ -1,1 +1,1 @@
-export { spotifyAuth } from "./spotify";
+export { spotifyAuth } from "./spotifyAuthHandler";
