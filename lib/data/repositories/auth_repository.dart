@@ -21,9 +21,10 @@ const redirectUri = 'com.muse.muse://callback';
 const scopes = 'user-read-private user-read-email';
 
 abstract class AuthRepository {
-  Future<String> spotifySignIn();
   Stream<User?> get authStateChanged;
   User? get currentUser;
+  Future<String> spotifySignIn();
+  Future<String> signOut();
 }
 
 class AuthRepositoryImpl implements AuthRepository {
@@ -93,6 +94,17 @@ class AuthRepositoryImpl implements AuthRepository {
         print(firebaseToken);
       }
       await ref.read(firebaseAuth).signInWithCustomToken(firebaseToken);
+      return 'success';
+    } on FirebaseAuthException catch (e) {
+      return FirebaseAuthErrorExt.fromCode(e.code).message;
+    }
+  }
+
+  @override
+  Future<String> signOut() async {
+    try {
+      await ref.read(firebaseAuth).signOut();
+
       return 'success';
     } on FirebaseAuthException catch (e) {
       return FirebaseAuthErrorExt.fromCode(e.code).message;
