@@ -16,8 +16,9 @@ export const spotifyAuth = onRequest(async (req, res) => {
 
     const data = await spotifyClient.getTokens(code, redirectUri, codeVerifier);
     const accessToken = data.access_token;
+    const refreshToken = data.refresh_token;
     logger.log("Received Access Token:", accessToken);
-    logger.log("Received Refresh Token:", data.refresh_token);
+    logger.log("Received Refresh Token:", refreshToken);
 
     const userInfo = await spotifyClient.getUserProfile(accessToken);
 
@@ -26,7 +27,8 @@ export const spotifyAuth = onRequest(async (req, res) => {
       userInfo.display_name,
       userInfo.images?.[0]?.url || "",
       userInfo.email,
-      accessToken
+      accessToken,
+      refreshToken,
     );
 
     res.jsonp({ token: firebaseToken });

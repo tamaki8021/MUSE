@@ -1,14 +1,13 @@
 import * as admin from "firebase-admin";
 import { logger } from "firebase-functions/v2";
 
-admin.initializeApp();
-
 export const createFirebaseAccount = async (
   spotifyID: string,
   displayName: string,
   photoURL: string,
   email: string,
-  accessToken: string
+  accessToken: string,
+  refreshToken: string,
 ) => {
   // The UID we'll assign to the user.
   const uid = `spotify:${spotifyID}`;
@@ -17,7 +16,7 @@ export const createFirebaseAccount = async (
   const databaseTask = admin
     .database()
     .ref(`/spotifyAccessToken/${uid}`)
-    .set(accessToken);
+    .set({accessToken: accessToken, refreshToken: refreshToken});
 
   // Create or update the user account.
   const userCreationTask = admin
