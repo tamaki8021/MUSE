@@ -38,6 +38,7 @@ export const createFirebaseAccount = async (
           emailVerified: true,
         });
       }
+      logger.error(error);
       throw error;
     });
 

@@ -18,7 +18,6 @@ export const spotifyAuth = onRequest(async (req, res) => {
     const accessToken = data.access_token;
     const refreshToken = data.refresh_token;
     logger.log("Received Access Token:", accessToken);
-    logger.log("Received Refresh Token:", refreshToken);
 
     const userInfo = await spotifyClient.getUserProfile(accessToken);
 
@@ -31,7 +30,7 @@ export const spotifyAuth = onRequest(async (req, res) => {
       refreshToken,
     );
 
-    res.jsonp({ token: firebaseToken });
+    res.jsonp({ data: firebaseToken });
   } catch (error: any) {
     logger.error("Spotify auth failed", error);
     res.status(500).send({ error: "Authentication failed" });
