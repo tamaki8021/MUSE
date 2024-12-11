@@ -8,6 +8,19 @@ import 'package:muse/core/app_export.dart';
 
 class NavigatorService {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  static Future<dynamic> openDrawer() async {
+    return scaffoldKey.currentState!.openDrawer();
+  }
+
+  static Future<dynamic> openEndDrawer() async {
+    return scaffoldKey.currentState!.openEndDrawer();
+  }
+
+  static Future<dynamic> closeEndDrawer() async {
+    return scaffoldKey.currentState!.closeEndDrawer();
+  }
 
   static Future<dynamic> pushNamed(
     String routeName, {
@@ -17,11 +30,31 @@ class NavigatorService {
         .pushNamed(routeName, arguments: arguments);
   }
 
+  static Future<dynamic> pushReplacementNamed(
+    String routeName, {
+    dynamic arguments,
+  }) {
+    return navigatorKey.currentState!
+        .pushReplacementNamed(routeName, arguments: arguments);
+  }
+
   static Future<dynamic> pushNamedNoAnimation(
     String routeName, {
     dynamic arguments,
   }) {
     return navigatorKey.currentState!.push(
+      _noAnimationRoute(
+        routeName,
+        arguments: arguments,
+      ),
+    );
+  }
+
+  static Future<dynamic> pushReplacementNamedNoAnimation(
+    String routeName, {
+    dynamic arguments,
+  }) {
+    return navigatorKey.currentState!.pushReplacement(
       _noAnimationRoute(
         routeName,
         arguments: arguments,
@@ -70,16 +103,15 @@ class NavigatorService {
     dynamic arguments,
   }) {
     return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          AppRoutes.routes[routeName]!(context),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return child; // アニメーションなし
+      },
       settings: RouteSettings(
         name: routeName,
         arguments: arguments,
-      ), // ここでsettingsを設定
-      pageBuilder: (context, animation, secondaryAnimation) {
-        return AppRoutes.getMainPage(
-          routeName,
-          arguments: arguments,
-        );
-      },
+      ),
       transitionDuration: Duration.zero,
       reverseTransitionDuration: Duration.zero,
     );
