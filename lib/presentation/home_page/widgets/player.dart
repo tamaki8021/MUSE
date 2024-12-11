@@ -23,13 +23,6 @@ class Player extends HookConsumerWidget {
       duration: const Duration(seconds: 1),
     )..repeat();
 
-    useEffect(
-      () {
-        return animationController.dispose;
-      },
-      [animationController],
-    );
-
     return switch (asyncPostWithUser) {
       AsyncData(:final value) => value != null
           ? Column(
