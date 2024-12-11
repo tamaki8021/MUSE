@@ -65,7 +65,6 @@ class App extends HookConsumerWidget {
           theme: theme,
           title: 'muse app',
           navigatorKey: NavigatorService.navigatorKey,
-          debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             AppLocalizationDelegate(),
             GlobalMaterialLocalizations.delegate,
@@ -78,7 +77,7 @@ class App extends HookConsumerWidget {
               '',
             ),
           ],
-          initialRoute: AppRoutes.initialRoute,
+          initialRoute: AppRoutes.root,
           routes: AppRoutes.routes,
         );
       },

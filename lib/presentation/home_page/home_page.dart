@@ -55,17 +55,17 @@ class HomePage extends StatelessWidget {
       title: AppbarTitle(
         text: 'lbl_muse'.tr,
       ),
-      actions: const [
-        CustomGradientMask(
-          child: IconButton(
-            onPressed: null,
-            icon: Icon(
-              AppIcons.menu,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ],
+      // actions: const [
+      //   CustomGradientMask(
+      //     child: IconButton(
+      //       onPressed: null,
+      //       icon: Icon(
+      //         AppIcons.menu,
+      //         color: Colors.white,
+      //       ),
+      //     ),
+      //   ),
+      // ],
     );
   }
 }

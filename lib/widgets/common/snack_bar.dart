@@ -16,6 +16,7 @@ void openSnackBar({
         message,
         style: CustomTextStyles.bodySmallWhite,
       ),
+      behavior: SnackBarBehavior.floating,
       backgroundColor: backgroundColor ?? Colors.red,
     ),
   );

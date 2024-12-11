@@ -52,7 +52,7 @@ class CustomBottomBar extends StatelessWidget {
               }
               return BottomBarItem(
                 icon: bottomBar.icon,
-                isSelected: (currentRoute == AppRoutes.initialRoute &&
+                isSelected: (currentRoute == AppRoutes.root &&
                         getCurrentRoute(bottomBar.type) ==
                             AppRoutes.homePage) ||
                     getCurrentRoute(bottomBar.type) == currentRoute,

@@ -17,7 +17,6 @@ import 'package:muse/routes/auth_guard.dart';
 
 class AppRoutes {
   static const String root = '/';
-  static const String initialRoute = '/initialRoute';
   static const String signInPage = '/sign_in_page';
   static const String homePage = '/home_page';
   static const String postPage = '/post_page';
@@ -30,9 +29,7 @@ class AppRoutes {
   static const String streetPassScreen = '/street_pass_screen';
 
   static Map<String, WidgetBuilder> routes = {
-    initialRoute: (context) => const AuthGuard(
-          child: HomePage(),
-        ),
+    root: (context) => const AuthGuard(child: HomePage()),
     signInPage: (context) => const SignInPage(),
     homePage: (context) => const HomePage(),
     profilePage: (context) => const ProfilePage(),
@@ -55,7 +52,7 @@ class AppRoutes {
       case activityPage:
         return const ActivityPage();
       default:
-        return const HomePage();
+        return const SignInPage();
     }
   }
 }
