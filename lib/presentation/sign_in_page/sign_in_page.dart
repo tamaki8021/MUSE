@@ -99,9 +99,8 @@ class SignInPage extends HookConsumerWidget {
                   text: TextSpan(
                     children: const [
                       TextSpan(
-                        text:
-                            'By signing up, you are creating a MUSE account and '
-                            'agree to MUSE’s ',
+                        text: 'By signing up, you are creating a MUSE account'
+                            ' and agree to MUSE’s ',
                       ),
                       TextSpan(
                         text: 'Terms',
