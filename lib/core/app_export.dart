@@ -6,13 +6,13 @@ export 'package:flutter_svg/flutter_svg.dart';
 export 'package:muse/core/utils/app_icons.dart';
 export 'package:muse/core/utils/date_time_utils.dart';
 export 'package:muse/core/utils/image_constant.dart';
-export 'package:muse/core/utils/navigator_service.dart';
 export 'package:muse/core/utils/pref_utils.dart';
 export 'package:muse/core/utils/size_utils.dart';
 // localizations
 export 'package:muse/localization/app_localization.dart';
 // routes
 export 'package:muse/routes/app_routes.dart';
+export 'package:muse/routes/navigator_service.dart';
 // theme
 export 'package:muse/theme/app_decoration.dart';
 export 'package:muse/theme/custom_text_style.dart';

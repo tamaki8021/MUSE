@@ -116,17 +116,17 @@ class ActivityPage extends HookConsumerWidget {
       title: AppbarTitle(
         text: 'lbl_activity'.tr,
       ),
-      actions: const [
-        CustomGradientMask(
-          child: IconButton(
-            onPressed: null,
-            icon: Icon(
-              AppIcons.menu,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ],
+      // actions: const [
+      //   CustomGradientMask(
+      //     child: IconButton(
+      //       onPressed: null,
+      //       icon: Icon(
+      //         AppIcons.menu,
+      //         color: Colors.white,
+      //       ),
+      //     ),
+      //   ),
+      // ],
     );
   }
 }

@@ -51,6 +51,9 @@
                 <data
                     android:host="muse-dev-e029c.firebaseapp.com"
                     android:scheme="https"/>
+                <data
+                    android:host="callback"
+                    android:scheme="com.muse.muse"/>
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

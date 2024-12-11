@@ -21,6 +21,7 @@ final Map<String, String> enUs = {
   'lbl_post': 'Post',
   'lbl_my_posts': 'My Posts',
   'msg_sometimes_i_cook': 'Sometimes I cook and I like to show them',
+  'lbl_logout': 'Logout',
 
   // profile edit Screen
   'lbl_edit_profile': 'Edit Profile',
