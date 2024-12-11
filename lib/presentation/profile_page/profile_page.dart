@@ -1,3 +1,6 @@
+// Dart imports:
+import 'dart:async';
+
 // Flutter imports:
 import 'package:flutter/material.dart';
 
@@ -6,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import 'package:muse/core/app_export.dart';
+import 'package:muse/data/repositories/auth_repository.dart';
 import 'package:muse/widgets/bottom_bar/custom_bottom_bar.dart';
 import 'package:muse/widgets/custom_tab_bar.dart';
 import 'widgets/music_cover_grid_view.dart';
@@ -19,10 +23,12 @@ class ProfilePage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
       child: Scaffold(
+        key: NavigatorService.scaffoldKey,
         extendBody: true,
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
         appBar: _buildAppBar(context),
+        endDrawer: _buildDrawer(context, ref),
         bottomNavigationBar: const CustomBottomBar(),
         body: Container(
           width: SizeUtils.width,
@@ -80,6 +86,43 @@ class ProfilePage extends HookConsumerWidget {
       centerTitle: true,
       title: AppbarTitle(
         text: 'lbl_profile'.tr,
+      ),
+      actions: const [
+        CustomGradientMask(
+          child: IconButton(
+            onPressed: NavigatorService.openEndDrawer,
+            icon: Icon(
+              AppIcons.menu,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDrawer(BuildContext context, WidgetRef ref) {
+    return CustomGradientMask(
+      gradient: AppDecoration.gradientBackground.gradient,
+      child: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: Text(
+                'lbl_logout'.tr,
+              ),
+              onTap: () async {
+                await ref.read(authRepositoryProvider).signOut();
+                unawaited(NavigatorService.closeEndDrawer());
+                await NavigatorService.pushReplacementNamedNoAnimation(
+                  AppRoutes.signInPage,
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
